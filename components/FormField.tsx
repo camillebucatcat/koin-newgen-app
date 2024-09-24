@@ -1,13 +1,13 @@
 import React, {useRef, useState} from 'react';
 import {Animated, Platform, StyleSheet, Text, TextInput, View} from 'react-native';
 
-interface LabelInput {
+interface FormField {
   title: string;
   isFloating?: boolean; 
   placeholder?: string;
 }
 
-const LabelInput: React.FC<LabelInput> = ({title, isFloating = true,  placeholder = ''}) => {
+const FormField: React.FC<FormField> = ({title, isFloating = true,  placeholder = ''}) => {
   const [text, setText] = useState('');
   const floatingLabelAnimation = useRef(new Animated.Value(text ? 1 : 0)).current;
   const borderAnimation = useRef(new Animated.Value(0)).current;
@@ -57,8 +57,8 @@ const LabelInput: React.FC<LabelInput> = ({title, isFloating = true,  placeholde
   };
 
   const stackedLabelStyle = {
-    top: -5, // Keep the label on top as stacked
-    fontSize: 12, // Keep the font size constant for stacked labels
+    top: -5, 
+    fontSize: 12, 
   };
 
   const borderStyle = {
@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Aventa-Medium',
     ...Platform.select({
       web: {
-        outlineStyle: 'none', // This will remove the yellow border on web
+        outlineStyle: 'none', 
       },
     }),
   },
@@ -114,4 +114,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default LabelInput;
+export default FormField;

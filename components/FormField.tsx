@@ -1,5 +1,6 @@
 import React, {useRef, useState} from 'react';
-import {Animated, Platform, StyleSheet, Text, TextInput, View} from 'react-native';
+import {Animated, Platform, StyleSheet, TextInput, View} from 'react-native';
+import Colors from '../constants/Colors';
 
 interface FormField {
   title: string;
@@ -33,13 +34,13 @@ const FormField: React.FC<FormField> = ({title, isFloating = true,  placeholder 
     setIsFocused(false);
     if (isFloating) {
       Animated.timing(floatingLabelAnimation, {
-        toValue: text ? 1 : 0, // Keep label up if there's text
+        toValue: text ? 1 : 0, 
         duration: 150,
         useNativeDriver: false,
       }).start();
     }
     Animated.timing(borderAnimation, {
-      toValue: 0, // Reset border to normal
+      toValue: 0, 
       duration: 80,
       useNativeDriver: false,
     }).start();
@@ -48,11 +49,11 @@ const FormField: React.FC<FormField> = ({title, isFloating = true,  placeholder 
   const floatingLabelStyle = {
     top: floatingLabelAnimation.interpolate({
       inputRange: [0, 1],
-      outputRange: [10, -5], // top value
+      outputRange: [10, -5],
     }),
     fontSize: floatingLabelAnimation.interpolate({
       inputRange: [0, 1],
-      outputRange: [16, 12], // font size
+      outputRange: [16, 12], 
     }),
   };
 
@@ -64,20 +65,27 @@ const FormField: React.FC<FormField> = ({title, isFloating = true,  placeholder 
   const borderStyle = {
     borderColor: borderAnimation.interpolate({
       inputRange: [0, 1],
-      outputRange: ['#EBEBEB', '#543D8A'], //border color
+      outputRange: ['#EBEBEB', Colors.primary.color], 
     }),
   };
 
   return (
     <Animated.View style={[styles.container, borderStyle]}>
-      <Animated.Text style={[styles.label, isFloating ? floatingLabelStyle : stackedLabelStyle]}>
-        {title}
-      </Animated.Text>
+      {isFloating && (
+        <Animated.Text style={[styles.label, floatingLabelStyle]}>
+          {title}
+        </Animated.Text>
+      )}
+      {!isFloating && (
+        <Animated.Text style={[styles.label, stackedLabelStyle]}>
+          {title}
+        </Animated.Text>
+      )}
       <TextInput
         style={styles.input}
         value={text}
-        placeholder={isFocused || stackedLabelStyle ? placeholder : ''}
-         placeholderTextColor="#B8BBBF"
+        placeholder={isFloating ? (isFocused || text ? placeholder : '') : placeholder} // Adjusted here
+        placeholderTextColor="#B8BBBF"
         onChangeText={val => setText(val)}
         onFocus={handleFocus}
         onBlur={handleBlur}

@@ -4,26 +4,23 @@ import React from 'react';
 interface ButtonProps {
   title: string;
   handlePress: () => void;
-  customStyles?: string;
-  customButton?: string;
-  textStyles?: string;
+  customStyles?: object;
   shape?: 'default' | 'round';
   fill?: 'solid' | 'clear' | 'outline';
-  color?: 'primary' | 'success' | 'danger' | 'light' | 'dark' | 'moolah' | 'tipTicket' | 'ellis';
+  color?: 'primary' | 'success' | 'danger' | 'light' | 'dark';
   text?: 'primary' | 'success' | 'danger' | 'light' | 'dark' | 'white';
   image?: ImageSourcePropType;
-  transform?: '' | 'normal',
+  transform?: '' | 'normal';
   disabled?: boolean;
   opacity?: number;
   centerText?: boolean;
+  expand?: 'block' | 'default'; 
 }
 
-const Button: React.FC<ButtonProps> = ({
-  title, 
-  handlePress, 
-  customStyles, 
-  customButton, 
-  textStyles, 
+const TestButtons: React.FC<ButtonProps> = ({
+  title,
+  handlePress,
+  customStyles = {},
   image,
   transform = '',
   shape = 'default',
@@ -33,6 +30,7 @@ const Button: React.FC<ButtonProps> = ({
   disabled = false,
   opacity = 1,
   centerText = true,
+  expand = 'default',  // Default value for layout prop
 }) => {
   return (
     <TouchableOpacity
@@ -40,40 +38,31 @@ const Button: React.FC<ButtonProps> = ({
       activeOpacity={0.7}
       disabled={disabled}
       style={[
-        styles.button, 
-        customButton && styles.customButton, // Add custom styles if provided
+        customStyles,
+        expand === 'block' ? styles.blockButton : styles.defaultButton,  // Use block style if layout is 'block'
       ]}
     >
       <View
         style={[
-          styles.container,
-          customStyles && styles.customStyles,
-          centerText ? styles.centerText : styles.leftAlignText,
+          styles.buttonContent,
           { opacity: disabled ? 0.5 : 1 },
           shape === 'default' && shapes.defaultShape,
           shape === 'round' && shapes.round,
-          fill === 'solid' && color === 'primary' && colors.primary,
-          fill === 'solid' && color === 'success' && colors.success,
-          fill === 'solid' && color === 'danger' && colors.danger,
-          fill === 'solid' && color === 'dark' && colors.dark,
-          fill === 'solid' && color === 'light' && colors.light,
-          fill === 'outline' && color === 'primary' && colors.primaryBorder,
-          fill === 'outline' && color === 'success' && colors.successBorder,
-          fill === 'outline' && color === 'danger' && colors.dangerBorder,
-          fill === 'outline' && color === 'dark' && colors.darkBorder,
-          fill === 'outline' && color === 'light' && colors.lightBorder,
+          fill === 'solid' && colorStyles[color],
+          fill === 'outline' && borderStyles[color],
           fill === 'clear' && fills.clear,
-          fill === 'outline' && fills.outline,
-          fill === 'solid' && color === 'ellis' && colors.ellis,
         ]}
       >
-        <View style={styles.row}>
+        <View
+          style={[
+            styles.flexRow,
+            centerText ? styles.centerButtonText : styles.leftButtonText,
+          ]}
+        >
           {image && <Image source={image} style={styles.image} />}
           <Text
-            maxFontSizeMultiplier={1.2}
-            minimumFontScale={1.1}
             style={[
-              styles.text,
+              styles.baseText,
               transform === '' ? transforms.default : transforms.normal,
               fill === 'solid' && texts.solid,
               color === 'primary' && fill === 'solid' && texts.white,
@@ -89,7 +78,6 @@ const Button: React.FC<ButtonProps> = ({
               color === 'dark' && fill === 'clear' && texts.dark,
               color === 'dark' && fill === 'outline' && texts.dark,
               color === 'light' && fill === 'solid' && texts.light,
-              color === 'tipTicket' && fill === 'solid' && texts.tipTicket,
             ]}
           >
             {title}
@@ -100,24 +88,15 @@ const Button: React.FC<ButtonProps> = ({
   );
 };
 
-export default Button;
+export default TestButtons;
 
 const styles = StyleSheet.create({
-  button: {},
-  customButton: {}, 
-  container: {
-    minHeight: 52,
-    paddingVertical: 5,
-    justifyContent: 'center',
+  buttonContent: {
+    minHeight: 50,
+    paddingVertical: 16,
+    paddingHorizontal: 12,  // Adjust padding for horizontal spacing
   },
-  centerText: {
-    alignItems: 'center',
-  },
-  leftAlignText: {
-    paddingLeft: 16,
-    justifyContent: 'center',
-  },
-  row: {
+  flexRow: {
     flexDirection: 'row',
     alignItems: 'center',
   },
@@ -126,9 +105,22 @@ const styles = StyleSheet.create({
     height: 20,
     marginRight: 8,
   },
-  text: {
+  baseText: {
     fontSize: 16,
     fontFamily: 'AventaBold',
+  },
+  centerButtonText: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  leftButtonText: {
+    paddingLeft: 16,
+  },
+  defaultButton: {
+    alignSelf: 'flex-start', 
+  },
+  blockButton: {
+    width: '100%',  
   },
 });
 
@@ -150,58 +142,44 @@ const transforms = StyleSheet.create({
   },
 });
 
-const colors = StyleSheet.create({
+const colorStyles = StyleSheet.create({
   primary: {
-    backgroundColor: "#543D8A",
-    borderWidth: 0,
-  },
-  primaryBorder: {
-    borderWidth: 1,
-    borderColor: "#543D8A",
+    backgroundColor: '#543D8A',
   },
   success: {
-    backgroundColor: "#29A46A",
-    borderWidth: 0,
+    backgroundColor: '#29A46A',
   },
   danger: {
-    backgroundColor: "#E14D4D",
-    borderWidth: 0,
-  },
-  light: {
-    backgroundColor: "#EBEBEB",
-    borderWidth: 0,
-  },
-  lightBorder: {
-    borderWidth: 1,
-    borderColor: "#EBEBEB",
-  },
-  successBorder: {
-    borderWidth: 1,
-    borderColor: "#29A46A",
-  },
-  dangerBorder: {
-    borderWidth: 1,
-    borderColor: "#E14D4D",
+    backgroundColor: '#E14D4D',
   },
   dark: {
-    backgroundColor: "#282828",
-    borderWidth: 0,
+    backgroundColor: '#282828',
   },
-  darkBorder: {
+  light: {
+    backgroundColor: '#EBEBEB',
+  },
+});
+
+const borderStyles = StyleSheet.create({
+  primary: {
     borderWidth: 1,
-    borderColor: "#282828",
+    borderColor: '#543D8A',
   },
-  tipTicket: {
-    backgroundColor: '#9AE8C8',
-    borderWidth: 0,
+  success: {
+    borderWidth: 1,
+    borderColor: '#29A46A',
   },
-  moolah: {
-    backgroundColor: '#449B81',
-    borderWidth: 0,
+  danger: {
+    borderWidth: 1,
+    borderColor: '#E14D4D',
   },
-  ellis: {
-    backgroundColor: '#146634',
-    borderWidth: 0,
+  dark: {
+    borderWidth: 1,
+    borderColor: '#282828',
+  },
+  light: {
+    borderWidth: 1,
+    borderColor: '#EBEBEB',
   },
 });
 
@@ -227,18 +205,10 @@ const texts = StyleSheet.create({
   light: {
     color: "#404040",
   },
-  tipTicket: {
-    color: '#211F21',
-  },
 });
 
 const fills = StyleSheet.create({
   clear: {
     backgroundColor: 'transparent',
-    borderWidth: 0,
-  },
-  outline: {
-    backgroundColor: 'transparent',
-    borderWidth: 1,
   },
 });

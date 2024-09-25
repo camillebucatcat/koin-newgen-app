@@ -1,15 +1,16 @@
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, ImageBackground } from 'react-native';
 import { BottomTabBarProps } from '@react-navigation/bottom-tabs'
 import Colors from '../constants/Colors';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { Defs, G, Path, Svg } from 'react-native-svg';
+const image = {uri: '../assets/images/tabbar-vector.png'};
 
 export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
   const insets = useSafeAreaInsets();
 
   return (
     <View style={[styles.tabBar]}>
-      <View style={[styles.tabBarBg]}></View>
-      <View style={styles.tabBarBgBottom}></View>
+      <View style={[styles.tabLinks]}>
       {state.routes.map((route, index) => {
         const { options } = descriptors[route.key];
         const label =
@@ -64,6 +65,10 @@ export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
           </Text>
         </TouchableOpacity>
       </View>
+      </View>
+      <View style={styles.tabBarBg}>
+        <ImageBackground source={image} resizeMode="contain" style={styles.image}></ImageBackground>
+      </View>
     </View>
   );
 }
@@ -71,43 +76,38 @@ export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
 
 const styles = StyleSheet.create({
   tabBar: {
-    position: 'absolute',
-    bottom: -50,
+    width: '100%',
+    height: 120,
+    maxWidth: 500,
+    left: '50%',
+    transform: [{ translateX: '-50%' }],
+  },
+  tabLinks: {
+    width: '93%',
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingTop: 40,
-    paddingBottom: 50,
-    // paddingHorizontal: 20,
-    width: '100%',
-    height: 180,
-    // flex: 1,
   },
   tabBarBg: {
-    backgroundColor: '#543D8A',
-    borderTopLeftRadius: 30,
-    width: '100%',
     position: 'absolute',
-    left: 0,
-    height: '100%',
-    transform: [
-      { skewX: '-11deg' },
-      { skewY: '4deg' }
-    ]
-  },
-  tabBarBgBottom: {
-    backgroundColor: '#543D8A',
     width: '100%',
-    position: 'absolute',
-    left: 0,
-    height: '100%',
+    maxWidth: 440,
+    height: 180,
     bottom: 0,
+    left: '50%',
+    transform: [{ translateX: '-50%' }],
     zIndex: -1
+  },
+  image: {
+    width: '100%',
+    height: 150,
+    position: 'absolute',
+    bottom: 0
   },
   btnQR: {
     backgroundColor: 'orange',
-    width: 80,
-    height: 80,
+    width: 90,
+    height: 90,
     borderRadius: 200,
     borderColor: '#404040',
     borderWidth: 10,

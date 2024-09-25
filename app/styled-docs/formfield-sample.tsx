@@ -5,6 +5,8 @@ import FormField from '../../components/FormField'
 const FormfieldSample = () => {
   return (
     <View style={{paddingHorizontal: 16}}>
+      <FormField title="Security Mask" isFloating={true} securityMask={true} placeholder="floating label"></FormField>
+      <FormField title="floating label" isFloating={true} showClearBtn={true} placeholder="floating label"></FormField>
       <FormField title="stacked label" isFloating={false} placeholder="stacked label"></FormField>
       <FormField title="floating label" isFloating={true} placeholder="floating label"></FormField>
     </View>

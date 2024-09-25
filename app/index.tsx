@@ -4,7 +4,6 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StatusBar } from 'expo-status-bar';
 import ButtonSample from './styled-docs/button-sample';
-import Tab from './(tabs)/settings';
 import FormfieldSample from './styled-docs/formfield-sample';
 
 export default function App() {
@@ -13,8 +12,8 @@ export default function App() {
   return (
     <NavigationContainer independent={true}>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="styled-docs/button-sample" component={FormfieldSample} />
-        <Stack.Screen name="styled-docs/formfield-sample" component={ButtonSample} />
+        <Stack.Screen name="styled-docs/button-sample" component={ButtonSample} />
+        <Stack.Screen name="styled-docs/formfield-sample" component={FormfieldSample} />
       </Stack.Navigator>
       <StatusBar style="dark"/>
     </NavigationContainer>

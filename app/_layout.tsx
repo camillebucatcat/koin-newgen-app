@@ -5,12 +5,13 @@ export default function Layout() {
     <Stack screenOptions={{
       headerShown: false,
       headerShadowVisible: false,
-      // contentStyle:{
-      //   backgroundColor: '#F2F6F6',
-      // },
-      // headerStyle:{
-      //   backgroundColor: '#F2F6F6'
-      // },
+      contentStyle:{
+        backgroundColor: '#F2F6F6',
+      },
+      headerStyle:{
+        backgroundColor: '#F2F6F6'
+      },
+      
     }}>
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
     </Stack>

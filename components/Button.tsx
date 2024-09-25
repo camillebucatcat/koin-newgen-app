@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
   },
   baseText: {
     fontSize: 16,
-    fontFamily: 'AventaBold',
+    // fontFamily: 'AventaBold',
   },
   centerButtonText: {
     justifyContent: 'center',

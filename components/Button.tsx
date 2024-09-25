@@ -1,5 +1,6 @@
 import { TouchableOpacity, Text, Image, StyleSheet, View, ImageSourcePropType } from 'react-native';
 import React from 'react';
+import Colors from '../constants/Colors';
 
 interface ButtonProps {
   title: string;
@@ -30,7 +31,7 @@ const TestButtons: React.FC<ButtonProps> = ({
   disabled = false,
   opacity = 1,
   centerText = true,
-  expand = 'default',  // Default value for layout prop
+  expand = 'default',  
 }) => {
   return (
     <TouchableOpacity
@@ -39,7 +40,7 @@ const TestButtons: React.FC<ButtonProps> = ({
       disabled={disabled}
       style={[
         customStyles,
-        expand === 'block' ? styles.blockButton : styles.defaultButton,  // Use block style if layout is 'block'
+        expand === 'block' ? styles.blockButton : styles.defaultButton,
       ]}
     >
       <View
@@ -94,7 +95,7 @@ const styles = StyleSheet.create({
   buttonContent: {
     minHeight: 50,
     paddingVertical: 16,
-    paddingHorizontal: 12,  // Adjust padding for horizontal spacing
+    paddingHorizontal: 16,
   },
   flexRow: {
     flexDirection: 'row',
@@ -144,66 +145,66 @@ const transforms = StyleSheet.create({
 
 const colorStyles = StyleSheet.create({
   primary: {
-    backgroundColor: '#543D8A',
+    backgroundColor: Colors.primary.color,
   },
   success: {
-    backgroundColor: '#29A46A',
+    backgroundColor: Colors.success.color,
   },
   danger: {
-    backgroundColor: '#E14D4D',
+    backgroundColor: Colors.danger.color,
   },
   dark: {
-    backgroundColor: '#282828',
+    backgroundColor: Colors.dark.color,
   },
   light: {
-    backgroundColor: '#EBEBEB',
+    backgroundColor: Colors.light.color,
   },
 });
 
 const borderStyles = StyleSheet.create({
   primary: {
     borderWidth: 1,
-    borderColor: '#543D8A',
+    borderColor: Colors.primary.color,
   },
   success: {
     borderWidth: 1,
-    borderColor: '#29A46A',
+    borderColor: Colors.success.color,
   },
   danger: {
     borderWidth: 1,
-    borderColor: '#E14D4D',
+    borderColor: Colors.danger.color,
   },
   dark: {
     borderWidth: 1,
-    borderColor: '#282828',
+    borderColor: Colors.dark.color,
   },
   light: {
     borderWidth: 1,
-    borderColor: '#EBEBEB',
+    borderColor: Colors.light.color,
   },
 });
 
 const texts = StyleSheet.create({
   solid: {
-    color: "#ffffff",
+    color: Colors.text.light,
   },
   primary: {
-    color: "#543D8A",
+    color: Colors.primary.color,
   },
   white: {
-    color: "#ffffff",
+    color: Colors.text.light,
   },
   success: {
-    color: '#29A46A',
+    color: Colors.success.color,
   },
   danger: {
-    color: '#E14D4D',
+    color: Colors.danger.color,
   },
   dark: {
-    color: "#282828",
+    color: Colors.dark.color,
   },
   light: {
-    color: "#404040",
+    color: Colors.text.primary,
   },
 });
 

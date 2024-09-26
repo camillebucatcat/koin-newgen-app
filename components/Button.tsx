@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
     marginRight: 8,
   },
   baseText: {
-    fontSize: 16,
+    fontSize: 14,
     // fontFamily: 'AventaBold',
   },
   centerButtonText: {

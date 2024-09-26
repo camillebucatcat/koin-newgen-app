@@ -9,31 +9,31 @@ import RecentTransactions from '../../components/RecentTransactions';
 
 export default function Tab() {
   return (
-    <SafeAreaProvider style={gStyle.darkBg}>
-      <Text style={gStyle.textLight}>Tab Home</Text>
+    <SafeAreaProvider style={ gStyle.darkBg }>
+      <Text style={ gStyle.textLight }>Tab Home</Text>
       <SafeAreaView style={{ flex: 1, padding: 16 }}>
         <ScrollView>
-          <View style={[gStyle.darkCard, {marginVertical: 16}]}>
-            <Text style={[gStyle.textLight, gStyle.fw500, gStyle.fs16]}>Total Available Cash</Text>
-            <Text style={[gStyle.textLight, gStyle.fw600, gStyle.fs32]}>$8,385.28</Text>
-            <View style={[display.flexBetween, gStyle.gap, {marginVertical: 16}]}>
+          <View style={[ gStyle.darkCard, gStyle.mx4 ]}>
+            <Text style={[ gStyle.textLight, gStyle.fw500, gStyle.fs16 ]}>Total Available Cash</Text>
+            <Text style={[ gStyle.textLight, gStyle.fw600, gStyle.fs32 ]}>$8,385.28</Text>
+            <View style={[ display.flexBetween, gStyle.gap, gStyle.mx4 ]}>
               <Button title="Move Funds" customStyles={{width: '48%',}} transform="normal" shape="round" fill="solid" color="primary"  centerText={true} handlePress={() => router.push('')} />
               <Button title="Add Funds" customStyles={{width: '48%',}} transform="normal" shape="round" fill="solid" color="primary" centerText={true} handlePress={() => router.push('')} />
             </View>
           </View>
-          <View style={[gStyle.darkCard, { marginVertical: 16, position: "relative" }]}>
+          <View style={[ gStyle.darkCard, gStyle.mx4, { position: "relative" } ]}>
             <View style={{width: '45%'}}>
-              <Text style={[gStyle.textLight, gStyle.fw500, gStyle.fs16]}>
+              <Text style={[ gStyle.textLight, gStyle.fw500, gStyle.fs16 ]}>
                 See the benefits we give you for your
-                <Text style={gStyle.fw700}> local casino</Text>
+                <Text style={ gStyle.fw700 }> local casino</Text>
               </Text>
               <TouchableOpacity activeOpacity={0.8} style={{marginTop: 20}}>
-                <Text style={gStyle.textPrimaryLight}>View benefits</Text>
+                <Text style={ gStyle.textPrimaryLight }>View benefits</Text>
               </TouchableOpacity>
             </View>
             <Image 
-              source={images.home.dice} 
-              style={styles.diceImage} 
+              source={ images.home.dice } 
+              style={ styles.diceImage } 
             />
           </View>
 

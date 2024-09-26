@@ -19,7 +19,7 @@ export default function Tab() {
             <Text style={[ gStyle.textLight, gStyle.fw600, gStyle.fs32 ]}>$8,385.28</Text>
             <View style={[ display.flexBetween, gStyle.gap, gStyle.my4 ]}>
               <Button title="Move Funds" customStyles={{width: '48%',}} transform="normal" shape="round" fill="solid" color="primary"  centerText={true} handlePress={() => router.push('')} />
-              <Button title="Add Funds" customStyles={{width: '48%',}} transform="normal" shape="round" fill="solid" color="primary" centerText={true} handlePress={() => router.push('')} />
+              <Button title="Add Funds" customStyles={{width: '48%',}} transform="normal" shape="round" fill="solid" color="primary" centerText={true} handlePress={() => router.push('/styled-docs/button-sample')} />
             </View>
           </View>
           <View style={[ gStyle.darkCard, gStyle.my4, { position: "relative" } ]}>
@@ -54,6 +54,26 @@ export default function Tab() {
               </View>
             </View>
           </TouchableOpacity>
+          <View style={[ gStyle.darkCard]}>
+            <View>
+              <Text style={[ gStyle.textLight ]}>Nearby Casinos</Text>
+            </View>
+          </View>
+          <View style={[ gStyle.darkCard]}>
+            <View>
+              <Text style={[ gStyle.textLight ]}>Nearby Casinos</Text>
+            </View>
+          </View>
+          <View style={[ gStyle.darkCard]}>
+            <View>
+              <Text style={[ gStyle.textLight ]}>Nearby Casinos</Text>
+            </View>
+          </View>
+          <View style={[ gStyle.darkCard]}>
+            <View>
+              <Text style={[ gStyle.textLight ]}>Nearby Casinos</Text>
+            </View>
+          </View>
         </ScrollView>
       </SafeAreaView>
     </SafeAreaProvider>

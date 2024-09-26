@@ -1,67 +1,73 @@
-// import { Stack } from 'expo-router/stack';
-
-// export default function Layout() {
-//   return (
-//     <Stack screenOptions={{
-//       headerShown: false,
-//       headerShadowVisible: false,
-//       contentStyle:{
-//         backgroundColor: '#F2F6F6',
-//       },
-//       headerStyle:{
-//         backgroundColor: '#F2F6F6'
-//       },
-      
-//     }}>
-//       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-//     </Stack>
-//   );
-// }
-
-
-import { StyleSheet, Text, View } from 'react-native';
-import React from 'react';
+import * as React from 'react';
+import * as Linking from 'expo-linking';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { StatusBar } from 'expo-status-bar';
-import ButtonSample from './styled-docs/button-sample';
-import FormfieldSample from './styled-docs/formfield-sample';
+import FontAwesome from '@expo/vector-icons/FontAwesome';
+import { TabBar } from '../components/TabBar';
+import Home from './(tabs)/Home';
+import Settings from './(tabs)/Settings';
+import Discover from './(tabs)/Discover';
+import ButtonSample from './styledDocs/ButtonSample';
+import FormFieldSample from './styledDocs/FormFieldSample';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 
-// export default function App() {
-//   const Stack = createNativeStackNavigator();
-
-//   return (
-//     <NavigationContainer independent={true}>
-//       <Stack.Navigator screenOptions={{ headerShown: false }}>
-//         <Stack.Screen name="styled-docs/button-sample" component={ButtonSample} />
-//         <Stack.Screen name="styled-docs/formfield-sample" component={FormfieldSample} />
-//       </Stack.Navigator>
-//       <StatusBar style="dark"/>
-//     </NavigationContainer>
-//   );
-// }
-
-function HomeStack() {
+function HomeTabs() {
   return (
-    <NavigationContainer independent={true}>
-      <Stack.Navigator>
-        <Stack.Screen name="styled-docs/button-sample" component={ButtonSample} />
-        <Stack.Screen name="styled-docs/formfield-sample" component={FormfieldSample} />
+    // <Tab.Navigator>
+    //   <Tab.Screen name="Home" component={Home} options={{headerShown: true}} />
+    //   <Tab.Screen name="Feed" component={EmptyScreen} options={{headerShown: true}}  />
+    //   <Tab.Screen name="Notifications" component={EmptyScreen} options={{headerShown: true}}  />
+    // </Tab.Navigator>
+    <Tab.Navigator tabBar={props => <TabBar {...props} />} screenOptions={{ tabBarActiveTintColor: 'blue' }}>
+      <Tab.Screen
+        name="Index"
+        component={Home}
+        options={{
+          title: 'Home',
+          headerShown: false,
+          tabBarIcon: ({ color }) => <FontAwesome size={28} name="home" color={color} />,
+        }}
+      />
+      <Tab.Screen
+        name="Settings"
+        component={Settings}
+        options={{
+          title: 'Settings',
+          headerShown: false,
+          tabBarIcon: ({ color }) => <FontAwesome size={28} name="home" color={color} />,
+        }}
+      />
+      <Tab.Screen
+        name="Discover"
+        component={Discover}
+        options={{
+          title: 'Discover',
+          headerShown: false,
+          tabBarIcon: ({ color }) => <FontAwesome size={28} name="home" color={color} />,
+        }}
+      />
+    </Tab.Navigator>
+  );
+}
+
+const prefix = Linking.createURL('/');
+const linking = {
+  prefixes: [prefix],
+};
+
+function App() {
+  return (
+    <NavigationContainer independent={true} linking={linking}>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="Home" component={HomeTabs} />
+        <Stack.Screen name="styledDocs/ButtonSample" component={ButtonSample} />
+        <Stack.Screen name="styledDocs/FormFieldSample" component={FormFieldSample} />
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
 
-// function App() {
-//   return (
-//     <Tab.Navigator>
-//       <Tab.Screen name="Home" component={HomeStack} />
-//     </Tab.Navigator>
-//   );
-// }
-
-const styles = StyleSheet.create({});
+export default App;

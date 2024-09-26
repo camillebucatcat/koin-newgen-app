@@ -5,6 +5,7 @@ import { router } from 'expo-router';
 import images from '../../constants/Images';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import SafeAreaView from 'react-native-safe-area-view';
+
 const ButtonSample = () => {
   return (
     <SafeAreaProvider>

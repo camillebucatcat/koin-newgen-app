@@ -8,7 +8,7 @@ import { router } from 'expo-router';
 import RecentTransactions from '../../components/RecentTransactions';
 import ArrowCircleGradient from '../../assets/icons/svg-icons/arrow-circle-gradient';
 
-const Home = () => {
+const Home = ({ navigation }) => {
   return (
     <SafeAreaProvider style={gStyle.darkBg}>
       <SafeAreaView style={{ flex: 1, padding: 16 }}>
@@ -18,7 +18,7 @@ const Home = () => {
             <Text style={[gStyle.textLight, gStyle.fw600, gStyle.fs32]}>$8,385.28</Text>
             <View style={[display.flexBetween, gStyle.gap, { marginVertical: 16 }]}>
               <Button title="Move Funds" customStyles={{ width: '48%', }} transform="normal" shape="round" fill="solid" color="primary" centerText={true} handlePress={() => router.push('')} />
-              <Button title="Add Funds" customStyles={{ width: '48%', }} transform="normal" shape="round" fill="solid" color="primary" centerText={true} handlePress={() => router.push('/ButtonSample')} />
+              <Button title="Add Funds" customStyles={{ width: '48%', }} transform="normal" shape="round" fill="solid" color="primary" centerText={true} handlePress={() => navigation.navigate('styledDocs/ButtonSample')} />
             </View>
           </View>
           <View style={[gStyle.darkCard, { marginVertical: 16, position: "relative" }]}>

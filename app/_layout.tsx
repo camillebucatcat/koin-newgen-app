@@ -5,15 +5,30 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { TabBar } from '../components/TabBar';
-import Home from './(tabs)/Home';
-
+import Home from './tabs/Home';
 import ButtonSample from './styledDocs/ButtonSample';
 import FormFieldSample from './styledDocs/FormFieldSample';
-import Settings from './(tabs)/settings';
-import Discover from './(tabs)/discover';
+import Settings from './tabs/Settings';
+import Discover from './tabs/Discover';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
+const prefix = Linking.createURL('/');
+const linking = {
+  prefixes: [prefix],
+};
+
+export default function App() {
+  return (
+    <NavigationContainer independent={true} linking={linking}>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="Home" component={HomeTabs} />
+        <Stack.Screen name="styledDocs/ButtonSample" component={ButtonSample} />
+        <Stack.Screen name="styledDocs/FormFieldSample" component={FormFieldSample} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
 
 function HomeTabs() {
   return (
@@ -53,22 +68,3 @@ function HomeTabs() {
     </Tab.Navigator>
   );
 }
-
-const prefix = Linking.createURL('/');
-const linking = {
-  prefixes: [prefix],
-};
-
-function App() {
-  return (
-    <NavigationContainer independent={true} linking={linking}>
-      <Stack.Navigator screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="Home" component={HomeTabs} />
-        <Stack.Screen name="styledDocs/ButtonSample" component={ButtonSample} />
-        <Stack.Screen name="styledDocs/FormFieldSample" component={FormFieldSample} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
-}
-
-export default App;

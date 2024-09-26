@@ -20,7 +20,6 @@ export const display = StyleSheet.create({
   justifyEnd: {
     justifyContent: 'flex-end',
   },
-
   flexStart: {
     flex: 1,
     flexDirection: 'row',

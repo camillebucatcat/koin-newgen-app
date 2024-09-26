@@ -18,7 +18,7 @@ interface ButtonProps {
   expand?: 'block' | 'default'; 
 }
 
-const TestButtons: React.FC<ButtonProps> = ({
+const Buttons: React.FC<ButtonProps> = ({
   title,
   handlePress,
   customStyles = {},
@@ -39,8 +39,8 @@ const TestButtons: React.FC<ButtonProps> = ({
       activeOpacity={0.7}
       disabled={disabled}
       style={[
-        customStyles,
         expand === 'block' ? styles.blockButton : styles.defaultButton,
+        customStyles,
       ]}
     >
       <View
@@ -52,6 +52,7 @@ const TestButtons: React.FC<ButtonProps> = ({
           fill === 'solid' && colorStyles[color],
           fill === 'outline' && borderStyles[color],
           fill === 'clear' && fills.clear,
+          
         ]}
       >
         <View
@@ -89,7 +90,7 @@ const TestButtons: React.FC<ButtonProps> = ({
   );
 };
 
-export default TestButtons;
+export default Buttons;
 
 const styles = StyleSheet.create({
   buttonContent: {

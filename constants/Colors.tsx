@@ -24,10 +24,10 @@ export default {
     darkTint: '#3e3e3e',
   },
   primary:{
-    color: '#0054e9',
+    color: '#543D8A',
     primaryContrast: '#fff',
-    primaryShade: '#004acd',
-    primaryTint: '#1a65eb',
+    primaryShade: '#4a3679',
+    primaryTint: '#655096',
   },
   secondary:{
     color: '#015796',

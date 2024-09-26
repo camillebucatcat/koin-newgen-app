@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, ScrollView, Image, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, Image, TouchableOpacity, Dimensions, Animated, Easing, LayoutChangeEvent } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import images from '../../constants/Images';
 import { gStyle } from '../styles/Global';
@@ -8,121 +8,212 @@ import { router } from 'expo-router';
 import RecentTransactions from '../../components/RecentTransactions';
 import ArrowCircleGradient from '../../assets/icons/svg-icons/arrow-circle-gradient';
 import InsightDoughnutChart from '../../components/InsightDoughnutChart';
-
+import { useEffect, useRef, useState } from 'react';
+import ThreeDotsLight from '../../assets/icons/svg-icons/three-dots-light';
+import Colors from '../../constants/Colors';
 
 const Home = ({ navigation }) => {
+  const [selectedSegment, setSelectedSegment] = useState(0); 
+  const [segmentWidths, setSegmentWidths] = useState<number[]>([]); 
+  const animatedValue = useRef(new Animated.Value(0)).current;
+  const [activeSegment, setActiveSegment] = useState<string>('For-You'); 
+
+  //segment header
+  useEffect(() => {
+    Animated.timing(animatedValue, {
+      toValue: segmentWidths.slice(0, selectedSegment).reduce((acc, width) => acc + width, 0), 
+      duration: 200,
+      easing: Easing.ease,
+      useNativeDriver: false,
+    }).start();
+  }, [selectedSegment, segmentWidths]);
+
+  const measureSegment = (index: number) => (event: LayoutChangeEvent) => {
+    const { width } = event.nativeEvent.layout;
+    setSegmentWidths(prevWidths => {
+      const newWidths = [...prevWidths];
+      newWidths[index] = width;
+      return newWidths;
+    });
+  };
+
+  const handleSegmentPress = (index: number, segment: string) => {
+    setSelectedSegment(index); 
+    setActiveSegment(segment); 
+  };
+
   return (
     <SafeAreaProvider style={gStyle.darkBg}>
-      <SafeAreaView style={{ flex: 1, padding: 16 }}>
+      <View style={styles.segmentContainer}>
+        <TouchableOpacity activeOpacity={0.8} onPress={() => handleSegmentPress(0, 'For-You')} onLayout={measureSegment(0)} style={styles.segmentButton}>
+          <Text maxFontSizeMultiplier={1.1} minimumFontScale={1.1} style={[ styles.segmentText, selectedSegment === 0 && styles.activeSegmentText ]}>
+            For You
+          </Text>
+        </TouchableOpacity>  
+        <TouchableOpacity activeOpacity={0.8} onPress={() => handleSegmentPress(1, 'Accounts')} onLayout={measureSegment(1)} style={styles.segmentButton}>
+          <Text maxFontSizeMultiplier={1.1} minimumFontScale={1.1} style={[ styles.segmentText, selectedSegment === 1 && styles.activeSegmentText, ]}>
+            Accounts
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity activeOpacity={0.8} onPress={() => handleSegmentPress(2, 'Credit')} onLayout={measureSegment(2)}  style={styles.segmentButton}>
+          <Text maxFontSizeMultiplier={1.1} minimumFontScale={1.1} style={[ styles.segmentText, selectedSegment === 2 && styles.activeSegmentText,]}>
+            Credit
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity activeOpacity={0.8} onPress={() => handleSegmentPress(3, 'Rewards')} onLayout={measureSegment(3)} style={styles.segmentButton}>
+          <Text maxFontSizeMultiplier={1.1} minimumFontScale={1.1} style={[ styles.segmentText,selectedSegment === 3 && styles.activeSegmentText,]} >
+            Rewards
+          </Text>
+        </TouchableOpacity>
+        <Animated.View
+          style={[
+            styles.animatedLine,
+            {
+              width: segmentWidths[selectedSegment] || 0,
+              transform: [{ translateX: animatedValue }],
+            },
+          ]}
+        />
+      </View>
+      <SafeAreaView style={{ flex: 1, paddingHorizontal: 16, paddingVertical: 8 }}>
         <ScrollView>
-          <View style={[gStyle.darkCard, gStyle.my4]}>
-            <Text style={[gStyle.textLight, gStyle.fw500, gStyle.fs16]}>Total Available Cash</Text>
-            <Text style={[gStyle.textLight, gStyle.fw600, gStyle.fs32]}>$8,385.28</Text>
-            <View style={[display.flexBetween, gStyle.gap, gStyle.my4]}>
-              <Button title="Move Funds" customStyles={{ width: '48%', }} transform="normal" shape="round" fill="solid" color="primary" centerText={true} handlePress={() => navigation.navigate('')} />
-              <Button title="Add Funds" customStyles={{ width: '48%', }} transform="normal" shape="round" fill="solid" color="primary" centerText={true} handlePress={() => navigation.navigate('styledDocs/ButtonSample')} />
+        {activeSegment === 'For-You' && (
+          <View>
+            <View style={[gStyle.darkCard, gStyle.my4]}>
+              <Text style={[gStyle.textLight, gStyle.fw500, gStyle.fs16]}>Total Available Cash</Text>
+              <Text style={[gStyle.textLight, gStyle.fw600, gStyle.fs32]}>$8,385.28</Text>
+              <View style={[display.flexBetween, gStyle.gap, gStyle.my4]}>
+                <Button title="Move Funds" customStyles={{ width: '48%', }} transform="normal" shape="round" fill="solid" color="primary" centerText={true} handlePress={() => navigation.navigate('')} />
+                <Button title="Add Funds" customStyles={{ width: '48%', }} transform="normal" shape="round" fill="solid" color="primary" centerText={true} handlePress={() => navigation.navigate('styledDocs/ButtonSample')} />
+              </View>
             </View>
-          </View>
-          <View style={[gStyle.darkCard, gStyle.my4, { position: "relative" }]}>
-            <View style={{ width: '45%' }}>
-              <Text style={[gStyle.textLight, gStyle.fw500, gStyle.fs16]}>
-                See the benefits we give you for your
-                <Text style={gStyle.fw700}> local casino</Text>
-              </Text>
-              <TouchableOpacity activeOpacity={0.8} style={{ marginTop: 20 }}>
-                <Text style={gStyle.textPrimaryLight}>View benefits</Text>
-              </TouchableOpacity>
+            <View style={[gStyle.darkCard, gStyle.my4, { position: "relative" }]}>
+              <View style={{ width: '45%' }}>
+                <Text style={[gStyle.textLight, gStyle.fw500, gStyle.fs16]}>
+                  See the benefits we give you for your
+                  <Text style={gStyle.fw700}> local casino</Text>
+                </Text>
+                <TouchableOpacity activeOpacity={0.8} style={{ marginTop: 20 }}>
+                  <Text style={gStyle.textPrimaryLight}>View benefits</Text>
+                </TouchableOpacity>
+              </View>
+              <Image
+                source={images.home.dice}
+                style={styles.diceImage}
+              />
             </View>
-            <Image
-              source={images.home.dice}
-              style={styles.diceImage}
-            />
-          </View>
-          <View style={[gStyle.my4]}>
-            <RecentTransactions />
-          </View>
-          <TouchableOpacity activeOpacity={0.8}>
+            <View style={[gStyle.my4]}>
+              <RecentTransactions />
+            </View>
+            <TouchableOpacity activeOpacity={0.8}>
+              <View style={[ gStyle.darkCard, gStyle.my4 ]}>
+                <View style={[ display.flexBetween, display.alignCenter ]}>
+                  <View style={[ display.dFlex, display.alignCenter ]}>
+                    <Image source={ images.icon.qrCode } />
+                    <View style={[ gStyle.ml4 ]}>
+                      <Text style={[ gStyle.textLight, gStyle.fw700, gStyle.fs16 ]}>Connect to Game</Text>
+                      <Text style={[ gStyle.textLight, gStyle.fw500, gStyle.fs14, gStyle.mt2 ]}>With QR Code</Text>
+                    </View>
+                  </View>
+                  <ArrowCircleGradient/>
+                </View>
+              </View>
+            </TouchableOpacity>
             <View style={[ gStyle.darkCard, gStyle.my4 ]}>
-              <View style={[ display.flexBetween, display.alignCenter ]}>
-                <View style={[ display.dFlex, display.alignCenter ]}>
-                  <Image source={ images.icon.qrCode } />
-                  <View style={[ gStyle.ml4 ]}>
-                    <Text style={[ gStyle.textLight, gStyle.fw700, gStyle.fs16 ]}>Connect to Game</Text>
-                    <Text style={[ gStyle.textLight, gStyle.fw500, gStyle.fs14, gStyle.mt2 ]}>With QR Code</Text>
+              <View style={[ display.flexBetween, display.alignCenter, gStyle.mb4 ]}>
+                <Text style={[ gStyle.textLight, gStyle.fw700, gStyle.fs14 ]}>Nearby Casinos</Text>
+                <Button title="View All" customStyles={{width: '30%'}} customSpace={{padding: 12}} transform="normal" shape="round" fill="outline" color="light"  centerText={true} handlePress={() => navigation.navigate('')} />
+              </View>
+              <View style={styles.mapContainer}>
+                <Image source={images.home.map} style={styles.relativeMap} />
+                <Image source={images.icon.mapMarker} style={styles.absoluteMap} />
+              </View>
+            </View>
+            <View style={[ gStyle.darkCard, gStyle.my4]}>
+              <View style={[ display.flexBetween, display.alignCenter, gStyle.mb4 ]}>
+                <Text style={[gStyle.textLight, gStyle.fw700, gStyle.fs14 ]}>Your Player Cards</Text>
+                <Button title="Edit Cards" customStyles={{width: '30%'}} customSpace={{padding: 12}} transform="normal" shape="round" fill="outline" color="light"  centerText={true} handlePress={() => navigation.navigate('')} />
+              </View>
+            </View>
+            <View style={[ gStyle.darkCard, gStyle.my4]}>
+              <View style={[ display.flexBetween, display.alignCenter, gStyle.mb4 ]}>
+                <Text style={[gStyle.textLight, gStyle.fw700, gStyle.fs14 ]}>Insights</Text>
+                <Button title="View Detail" customStyles={{width: '30%'}} customSpace={{padding: 12}} transform="normal" shape="round" fill="outline" color="light"  centerText={true} handlePress={() => navigation.navigate('')} />
+              </View>
+              <InsightDoughnutChart/>
+            </View>
+            <View style={[ gStyle.darkCard, gStyle.my4]}>
+              <View style={[ display.flexBetween, display.alignCenter, gStyle.mb4 ]}>
+                <Text style={[gStyle.textLight, gStyle.fw700, gStyle.fs14 ]}>Your Properties</Text>
+                <Button title="View All" customStyles={{width: '30%'}} customSpace={{padding: 12}} transform="normal" shape="round" fill="outline" color="light"  centerText={true} handlePress={() => navigation.navigate('')} />
+              </View>
+              <TouchableOpacity style={[ display.dFlex, gStyle.py3, display.flexBetween, display.alignCenter ]} activeOpacity={0.8}>
+                <View style={[]}>
+                  <Image source={ images.properties.plazaDark}/>
+                </View>
+                <View style={[display.flexBetween, display.alignCenter, gStyle.mx3]}>
+                  <View>
+                    <Text style={[gStyle.textLight, gStyle.fw600, gStyle.fs4]}>The Plaza Hotel & Casino</Text>
                   </View>
                 </View>
-                <ArrowCircleGradient/>
-              </View>
-            </View>
-          </TouchableOpacity>
-          <View style={[ gStyle.darkCard, gStyle.my4 ]}>
-            <View style={[ display.flexBetween, display.alignCenter, gStyle.mb4 ]}>
-              <Text style={[ gStyle.textLight, gStyle.fw700, gStyle.fs14 ]}>Nearby Casinos</Text>
-              <Button title="View All" customStyles={{width: '30%'}} customSpace={{padding: 12}} transform="normal" shape="round" fill="outline" color="light"  centerText={true} handlePress={() => navigation.navigate('')} />
-            </View>
-            <View style={styles.mapContainer}>
-              <Image source={images.home.map} style={styles.relativeMap} />
-              <Image source={images.icon.mapMarker} style={styles.absoluteMap} />
-            </View>
-          </View>
-          <View style={[ gStyle.darkCard, gStyle.my4]}>
-            <View style={[ display.flexBetween, display.alignCenter, gStyle.mb4 ]}>
-              <Text style={[gStyle.textLight, gStyle.fw700, gStyle.fs14 ]}>Your Player Cards</Text>
-              <Button title="Edit Cards" customStyles={{width: '30%'}} customSpace={{padding: 12}} transform="normal" shape="round" fill="outline" color="light"  centerText={true} handlePress={() => navigation.navigate('')} />
-            </View>
-          </View>
-          <View style={[ gStyle.darkCard, gStyle.my4]}>
-            <View style={[ display.flexBetween, display.alignCenter, gStyle.mb4 ]}>
-              <Text style={[gStyle.textLight, gStyle.fw700, gStyle.fs14 ]}>Insights</Text>
-              <Button title="View Detail" customStyles={{width: '30%'}} customSpace={{padding: 12}} transform="normal" shape="round" fill="outline" color="light"  centerText={true} handlePress={() => navigation.navigate('')} />
-            </View>
-            <InsightDoughnutChart/>
-          </View>
-          <View style={[ gStyle.darkCard, gStyle.my4]}>
-            <View style={[ display.flexBetween, display.alignCenter, gStyle.mb4 ]}>
-              <Text style={[gStyle.textLight, gStyle.fw700, gStyle.fs14 ]}>Your Properties</Text>
-              <Button title="View All" customStyles={{width: '30%'}} customSpace={{padding: 12}} transform="normal" shape="round" fill="outline" color="light"  centerText={true} handlePress={() => navigation.navigate('')} />
-            </View>
-            <TouchableOpacity style={[ display.dFlex, gStyle.py3, display.flexBetween, display.alignCenter ]} activeOpacity={0.8}>
-              <View style={[]}>
-                <Image source={ images.properties.plazaDark}/>
-              </View>
-              <View style={[display.flexBetween, display.alignCenter, gStyle.mx3]}>
                 <View>
-                  <Text style={[gStyle.textLight, gStyle.fw600, gStyle.fs4]}>The Plaza Hotel & Casino</Text>
+                  <Image source={images.icon.arrowright}/>
                 </View>
-              </View>
-              <View>
-                <Image source={images.icon.arrowright}/>
-              </View>
-            </TouchableOpacity>
-            <TouchableOpacity style={[ display.dFlex, gStyle.py3, display.flexBetween, display.alignCenter ]} activeOpacity={0.8}>
-              <View style={[]}>
-                <Image source={ images.properties.eclipseDark}/>
-              </View>
-              <View style={[display.flexBetween, display.alignCenter, gStyle.mx3]}>
+              </TouchableOpacity>
+              <TouchableOpacity style={[ display.dFlex, gStyle.py3, display.flexBetween, display.alignCenter ]} activeOpacity={0.8}>
+                <View style={[]}>
+                  <Image source={ images.properties.eclipseDark}/>
+                </View>
+                <View style={[display.flexBetween, display.alignCenter, gStyle.mx3]}>
+                  <View>
+                    <Text style={[gStyle.textLight, gStyle.fw600, gStyle.fs4]}>Eclipse Gaming</Text>
+                  </View>
+                </View>
                 <View>
-                  <Text style={[gStyle.textLight, gStyle.fw600, gStyle.fs4]}>Eclipse Gaming</Text>
+                  <Image source={images.icon.arrowright}/>
                 </View>
-              </View>
-              <View>
-                <Image source={images.icon.arrowright}/>
-              </View>
-            </TouchableOpacity>
-            <TouchableOpacity style={[ display.dFlex, gStyle.py3, display.flexBetween, display.alignCenter ]} activeOpacity={0.8}>
-              <View style={[]}>
-                <Image source={ images.properties.wskyDark}/>
-              </View>
-              <View style={[display.flexBetween, display.alignCenter, gStyle.mx3]}>
+              </TouchableOpacity>
+              <TouchableOpacity style={[ display.dFlex, gStyle.py3, display.flexBetween, display.alignCenter ]} activeOpacity={0.8}>
+                <View style={[]}>
+                  <Image source={ images.properties.wskyDark}/>
+                </View>
+                <View style={[display.flexBetween, display.alignCenter, gStyle.mx3]}>
+                  <View>
+                    <Text style={[gStyle.textLight, gStyle.fw600, gStyle.fs4]}>WSKY Bar + Grill</Text>
+                  </View>
+                </View>
                 <View>
-                  <Text style={[gStyle.textLight, gStyle.fw600, gStyle.fs4]}>WSKY Bar + Grill</Text>
+                  <Image source={images.icon.arrowright}/>
                 </View>
-              </View>
-              <View>
-                <Image source={images.icon.arrowright}/>
-              </View>
-            </TouchableOpacity>
+              </TouchableOpacity>
+            </View>
           </View>
+        )}  
+        {activeSegment === 'Accounts' && ( 
+          <View>
+            <View style={[gStyle.darkCard, gStyle.my4]}>
+              <View style={[display.flexCenterBetween]}>
+                <Text style={[gStyle.textLight, gStyle.fw700, gStyle.fs16]}>YOUR CASH</Text>
+                <TouchableOpacity activeOpacity={0.8}>
+                  <ThreeDotsLight/>
+                </TouchableOpacity>
+              </View>
+              <Text style={[gStyle.textLight, gStyle.fw600, gStyle.fs32, gStyle.my3]}>$8,385.28</Text>
+              <Text style={[gStyle.textGrayLight, gStyle.fw600, gStyle.fs16,]}>Total Available Cash</Text>
+            </View>
+            <Text style={[gStyle.textLight, gStyle.fw600, gStyle.fs16]}>Koin Accounts</Text>
+          </View>
+        )}
+        {activeSegment === 'Credit' && ( 
+          <View>
+            <Text style={[gStyle.textLight]}>Credit</Text>
+          </View>
+        )}
+        {activeSegment === 'Rewards' && ( 
+          <View>
+            <Text style={[gStyle.textLight]}>Rewards</Text>
+          </View>
+        )}
         </ScrollView>
       </SafeAreaView>
     </SafeAreaProvider>
@@ -160,5 +251,31 @@ const styles = StyleSheet.create({
     right: 0,
     bottom: 0,
     aspectRatio: 1, 
+  },
+  segmentContainer: {
+    flexDirection: 'row',
+    borderBottomWidth: 0.5,
+    borderBottomColor: '#545454',
+    zIndex: 2,
+    position: 'relative',
+    paddingHorizontal: 16
+  },
+  segmentButton: {
+    flex: 1,
+    alignItems: 'center',
+    paddingVertical: 10,
+  },
+  segmentText: {
+    fontWeight: '400',
+    color: '#fff',
+  },
+  activeSegmentText: {
+    fontWeight: '700',
+  },
+  animatedLine: {
+    position: 'absolute',
+    bottom: 0,
+    height: 2,
+    backgroundColor: Colors.primary.color,
   },
 });

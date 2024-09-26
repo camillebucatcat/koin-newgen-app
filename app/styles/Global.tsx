@@ -67,6 +67,9 @@ export const gStyle = StyleSheet.create({
   textPrimaryLight: {
     color: Colors.primary.primary300
   },
+  textGrayLight: {
+    color: '#A8A8A8'
+  },
 
   darkCard: {
     backgroundColor: '#3C3A3C',

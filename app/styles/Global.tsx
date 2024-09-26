@@ -32,8 +32,8 @@ const dynamicSpaces = Object.entries(spaces).reduce((styles: any, [key, value]) 
   styles[`mb${key}`] = { marginBottom: value };
   styles[`mr${key}`] = { marginRight: value };
   styles[`ml${key}`] = { marginLeft: value };
-  styles[`mx${key}`] = { marginVertical: value };
-  styles[`my${key}`] = { marginHorizontal: value };
+  styles[`mx${key}`] = { marginHorizontal: value };
+  styles[`my${key}`] = { marginVertical: value };
 
   //padding
   styles[`p-${key}`] = { padding: value };
@@ -41,8 +41,8 @@ const dynamicSpaces = Object.entries(spaces).reduce((styles: any, [key, value]) 
   styles[`pb${key}`] = { paddingBottom: value };
   styles[`pr${key}`] = { paddingRight: value };
   styles[`pl${key}`] = { paddingLeft: value };
-  styles[`px${key}`] = { paddingHorizontal: value };
-  styles[`py${key}`] = { paddingVertical: value };
+  styles[`px${key}`] = { paddingHorizontal: value }
+  styles[`py${key}`] = { paddingVertical: value }; 
   return styles;
 }, {});
 

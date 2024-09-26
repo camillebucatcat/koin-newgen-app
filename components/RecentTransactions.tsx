@@ -32,7 +32,7 @@ return(
     </TouchableOpacity>
     <TouchableOpacity style={[display.dFlex, gStyle.py3, display.flexBetween, display.alignCenter, {borderBottomColor: '#FFFFFF1F', borderBottomWidth: 1}]}>
         <View style={[]}>
-        <Image source={ images.transactions.shoppingbag}/>
+        <Image source={ images.transactions.coffeecup}/>
         </View>
         <View style={[display.flexBetween, display.alignCenter, gStyle.mx3]}>
             <View>
@@ -42,6 +42,24 @@ return(
             </View>
             <View>
                 <Text style={[gStyle.textLight, gStyle.fw700, gStyle.fs3]}>- $4.26</Text>
+            </View>
+        </View>
+        <View>
+            <Image source={images.icon.arrowright}/>
+        </View>
+    </TouchableOpacity>
+    <TouchableOpacity style={[display.dFlex, gStyle.py3, display.flexBetween, display.alignCenter, {borderBottomColor: '#FFFFFF1F', borderBottomWidth: 1}]}>
+        <View style={[]}>
+        <Image source={ images.transactions.basket}/>
+        </View>
+        <View style={[display.flexBetween, display.alignCenter, gStyle.mx3]}>
+            <View>
+                <Text style={[gStyle.textLight, gStyle.fw600, gStyle.fs4]}>Trader Joes</Text>
+                <Text style={[gStyle.textLight, gStyle.fs3]}>Groceries</Text>
+                <Text style={[gStyle.textLight, gStyle.fs3]}>Yesterday 10:31 am</Text>
+            </View>
+            <View>
+                <Text style={[gStyle.textLight, gStyle.fw700, gStyle.fs3]}>- $185.93</Text>
             </View>
         </View>
         <View>

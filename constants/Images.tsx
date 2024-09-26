@@ -15,7 +15,9 @@ const images = {
         dice: require(pathImages + 'dice.png'),
     },
     transactions: {
-        shoppingbag: require(pathIcons + 'ShoppingBag.png')
+        shoppingbag: require(pathIcons + 'ShoppingBag.png'),
+        coffeecup: require(pathIcons + 'CoffeeCup.png'),
+        basket: require(pathIcons + 'ShoppingBasket.png'),
     }
 
 }

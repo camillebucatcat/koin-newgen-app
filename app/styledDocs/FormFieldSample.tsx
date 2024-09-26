@@ -2,7 +2,7 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import FormField from '../../components/FormField'
 
-const FormfieldSample = () => {
+const FormFieldSample = () => {
   return (
     <View style={{paddingHorizontal: 16}}>
       <FormField title="Security Mask" isFloating={true} securityMask={true} placeholder="floating label"></FormField>
@@ -14,6 +14,6 @@ const FormfieldSample = () => {
   )
 }
 
-export default FormfieldSample
+export default FormFieldSample
 
 const styles = StyleSheet.create({})

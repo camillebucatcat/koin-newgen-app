@@ -1,12 +1,13 @@
 import { View, Text, StyleSheet } from 'react-native';
 
-export default function Tab() {
+const Discover = () => {
   return (
     <View style={styles.container}>
       <Text>Discover Home</Text>
     </View>
   );
 }
+export default Discover;
 
 const styles = StyleSheet.create({
   container: {

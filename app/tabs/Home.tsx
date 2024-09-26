@@ -7,6 +7,8 @@ import Button from '../../components/Button';
 import { router } from 'expo-router';
 import RecentTransactions from '../../components/RecentTransactions';
 import ArrowCircleGradient from '../../assets/icons/svg-icons/arrow-circle-gradient';
+import InsightDoughnutChart from '../../components/InsightDoughnutChart';
+
 
 const Home = ({ navigation }) => {
   return (
@@ -17,7 +19,7 @@ const Home = ({ navigation }) => {
             <Text style={[gStyle.textLight, gStyle.fw500, gStyle.fs16]}>Total Available Cash</Text>
             <Text style={[gStyle.textLight, gStyle.fw600, gStyle.fs32]}>$8,385.28</Text>
             <View style={[display.flexBetween, gStyle.gap, gStyle.my4]}>
-              <Button title="Move Funds" customStyles={{ width: '48%', }} transform="normal" shape="round" fill="solid" color="primary" centerText={true} handlePress={() => router.push('')} />
+              <Button title="Move Funds" customStyles={{ width: '48%', }} transform="normal" shape="round" fill="solid" color="primary" centerText={true} handlePress={() => navigation.navigate('')} />
               <Button title="Add Funds" customStyles={{ width: '48%', }} transform="normal" shape="round" fill="solid" color="primary" centerText={true} handlePress={() => navigation.navigate('styledDocs/ButtonSample')} />
             </View>
           </View>
@@ -36,7 +38,7 @@ const Home = ({ navigation }) => {
               style={styles.diceImage}
             />
           </View>
-          <View>
+          <View style={[gStyle.my4]}>
             <RecentTransactions />
           </View>
           <TouchableOpacity activeOpacity={0.8}>
@@ -53,9 +55,9 @@ const Home = ({ navigation }) => {
               </View>
             </View>
           </TouchableOpacity>
-          <View style={[ gStyle.darkCard]}>
-            <View style={[display.flexBetween, display.alignCenter, gStyle.mb4 ]}>
-              <Text style={[gStyle.textLight, gStyle.fw700, gStyle.fs14]}>Nearby Casinos</Text>
+          <View style={[ gStyle.darkCard, gStyle.my4 ]}>
+            <View style={[ display.flexBetween, display.alignCenter, gStyle.mb4 ]}>
+              <Text style={[ gStyle.textLight, gStyle.fw700, gStyle.fs14 ]}>Nearby Casinos</Text>
               <Button title="View All" customStyles={{width: '30%'}} customSpace={{padding: 12}} transform="normal" shape="round" fill="outline" color="light"  centerText={true} handlePress={() => navigation.navigate('')} />
             </View>
             <View style={styles.mapContainer}>
@@ -64,10 +66,62 @@ const Home = ({ navigation }) => {
             </View>
           </View>
           <View style={[ gStyle.darkCard, gStyle.my4]}>
-            <View style={[display.flexBetween, display.alignCenter, gStyle.mb4 ]}>
-              <Text style={[gStyle.textLight, gStyle.fw700, gStyle.fs14]}>Your Player Cards</Text>
+            <View style={[ display.flexBetween, display.alignCenter, gStyle.mb4 ]}>
+              <Text style={[gStyle.textLight, gStyle.fw700, gStyle.fs14 ]}>Your Player Cards</Text>
+              <Button title="Edit Cards" customStyles={{width: '30%'}} customSpace={{padding: 12}} transform="normal" shape="round" fill="outline" color="light"  centerText={true} handlePress={() => navigation.navigate('')} />
+            </View>
+          </View>
+          <View style={[ gStyle.darkCard, gStyle.my4]}>
+            <View style={[ display.flexBetween, display.alignCenter, gStyle.mb4 ]}>
+              <Text style={[gStyle.textLight, gStyle.fw700, gStyle.fs14 ]}>Insights</Text>
+              <Button title="View Detail" customStyles={{width: '30%'}} customSpace={{padding: 12}} transform="normal" shape="round" fill="outline" color="light"  centerText={true} handlePress={() => navigation.navigate('')} />
+            </View>
+            <InsightDoughnutChart/>
+          </View>
+          <View style={[ gStyle.darkCard, gStyle.my4]}>
+            <View style={[ display.flexBetween, display.alignCenter, gStyle.mb4 ]}>
+              <Text style={[gStyle.textLight, gStyle.fw700, gStyle.fs14 ]}>Your Properties</Text>
               <Button title="View All" customStyles={{width: '30%'}} customSpace={{padding: 12}} transform="normal" shape="round" fill="outline" color="light"  centerText={true} handlePress={() => navigation.navigate('')} />
             </View>
+            <TouchableOpacity style={[ display.dFlex, gStyle.py3, display.flexBetween, display.alignCenter ]} activeOpacity={0.8}>
+              <View style={[]}>
+                <Image source={ images.properties.plazaDark}/>
+              </View>
+              <View style={[display.flexBetween, display.alignCenter, gStyle.mx3]}>
+                <View>
+                  <Text style={[gStyle.textLight, gStyle.fw600, gStyle.fs4]}>The Plaza Hotel & Casino</Text>
+                </View>
+              </View>
+              <View>
+                <Image source={images.icon.arrowright}/>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity style={[ display.dFlex, gStyle.py3, display.flexBetween, display.alignCenter ]} activeOpacity={0.8}>
+              <View style={[]}>
+                <Image source={ images.properties.eclipseDark}/>
+              </View>
+              <View style={[display.flexBetween, display.alignCenter, gStyle.mx3]}>
+                <View>
+                  <Text style={[gStyle.textLight, gStyle.fw600, gStyle.fs4]}>Eclipse Gaming</Text>
+                </View>
+              </View>
+              <View>
+                <Image source={images.icon.arrowright}/>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity style={[ display.dFlex, gStyle.py3, display.flexBetween, display.alignCenter ]} activeOpacity={0.8}>
+              <View style={[]}>
+                <Image source={ images.properties.wskyDark}/>
+              </View>
+              <View style={[display.flexBetween, display.alignCenter, gStyle.mx3]}>
+                <View>
+                  <Text style={[gStyle.textLight, gStyle.fw600, gStyle.fs4]}>WSKY Bar + Grill</Text>
+                </View>
+              </View>
+              <View>
+                <Image source={images.icon.arrowright}/>
+              </View>
+            </TouchableOpacity>
           </View>
         </ScrollView>
       </SafeAreaView>

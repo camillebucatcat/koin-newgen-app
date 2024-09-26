@@ -20,6 +20,11 @@ const images = {
         shoppingbag: require(pathIcons + 'ShoppingBag.png'),
         coffeecup: require(pathIcons + 'CoffeeCup.png'),
         basket: require(pathIcons + 'ShoppingBasket.png'),
+    },
+    properties: {
+        plazaDark: require(pathImages + 'properties/plaza-dark.png'),
+        eclipseDark: require(pathImages + 'properties/eclipse-dark.png'),
+        wskyDark: require(pathImages + 'properties/wsky-dark.png'),
     }
 
 }

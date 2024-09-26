@@ -8,6 +8,7 @@ const images = {
     },
     icon: {
         iconSample: require('../assets/favicon.png'),
+        qrCode: require(pathIcons + 'qr-icon.png'),
     },
     home: {
         dice: require(pathImages + 'dice.png'),

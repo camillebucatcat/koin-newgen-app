@@ -6,6 +6,7 @@ import { display } from '../styles/Display';
 import Button from '../../components/Button';
 import { router } from 'expo-router';
 import RecentTransactions from '../../components/RecentTransactions';
+import ArrowCircleGradient from '../../assets/icons/svg-icons/arrow-circle-gradient';
 
 export default function Tab() {
   return (
@@ -13,15 +14,15 @@ export default function Tab() {
       <Text style={ gStyle.textLight }>Tab Home</Text>
       <SafeAreaView style={{ flex: 1, padding: 16 }}>
         <ScrollView>
-          <View style={[ gStyle.darkCard, gStyle.mx4 ]}>
+          <View style={[ gStyle.darkCard, gStyle.my4 ]}>
             <Text style={[ gStyle.textLight, gStyle.fw500, gStyle.fs16 ]}>Total Available Cash</Text>
             <Text style={[ gStyle.textLight, gStyle.fw600, gStyle.fs32 ]}>$8,385.28</Text>
-            <View style={[ display.flexBetween, gStyle.gap, gStyle.mx4 ]}>
+            <View style={[ display.flexBetween, gStyle.gap, gStyle.my4 ]}>
               <Button title="Move Funds" customStyles={{width: '48%',}} transform="normal" shape="round" fill="solid" color="primary"  centerText={true} handlePress={() => router.push('')} />
               <Button title="Add Funds" customStyles={{width: '48%',}} transform="normal" shape="round" fill="solid" color="primary" centerText={true} handlePress={() => router.push('')} />
             </View>
           </View>
-          <View style={[ gStyle.darkCard, gStyle.mx4, { position: "relative" } ]}>
+          <View style={[ gStyle.darkCard, gStyle.my4, { position: "relative" } ]}>
             <View style={{width: '45%'}}>
               <Text style={[ gStyle.textLight, gStyle.fw500, gStyle.fs16 ]}>
                 See the benefits we give you for your
@@ -36,10 +37,23 @@ export default function Tab() {
               style={ styles.diceImage } 
             />
           </View>
-
           <View>
             <RecentTransactions/>
           </View>
+          <TouchableOpacity activeOpacity={0.8}>
+            <View style={[ gStyle.darkCard, gStyle.my4 ]}>
+              <View style={[ display.flexBetween, display.alignCenter ]}>
+                <View style={[ display.dFlex, display.alignCenter ]}>
+                  <Image source={ images.icon.qrCode } />
+                  <View style={[ gStyle.ml4 ]}>
+                    <Text style={[ gStyle.textLight, gStyle.fw700, gStyle.fs16 ]}>Connect to Game</Text>
+                    <Text style={[ gStyle.textLight, gStyle.fw500, gStyle.fs14, gStyle.mt2 ]}>With QR Code</Text>
+                  </View>
+                </View>
+                <ArrowCircleGradient/>
+              </View>
+            </View>
+          </TouchableOpacity>
         </ScrollView>
       </SafeAreaView>
     </SafeAreaProvider>

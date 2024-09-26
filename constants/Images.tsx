@@ -9,9 +9,14 @@ const images = {
     icon: {
         iconSample: require('../assets/favicon.png'),
         qrCode: require(pathIcons + 'qr-icon.png'),
+        arrowright: require(pathIcons + 'arrow-right.png'),
     },
     home: {
         dice: require(pathImages + 'dice.png'),
+    },
+    transactions: {
+        shoppingbag: require(pathIcons + 'ShoppingBag.png')
     }
+
 }
 export default images;

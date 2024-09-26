@@ -70,6 +70,12 @@ export const gStyle = StyleSheet.create({
   textGrayLight: {
     color: '#A8A8A8'
   },
+  textSuccessLight: {
+    color: Colors.success.successBrand
+  },
+  textOrangeLight: {
+    color: '#FA8F5C'
+  },
 
   darkCard: {
     backgroundColor: '#3C3A3C',

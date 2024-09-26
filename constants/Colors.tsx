@@ -44,6 +44,7 @@ export default {
     color: '#2dd55b',
     successShade: '#28bb50',
     successTint: '#42d96b',
+    successBrand: '#6EDEB0',
   },
   warning: {
     color: '#ffc409',

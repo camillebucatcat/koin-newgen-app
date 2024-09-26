@@ -6,11 +6,17 @@ const images = {
     tabBar: {
         Bg: require(pathImages + 'tabbar-vector.png'),
     },
+    lean: {
+        leanLeftPrimary: require(pathIcons + 'lean-left-light-primary.png'),
+        leanLeftOrange: require(pathIcons + 'lean-left-light-orange.png'),
+        leanLeftSuccess: require(pathIcons + 'lean-left-light-success.png'),
+    },
     icon: {
         iconSample: require('../assets/favicon.png'),
         qrCode: require(pathIcons + 'qr-icon.png'),
         arrowright: require(pathIcons + 'arrow-right.png'),
         mapMarker: require(pathIcons + 'map-marker.png'),
+        bank: require(pathIcons+ 'bank.png'),
     },
     home: {
         dice: require(pathImages + 'dice.png'),

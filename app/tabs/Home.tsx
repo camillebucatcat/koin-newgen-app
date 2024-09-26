@@ -75,10 +75,10 @@ const Home = ({ navigation }) => {
           ]}
         />
       </View>
-      <SafeAreaView style={{ flex: 1, paddingHorizontal: 16, paddingVertical: 8 }}>
+      <SafeAreaView style={{ flex: 1 }}>
         <ScrollView>
         {activeSegment === 'For-You' && (
-          <View>
+          <View style={{paddingHorizontal: 16, paddingVertical: 8}}>
             <View style={[gStyle.darkCard, gStyle.my4]}>
               <Text style={[gStyle.textLight, gStyle.fw500, gStyle.fs16]}>Total Available Cash</Text>
               <Text style={[gStyle.textLight, gStyle.fw600, gStyle.fs32]}>$8,385.28</Text>
@@ -190,8 +190,8 @@ const Home = ({ navigation }) => {
           </View>
         )}  
         {activeSegment === 'Accounts' && ( 
-          <View>
-            <View style={[gStyle.darkCard, gStyle.my4]}>
+          <View style={{paddingHorizontal: 16, paddingVertical: 8}}>
+            <View style={[gStyle.darkCard, gStyle.my3,]}>
               <View style={[display.flexCenterBetween]}>
                 <Text style={[gStyle.textLight, gStyle.fw700, gStyle.fs16]}>YOUR CASH</Text>
                 <TouchableOpacity activeOpacity={0.8}>
@@ -201,16 +201,122 @@ const Home = ({ navigation }) => {
               <Text style={[gStyle.textLight, gStyle.fw600, gStyle.fs32, gStyle.my3]}>$8,385.28</Text>
               <Text style={[gStyle.textGrayLight, gStyle.fw600, gStyle.fs16,]}>Total Available Cash</Text>
             </View>
-            <Text style={[gStyle.textLight, gStyle.fw600, gStyle.fs16]}>Koin Accounts</Text>
+            <Text style={[gStyle.textLight, gStyle.fw600, gStyle.fs16, gStyle.mt4, gStyle.mb2]}>Koin Accounts</Text>
+            <View style={[gStyle.darkCard, gStyle.my3, {borderColor: '#FFFFFF', borderWidth: 1}]}>
+              <TouchableOpacity activeOpacity={0.8}>
+                <View style={[display.flexCenterBetween]}>
+                  <View style={[display.dFlex, display.alignCenter]}>
+                    <Image source={images.lean.leanLeftSuccess} style={[gStyle.mr2]}/>
+                    <Text style={[gStyle.textLight, gStyle.fw600, gStyle.fs14]}>Everyday Spending</Text>
+                  </View>
+                  <View>
+                    <Image source={images.icon.arrowright}/>
+                  </View>
+                </View>
+              </TouchableOpacity>
+              <View style={[display.flexCenterBetween, gStyle.mt4, { flexDirection: 'row', alignItems: 'flex-end' }]}>
+                <View>
+                  <View>
+                    <Text style={[gStyle.textLight, gStyle.fw600, gStyle.fs32, ]}>2,802</Text>
+                    <Text style={[gStyle.textLight, gStyle.fw600, gStyle.fs12, { position: 'absolute', top: 6, left: '100%' }]}>.99</Text>
+                  </View>
+                  <Text style={[gStyle.textGrayLight, gStyle.fw600, gStyle.fs12, gStyle.textSuccessLight,]}>Total balance</Text>
+                </View>
+                <View>
+                  <Text style={[gStyle.textLight, gStyle.fw600, gStyle.fs14, display.alignSelfEnd]}>37.5%</Text>
+                  <Text style={[gStyle.textGrayLight, gStyle.fw600, gStyle.fs12, gStyle.textSuccessLight,]}>of total funds</Text>
+                </View>
+              </View>
+            </View>
+            <View style={[gStyle.darkCard, gStyle.my3, {borderColor: '#FFFFFF', borderWidth: 1}]}>
+              <TouchableOpacity activeOpacity={0.8}>
+                <View style={[display.flexCenterBetween]}>
+                  <View style={[display.dFlex, display.alignCenter]}>
+                    <Image source={images.lean.leanLeftPrimary} style={[gStyle.mr2]}/>
+                    <Text style={[gStyle.textLight, gStyle.fw600, gStyle.fs14]}>Emergency Fund</Text>
+                  </View>
+                  <View>
+                    <Image source={images.icon.arrowright}/>
+                  </View>
+                </View>
+              </TouchableOpacity>
+              <View style={[display.flexCenterBetween, gStyle.mt4, { flexDirection: 'row', alignItems: 'flex-end' }]}>
+                <View>
+                  <View>
+                    <Text style={[gStyle.textLight, gStyle.fw600, gStyle.fs32, ]}>$5,000</Text>
+                    <Text style={[gStyle.textLight, gStyle.fw600, gStyle.fs12, { position: 'absolute', top: 6, left: '100%' }]}>.00</Text>
+                  </View>
+                  <Text style={[gStyle.textGrayLight, gStyle.fw600, gStyle.fs12, gStyle.textPrimaryLight,]}>Total balance</Text>
+                </View>
+                <View>
+                  <Text style={[gStyle.textLight, gStyle.fw600, gStyle.fs14, display.alignSelfEnd]}>50%</Text>
+                  <Text style={[gStyle.textGrayLight, gStyle.fw600, gStyle.fs12, gStyle.textPrimaryLight,]}>of total funds</Text>
+                </View>
+              </View>
+            </View>
+            <Text style={[gStyle.textLight, gStyle.fw600, gStyle.fs16, gStyle.mt4, gStyle.mb2]}>Gaming Accounts</Text>
+            <View style={[gStyle.darkCard, gStyle.my3, {borderColor: '#FFFFFF', borderWidth: 1}]}>
+              <TouchableOpacity activeOpacity={0.8}>
+                <View style={[display.flexCenterBetween]}>
+                  <View style={[display.dFlex, display.alignCenter]}>
+                    <Image source={images.lean.leanLeftOrange} style={[gStyle.mr2]}/>
+                    <Text style={[gStyle.textLight, gStyle.fw600, gStyle.fs14]}>Draft Kings Account</Text>
+                  </View>
+                  <View>
+                    <Image source={images.icon.arrowright}/>
+                  </View>
+                </View>
+              </TouchableOpacity>
+              <View style={[display.flexCenterBetween, gStyle.mt4, { flexDirection: 'row', alignItems: 'flex-end' }]}>
+                <View>
+                  <View>
+                    <Text style={[gStyle.textLight, gStyle.fw600, gStyle.fs32, ]}>$582</Text>
+                    <Text style={[gStyle.textLight, gStyle.fw600, gStyle.fs12, { position: 'absolute', top: 6, left: '100%' }]}>.99</Text>
+                  </View>
+                  <Text style={[gStyle.textGrayLight, gStyle.fw600, gStyle.fs12, gStyle.textOrangeLight,]}>Total balance</Text>
+                </View>
+                <View>
+                  <Text style={[gStyle.textLight, gStyle.fw600, gStyle.fs14, display.alignSelfEnd]}>37.5%</Text>
+                  <Text style={[gStyle.textGrayLight, gStyle.fw600, gStyle.fs12, gStyle.textOrangeLight,]}>of total funds</Text>
+                </View>
+              </View>
+            </View>
+            <Text style={[gStyle.textLight, gStyle.fw600, gStyle.fs16, gStyle.mt4, gStyle.mb2]}>Linked Accounts</Text>
+            <TouchableOpacity activeOpacity={0.8}>
+              <View style={[gStyle.darkCard, gStyle.my3, {borderColor: '#FFFFFF', borderWidth: 1}]}>
+                <View style={[display.flexCenterBetween]}>
+                  <View style={[display.dFlex, display.alignCenter]}>
+                    <Image source={images.icon.bank}/>
+                    <Text style={[gStyle.textLight, gStyle.fw600, gStyle.ml2]}>Wells Fargo</Text>
+                  </View>
+                  <View>
+                    <Image source={images.icon.arrowright}/>
+                  </View>
+                </View>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity activeOpacity={0.8}>
+              <View style={[gStyle.darkCard, gStyle.my3, {borderColor: '#FFFFFF', borderWidth: 1}]}>
+                <View style={[display.flexCenterBetween]}>
+                  <View style={[display.dFlex, display.alignCenter]}>
+                    <Image source={images.icon.bank}/>
+                    <Text style={[gStyle.textLight, gStyle.fw600, gStyle.ml2]}>Bank of America</Text>
+                  </View>
+                  <View>
+                    <Image source={images.icon.arrowright}/>
+                  </View>
+                </View>
+              </View>
+            </TouchableOpacity>
           </View>
         )}
         {activeSegment === 'Credit' && ( 
-          <View>
+          <View style={{paddingHorizontal: 16, paddingVertical: 8}}>
             <Text style={[gStyle.textLight]}>Credit</Text>
           </View>
         )}
         {activeSegment === 'Rewards' && ( 
-          <View>
+          <View style={{paddingHorizontal: 16, paddingVertical: 8}}>
             <Text style={[gStyle.textLight]}>Rewards</Text>
           </View>
         )}

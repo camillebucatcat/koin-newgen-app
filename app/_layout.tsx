@@ -6,10 +6,11 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { TabBar } from '../components/TabBar';
 import Home from './(tabs)/Home';
-import Settings from './(tabs)/Settings';
-import Discover from './(tabs)/Discover';
+
 import ButtonSample from './styledDocs/ButtonSample';
 import FormFieldSample from './styledDocs/FormFieldSample';
+import Settings from './(tabs)/settings';
+import Discover from './(tabs)/discover';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();

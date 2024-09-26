@@ -6,6 +6,7 @@ import { display } from '../styles/Display';
 import Button from '../../components/Button';
 import { router } from 'expo-router';
 import RecentTransactions from '../../components/RecentTransactions';
+import ArrowCircleGradient from '../../assets/icons/svg-icons/arrow-circle-gradient';
 
 const Home = () => {
   return (
@@ -17,7 +18,7 @@ const Home = () => {
             <Text style={[gStyle.textLight, gStyle.fw600, gStyle.fs32]}>$8,385.28</Text>
             <View style={[display.flexBetween, gStyle.gap, { marginVertical: 16 }]}>
               <Button title="Move Funds" customStyles={{ width: '48%', }} transform="normal" shape="round" fill="solid" color="primary" centerText={true} handlePress={() => router.push('')} />
-              <Button title="Add Funds" customStyles={{ width: '48%', }} transform="normal" shape="round" fill="solid" color="primary" centerText={true} handlePress={() => router.push('')} />
+              <Button title="Add Funds" customStyles={{ width: '48%', }} transform="normal" shape="round" fill="solid" color="primary" centerText={true} handlePress={() => router.push('/ButtonSample')} />
             </View>
           </View>
           <View style={[gStyle.darkCard, { marginVertical: 16, position: "relative" }]}>
@@ -35,9 +36,37 @@ const Home = () => {
               style={styles.diceImage}
             />
           </View>
-
           <View>
             <RecentTransactions />
+          </View>
+          <TouchableOpacity activeOpacity={0.8}>
+            <View style={[ gStyle.darkCard, gStyle.my4 ]}>
+              <View style={[ display.flexBetween, display.alignCenter ]}>
+                <View style={[ display.dFlex, display.alignCenter ]}>
+                  <Image source={ images.icon.qrCode } />
+                  <View style={[ gStyle.ml4 ]}>
+                    <Text style={[ gStyle.textLight, gStyle.fw700, gStyle.fs16 ]}>Connect to Game</Text>
+                    <Text style={[ gStyle.textLight, gStyle.fw500, gStyle.fs14, gStyle.mt2 ]}>With QR Code</Text>
+                  </View>
+                </View>
+                <ArrowCircleGradient/>
+              </View>
+            </View>
+          </TouchableOpacity>
+          <View style={[ gStyle.darkCard]}>
+            <View>
+              <Text style={[ gStyle.textLight ]}>Nearby Casinos</Text>
+            </View>
+          </View>
+          <View style={[ gStyle.darkCard]}>
+            <View>
+              <Text style={[ gStyle.textLight ]}>Nearby Casinos</Text>
+            </View>
+          </View>
+          <View style={[ gStyle.darkCard]}>
+            <View>
+              <Text style={[ gStyle.textLight ]}>Nearby Casinos</Text>
+            </View>
           </View>
         </ScrollView>
       </SafeAreaView>

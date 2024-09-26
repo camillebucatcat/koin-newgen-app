@@ -5,6 +5,7 @@ import { gStyle } from '../styles/Global';
 import { display } from '../styles/Display';
 import Button from '../../components/Button';
 import { router } from 'expo-router';
+import RecentTransactions from '../../components/RecentTransactions';
 
 export default function Tab() {
   return (
@@ -34,6 +35,10 @@ export default function Tab() {
               source={images.home.dice} 
               style={styles.diceImage} 
             />
+          </View>
+
+          <View>
+            <RecentTransactions/>
           </View>
         </ScrollView>
       </SafeAreaView>

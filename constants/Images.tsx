@@ -10,9 +10,11 @@ const images = {
         iconSample: require('../assets/favicon.png'),
         qrCode: require(pathIcons + 'qr-icon.png'),
         arrowright: require(pathIcons + 'arrow-right.png'),
+        mapMarker: require(pathIcons + 'map-marker.png'),
     },
     home: {
         dice: require(pathImages + 'dice.png'),
+        map: require(pathImages + 'map.png'),
     },
     transactions: {
         shoppingbag: require(pathIcons + 'ShoppingBag.png'),

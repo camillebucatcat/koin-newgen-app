@@ -6,6 +6,7 @@ interface ButtonProps {
   title: string;
   handlePress: () => void;
   customStyles?: object;
+  customSpace?: object;
   shape?: 'default' | 'round';
   fill?: 'solid' | 'clear' | 'outline';
   color?: 'primary' | 'success' | 'danger' | 'light' | 'dark';
@@ -22,6 +23,7 @@ const Buttons: React.FC<ButtonProps> = ({
   title,
   handlePress,
   customStyles = {},
+  customSpace = {},
   image,
   transform = '',
   shape = 'default',
@@ -52,7 +54,7 @@ const Buttons: React.FC<ButtonProps> = ({
           fill === 'solid' && colorStyles[color],
           fill === 'outline' && borderStyles[color],
           fill === 'clear' && fills.clear,
-          
+          customSpace,
         ]}
       >
         <View
@@ -80,6 +82,7 @@ const Buttons: React.FC<ButtonProps> = ({
               color === 'dark' && fill === 'clear' && texts.dark,
               color === 'dark' && fill === 'outline' && texts.dark,
               color === 'light' && fill === 'solid' && texts.light,
+              color === 'light' && fill === 'outline' && texts.white,
             ]}
           >
             {title}
@@ -94,7 +97,7 @@ export default Buttons;
 
 const styles = StyleSheet.create({
   buttonContent: {
-    minHeight: 50,
+    minHeight: 43,
     paddingVertical: 16,
     paddingHorizontal: 16,
   },

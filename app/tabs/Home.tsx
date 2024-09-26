@@ -13,15 +13,15 @@ const Home = ({ navigation }) => {
     <SafeAreaProvider style={gStyle.darkBg}>
       <SafeAreaView style={{ flex: 1, padding: 16 }}>
         <ScrollView>
-          <View style={[gStyle.darkCard, { marginVertical: 16 }]}>
+          <View style={[gStyle.darkCard, gStyle.my4]}>
             <Text style={[gStyle.textLight, gStyle.fw500, gStyle.fs16]}>Total Available Cash</Text>
             <Text style={[gStyle.textLight, gStyle.fw600, gStyle.fs32]}>$8,385.28</Text>
-            <View style={[display.flexBetween, gStyle.gap, { marginVertical: 16 }]}>
+            <View style={[display.flexBetween, gStyle.gap, gStyle.my4]}>
               <Button title="Move Funds" customStyles={{ width: '48%', }} transform="normal" shape="round" fill="solid" color="primary" centerText={true} handlePress={() => router.push('')} />
               <Button title="Add Funds" customStyles={{ width: '48%', }} transform="normal" shape="round" fill="solid" color="primary" centerText={true} handlePress={() => navigation.navigate('styledDocs/ButtonSample')} />
             </View>
           </View>
-          <View style={[gStyle.darkCard, { marginVertical: 16, position: "relative" }]}>
+          <View style={[gStyle.darkCard, gStyle.my4, { position: "relative" }]}>
             <View style={{ width: '45%' }}>
               <Text style={[gStyle.textLight, gStyle.fw500, gStyle.fs16]}>
                 See the benefits we give you for your
@@ -54,18 +54,19 @@ const Home = ({ navigation }) => {
             </View>
           </TouchableOpacity>
           <View style={[ gStyle.darkCard]}>
-            <View>
-              <Text style={[ gStyle.textLight ]}>Nearby Casinos</Text>
+            <View style={[display.flexBetween, display.alignCenter, gStyle.mb4 ]}>
+              <Text style={[gStyle.textLight, gStyle.fw700, gStyle.fs14]}>Nearby Casinos</Text>
+              <Button title="View All" customStyles={{width: '30%'}} customSpace={{padding: 12}} transform="normal" shape="round" fill="outline" color="light"  centerText={true} handlePress={() => navigation.navigate('')} />
+            </View>
+            <View style={styles.mapContainer}>
+              <Image source={images.home.map} style={styles.relativeMap} />
+              <Image source={images.icon.mapMarker} style={styles.absoluteMap} />
             </View>
           </View>
-          <View style={[ gStyle.darkCard]}>
-            <View>
-              <Text style={[ gStyle.textLight ]}>Nearby Casinos</Text>
-            </View>
-          </View>
-          <View style={[ gStyle.darkCard]}>
-            <View>
-              <Text style={[ gStyle.textLight ]}>Nearby Casinos</Text>
+          <View style={[ gStyle.darkCard, gStyle.my4]}>
+            <View style={[display.flexBetween, display.alignCenter, gStyle.mb4 ]}>
+              <Text style={[gStyle.textLight, gStyle.fw700, gStyle.fs14]}>Your Player Cards</Text>
+              <Button title="View All" customStyles={{width: '30%'}} customSpace={{padding: 12}} transform="normal" shape="round" fill="outline" color="light"  centerText={true} handlePress={() => navigation.navigate('')} />
             </View>
           </View>
         </ScrollView>
@@ -90,5 +91,20 @@ const styles = StyleSheet.create({
     height: 170,
     zIndex: 100,
     resizeMode: 'contain',
-  }
+  },
+  mapContainer: {
+    position: 'relative', 
+  },
+  relativeMap: {
+    width: '100%', 
+    aspectRatio: 1, 
+  },
+  absoluteMap: {
+    position: 'absolute',
+    top: 50, 
+    left: 30,
+    right: 0,
+    bottom: 0,
+    aspectRatio: 1, 
+  },
 });

@@ -16,8 +16,14 @@ const dynamicFontWeight = weight.reduce((styles: any, weight) => {
 
 export const gStyle = StyleSheet.create({
 
+  gap: {
+    gap: 12,
+  },
   textLight: {
     color: Colors.text.light,
+  },
+  textPrimaryLight: {
+    color: Colors.primary.primary300
   },
 
   darkCard: {

@@ -28,6 +28,7 @@ export default {
     primaryContrast: '#fff',
     primaryShade: '#4a3679',
     primaryTint: '#655096',
+    primary300: '#D6C4FF',
   },
   secondary:{
     color: '#015796',

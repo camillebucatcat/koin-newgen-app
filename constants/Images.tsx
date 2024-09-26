@@ -8,6 +8,9 @@ const images = {
     },
     icon: {
         iconSample: require('../assets/favicon.png'),
+    },
+    home: {
+        dice: require(pathImages + 'dice.png'),
     }
 }
 export default images;

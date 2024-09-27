@@ -11,73 +11,24 @@ import InsightDoughnutChart from '../../components/InsightDoughnutChart';
 import { useEffect, useRef, useState } from 'react';
 import ThreeDotsLight from '../../assets/icons/svg-icons/three-dots-light';
 import Colors from '../../constants/Colors';
+import SegmentControl from '../../components/SegmentControl';
 
 const Home = ({ navigation }) => {
-  const [selectedSegment, setSelectedSegment] = useState(0); 
-  const [segmentWidths, setSegmentWidths] = useState<number[]>([]); 
-  const animatedValue = useRef(new Animated.Value(0)).current;
-  const [activeSegment, setActiveSegment] = useState<string>('For-You'); 
+  const [activeSegment, setActiveSegment] = useState('For You');
 
-  //segment header
-  useEffect(() => {
-    Animated.timing(animatedValue, {
-      toValue: segmentWidths.slice(0, selectedSegment).reduce((acc, width) => acc + width, 0), 
-      duration: 200,
-      easing: Easing.ease,
-      useNativeDriver: false,
-    }).start();
-  }, [selectedSegment, segmentWidths]);
-
-  const measureSegment = (index: number) => (event: LayoutChangeEvent) => {
-    const { width } = event.nativeEvent.layout;
-    setSegmentWidths(prevWidths => {
-      const newWidths = [...prevWidths];
-      newWidths[index] = width;
-      return newWidths;
-    });
-  };
-
-  const handleSegmentPress = (index: number, segment: string) => {
-    setSelectedSegment(index); 
-    setActiveSegment(segment); 
+  const handleSegmentChange = (segment: string) => {
+    setActiveSegment(segment);
   };
 
   return (
     <SafeAreaProvider style={gStyle.darkBg}>
-      <View style={styles.segmentContainer}>
-        <TouchableOpacity activeOpacity={0.8} onPress={() => handleSegmentPress(0, 'For-You')} onLayout={measureSegment(0)} style={styles.segmentButton}>
-          <Text maxFontSizeMultiplier={1.1} minimumFontScale={1.1} style={[ styles.segmentText, selectedSegment === 0 && styles.activeSegmentText ]}>
-            For You
-          </Text>
-        </TouchableOpacity>  
-        <TouchableOpacity activeOpacity={0.8} onPress={() => handleSegmentPress(1, 'Accounts')} onLayout={measureSegment(1)} style={styles.segmentButton}>
-          <Text maxFontSizeMultiplier={1.1} minimumFontScale={1.1} style={[ styles.segmentText, selectedSegment === 1 && styles.activeSegmentText, ]}>
-            Accounts
-          </Text>
-        </TouchableOpacity>
-        <TouchableOpacity activeOpacity={0.8} onPress={() => handleSegmentPress(2, 'Credit')} onLayout={measureSegment(2)}  style={styles.segmentButton}>
-          <Text maxFontSizeMultiplier={1.1} minimumFontScale={1.1} style={[ styles.segmentText, selectedSegment === 2 && styles.activeSegmentText,]}>
-            Credit
-          </Text>
-        </TouchableOpacity>
-        <TouchableOpacity activeOpacity={0.8} onPress={() => handleSegmentPress(3, 'Rewards')} onLayout={measureSegment(3)} style={styles.segmentButton}>
-          <Text maxFontSizeMultiplier={1.1} minimumFontScale={1.1} style={[ styles.segmentText,selectedSegment === 3 && styles.activeSegmentText,]} >
-            Rewards
-          </Text>
-        </TouchableOpacity>
-        <Animated.View
-          style={[
-            styles.animatedLine,
-            {
-              width: segmentWidths[selectedSegment] || 0,
-              transform: [{ translateX: animatedValue }],
-            },
-          ]}
-        />
-      </View>
+      <SegmentControl 
+        titles={['For You', 'Accounts', 'Credit', 'Rewards' ]}
+        onSegmentChange={handleSegmentChange}
+      />
       <SafeAreaView style={{ flex: 1 }}>
         <ScrollView>
-        {activeSegment === 'For-You' && (
+        {activeSegment === 'For You' && (
           <View style={{paddingHorizontal: 16, paddingVertical: 8}}>
             <View style={[gStyle.darkCard, gStyle.my4]}>
               <Text style={[gStyle.textLight, gStyle.fw500, gStyle.fs16]}>Total Available Cash</Text>

@@ -9,17 +9,19 @@ const  Header= ()=>{
 return(
 <View style={[gStyle.py4, gStyle.px6]}>
     <View style={[display.justifyBetween, display.dFlex, display.alignCenter]}>
-        <LinearGradient
-      colors={['#54cd94', '#a182ed', '#211F2163']}
-      style={styles.gradientBorder}
-    >
-      <View style={styles.imageWrapper}>
-        <Image
-          source={images.header}
-          style={styles.image}
-        />
-      </View>
-    </LinearGradient>
+        <TouchableOpacity>
+            <LinearGradient
+        colors={['#54cd94', '#a182ed', '#211F2163']}
+        style={styles.gradientBorder}
+        >
+        <View style={styles.imageWrapper}>
+            <Image
+            source={images.header}
+            style={styles.image}
+            />
+        </View>
+        </LinearGradient>
+        </TouchableOpacity>
         <Text style={[gStyle.textLight, gStyle.fw400, gStyle.ml6, gStyle.fs18, {textAlign: 'left', flex: 1}]}>Morning, <Text style={[gStyle.fw500]}>Ethan</Text></Text>
         <TouchableOpacity>
             <Image source={images.icon.notification}/>

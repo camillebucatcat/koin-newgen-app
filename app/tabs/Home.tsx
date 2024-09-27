@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, ScrollView, Image, TouchableOpacity,} from 'react-native';
+import { View, Text, StyleSheet, ScrollView, Image, TouchableOpacity, ImageBackground,} from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import images from '../../constants/Images';
 import { gStyle } from '../styles/Global';
@@ -29,7 +29,7 @@ const Home = ({ navigation }) => {
       <SafeAreaView style={{ flex: 1 }}>
         <ScrollView>
         {activeSegment === 'For You' && (
-          <View style={{paddingHorizontal: 16, paddingVertical: 8}}>
+          <View style={{paddingHorizontal: 16, paddingVertical: 8, paddingBottom: 150}}>
             <View style={[gStyle.darkCard, gStyle.my4]}>
               <Text style={[gStyle.textLight, gStyle.fw500, gStyle.fs16]}>Total Available Cash</Text>
               <Text style={[gStyle.textLight, gStyle.fw600, gStyle.fs32]}>$8,385.28</Text>
@@ -82,9 +82,86 @@ const Home = ({ navigation }) => {
             </View>
             <View style={[ gStyle.darkCard, gStyle.my4]}>
               <View style={[ display.flexBetween, display.alignCenter, gStyle.mb4 ]}>
-                <Text style={[gStyle.textLight, gStyle.fw700, gStyle.fs14 ]}>Your Player Cards</Text>
-                <GradientButton title="Edit Cards" customStyles={{width: '30%'}} customSpace={{padding: 12}} transform="normal" shape="round" fill="outline" color="light"  centerText={true} handlePress={() => navigation.navigate('')} />
+                <Text style={[gStyle.textLight, gStyle.fw700, gStyle.fs14, gStyle.pt4 ]}>Your Player Card</Text>
+                <GradientButton title="View Detail" customStyles={{width: '30%'}} customSpace={{padding: 12}} transform="normal" shape="round" fill="outline" color="light"  centerText={true} handlePress={() => navigation.navigate('')} />
               </View>
+              <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={[gStyle.mt6]}>
+                <View style={[styles.playerCard,]}>
+                  <ImageBackground source={images.properties.bg.gleamorBg} style={[styles.card, styles.gridBg]}>
+                    <View style={[display.dFlex, display.justifyBetween, ]}>
+                      <Image source={images.properties.logo.gleamorLogoLight} style={[gStyle.mt1]}/>
+                      <View style={styles.poweredBy}>
+                        <Text style={[gStyle.fs8, gStyle.mr2]}>Powered By: </Text>
+                        <Image source={images.properties.logo.ardentxs} style={styles.logo} />
+                      </View>
+                    </View>
+                    <View>
+                      <Text style={[gStyle.textLight, gStyle.fw500, gStyle.fs12]}>Player Card Number</Text>
+                      <Text style={[gStyle.textLight, gStyle.fw700, gStyle.fs16]}>0123491235</Text>
+                    </View>
+                  </ImageBackground>
+                </View>
+                <View style={[styles.playerCard, gStyle.ml6]}>
+                  <ImageBackground source={images.properties.bg.nexyraBg} style={[styles.card, styles.gridBg]}>
+                    <View style={[display.dFlex, display.justifyBetween, ]}>
+                      <Image source={images.properties.logo.nexyraLogoLight} style={[gStyle.mt1]}/>
+                      <View style={styles.poweredBy}>
+                        <Text style={[gStyle.fs8, gStyle.mr2]}>Powered By: </Text>
+                        <Image source={images.properties.logo.acrexs} style={styles.logo} />
+                      </View>
+                    </View>
+                    <View>
+                      <Text style={[gStyle.textLight, gStyle.fw500, gStyle.fs12]}>Player Card Number</Text>
+                      <Text style={[gStyle.textLight, gStyle.fw700, gStyle.fs16]}>0123491235</Text>
+                    </View>
+                  </ImageBackground>
+                </View>
+                <View style={[styles.playerCard, gStyle.ml6]}>
+                  <ImageBackground source={images.properties.bg.gambitBg} style={[styles.card, styles.gridBg]}>
+                    <View style={[display.dFlex, display.justifyBetween, ]}>
+                      <Image source={images.properties.logo.gambitLogoDark} style={[gStyle.mt1]}/>
+                      <View style={styles.poweredBy}>
+                        <Text style={[gStyle.fs8, gStyle.mr2]}>Powered By: </Text>
+                        <Image source={images.properties.logo.konamixs} style={styles.logo} />
+                      </View>
+                    </View>
+                    <View>
+                      <Text style={[ gStyle.fw500, gStyle.fs12]}>Player Card Number</Text>
+                      <Text style={[ gStyle.fw700, gStyle.fs16]}>0123491235</Text>
+                    </View>
+                  </ImageBackground>
+                </View>
+                <View style={[styles.playerCard, gStyle.ml6]}>
+                  <ImageBackground source={images.properties.bg.eliteBg} style={[styles.card, styles.gridBg]}>
+                    <View style={[display.dFlex, display.justifyBetween, ]}>
+                      <Image source={images.properties.logo.eliteLogoDark} style={[gStyle.mt1]}/>
+                      <View style={styles.poweredBy}>
+                        <Text style={[gStyle.fs8, gStyle.mr2]}>Powered By: </Text>
+                        <Image source={images.properties.logo.konamiEliteXs} style={styles.logo} />
+                      </View>
+                    </View>
+                    <View>
+                      <Text style={[ gStyle.fw500, gStyle.fs12]}>Player Card Number</Text>
+                      <Text style={[ gStyle.fw700, gStyle.fs16]}>0123491235</Text>
+                    </View>
+                  </ImageBackground>
+                </View>
+                <View style={[styles.playerCard, gStyle.ml6]}>
+                  <ImageBackground source={images.properties.bg.fortunaBg} style={[styles.card, styles.gridBg]}>
+                    <View style={[display.dFlex, display.justifyBetween, ]}>
+                      <Image source={images.properties.logo.fortunaLogoLight} style={[gStyle.mt1]}/>
+                      <View style={styles.poweredBy}>
+                        <Text style={[gStyle.fs8, gStyle.mr2]}>Powered By:</Text>
+                        <Image source={images.properties.logo.konamixs} style={styles.logo} />
+                      </View>
+                    </View>
+                    <View>
+                      <Text style={[ gStyle.textLight, gStyle.fw500, gStyle.fs12]}>Player Card Number</Text>
+                      <Text style={[ gStyle.textLight, gStyle.fw700, gStyle.fs16]}>0123491235</Text>
+                    </View>
+                  </ImageBackground>
+                </View>
+              </ScrollView>
             </View>
             <View style={[ gStyle.darkCard, gStyle.my4]}>
               <View style={[ display.flexBetween, display.alignCenter, gStyle.mb4 ]}>
@@ -141,7 +218,7 @@ const Home = ({ navigation }) => {
           </View>
         )}  
         {activeSegment === 'Accounts' && ( 
-          <View style={{paddingHorizontal: 16, paddingVertical: 8}}>
+          <View style={{paddingHorizontal: 16, paddingVertical: 8, paddingBottom: 150}}>
             <View style={[gStyle.darkCard, gStyle.my3,]}>
               <View style={[display.flexCenterBetween]}>
                 <Text style={[gStyle.textLight, gStyle.fw700, gStyle.fs16]}>YOUR CASH</Text>
@@ -262,12 +339,12 @@ const Home = ({ navigation }) => {
           </View>
         )}
         {activeSegment === 'Credit' && ( 
-          <View style={{paddingHorizontal: 16, paddingVertical: 8}}>
+          <View style={{paddingHorizontal: 16, paddingVertical: 8, paddingBottom: 150}}>
             <Text style={[gStyle.textLight]}>Credit</Text>
           </View>
         )}
         {activeSegment === 'Rewards' && ( 
-          <View style={{paddingHorizontal: 16, paddingVertical: 8}}>
+          <View style={{paddingHorizontal: 16, paddingVertical: 8, paddingBottom: 150}}>
             <Text style={[gStyle.textLight]}>Rewards</Text>
           </View>
         )}
@@ -287,7 +364,7 @@ const styles = StyleSheet.create({
   },
   diceImage: {
     position: 'absolute',
-    right: -5,
+    right: -16,
     bottom: 0,
     width: 209,
     height: 170,
@@ -309,30 +386,31 @@ const styles = StyleSheet.create({
     bottom: 0,
     aspectRatio: 1, 
   },
-  segmentContainer: {
-    flexDirection: 'row',
-    borderBottomWidth: 0.5,
-    borderBottomColor: '#545454',
-    zIndex: 2,
-    position: 'relative',
-    paddingHorizontal: 16
+  playerCard:{
+    minWidth: 240,
   },
-  segmentButton: {
-    flex: 1,
-    alignItems: 'center',
-    paddingVertical: 10,
+  card: {
+    height: 150,
+    padding: 16,
+    flexDirection: 'column',
+    justifyContent: 'space-between',
   },
-  segmentText: {
-    fontWeight: '400',
-    color: '#fff',
+  gridBg: {
+    // padding: 24,
+    borderRadius: 12,
+    resizeMode: 'cover',
+    overflow: 'hidden',
   },
-  activeSegmentText: {
-    fontWeight: '700',
+  poweredBy: {
+    flexDirection: 'row',           
+    justifyContent: 'space-between',
+    alignItems: 'center',           
+    borderRadius: 32,
+    height: 24,
+    padding: 10,
+    backgroundColor: "#fff"
   },
-  animatedLine: {
-    position: 'absolute',
-    bottom: 0,
-    height: 2,
-    backgroundColor: Colors.primary.color,
-  },
+  logo: {
+    resizeMode: 'contain',
+  }
 });

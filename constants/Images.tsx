@@ -28,6 +28,26 @@ const images = {
         basket: require(pathIcons + 'ShoppingBasket.png'),
     },
     properties: {
+        bg: {
+            gleamorBg:  require(pathImages + 'properties/gleamor-bg-sm.png'),
+            nexyraBg:  require(pathImages + 'properties/nexyra-bg-sm.png'),
+            gambitBg:  require(pathImages + 'properties/gambit-bg-sm.png'),
+            eliteBg:  require(pathImages + 'properties/elite-bg-sm.png'),
+            fortunaBg:  require(pathImages + 'properties/fortuna-bg-sm.png'),
+        },
+        logo: {
+            gleamorLogoLight:  require(pathImages + 'properties/gleamor-logo-light.png'),
+            nexyraLogoLight:  require(pathImages + 'properties/nexyra-logo-light.png'),
+            gambitLogoDark:  require(pathImages + 'properties/gambit-logo-dark.png'),
+            eliteLogoDark:  require(pathImages + 'properties/elite-logo-dark.png'),
+            fortunaLogoLight:  require(pathImages + 'properties/fortuna-logo-light.png'),
+
+            ardentxs: require(pathImages + 'properties/ardent-xs.png'),
+            acrexs: require(pathImages + 'properties/acres-xs.png'),
+            konamiEliteXs: require(pathImages + 'properties/konami-elite-xs.png'),
+            konamixs: require(pathImages + 'properties/konami-xs.png'),
+        },
+        
         plazaDark: require(pathImages + 'properties/plaza-dark.png'),
         eclipseDark: require(pathImages + 'properties/eclipse-dark.png'),
         wskyDark: require(pathImages + 'properties/wsky-dark.png'),

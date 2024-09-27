@@ -68,32 +68,32 @@ const Settings = ({ navigation }) => {
             <View>
               <SansSerifText style={[gStyle.textLight, gStyle.fw600, gStyle.fs16, gStyle.mt2, gStyle.px4, gStyle.py2]}>Recent</SansSerifText>
               <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={[gStyle.pt4]}>
-                <TouchableOpacity style={[styles.avatarCard, , gStyle.ml4]}>
-                  <View style={[gStyle.mb3, { borderRadius: 12, overflow: 'hidden' }]}>
+                <TouchableOpacity style={[gStyle.ml4]}>
+                  <View style={[gStyle.mb3, styles.avatarCard, { borderRadius: 12, overflow: 'hidden' }]}>
                     <Image source={images.profileSample.user1} style={styles.avatarImg}/>
                     <SansSerifText style={[gStyle.textLight, gStyle.fs12, gStyle.fw400, display.alignTextCenter]}>Olivia Rhye</SansSerifText>
                   </View>
                 </TouchableOpacity>
-                <TouchableOpacity style={[styles.avatarCard, gStyle.ml5]}>
-                  <View style={[gStyle.mb3, { borderRadius: 12, overflow: 'hidden' }]}>
+                <TouchableOpacity style={[gStyle.ml5]}>
+                  <View style={[gStyle.mb3, styles.avatarCard, { borderRadius: 12, overflow: 'hidden' }]}>
                     <Image source={images.profileSample.user2} style={styles.avatarImg}/>
                     <SansSerifText style={[gStyle.textLight, gStyle.fs12, gStyle.fw400, display.alignTextCenter]}>Joshua Smith</SansSerifText>
                   </View>
                 </TouchableOpacity>
-                <TouchableOpacity style={[styles.avatarCard, gStyle.ml5]}>
-                  <View style={[gStyle.mb3, { borderRadius: 12, overflow: 'hidden' }]}>
+                <TouchableOpacity style={[gStyle.ml5]}>
+                  <View style={[gStyle.mb3, styles.avatarCard, { borderRadius: 12, overflow: 'hidden' }]}>
                     <Image source={images.profileSample.user3} style={styles.avatarImg}/>
                     <SansSerifText style={[gStyle.textLight, gStyle.fs12, gStyle.fw400, display.alignTextCenter]}>Hailey Williams</SansSerifText>
                   </View>
                 </TouchableOpacity>
-                <TouchableOpacity style={[styles.avatarCard, gStyle.ml5]}>
-                  <View style={[gStyle.mb3, { borderRadius: 12, overflow: 'hidden' }]}>
+                <TouchableOpacity style={[gStyle.ml5]}>
+                  <View style={[gStyle.mb3, styles.avatarCard, { borderRadius: 12, overflow: 'hidden' }]}>
                     <Image source={images.profileSample.user4} style={styles.avatarImg}/>
                     <SansSerifText style={[gStyle.textLight, gStyle.fs12, gStyle.fw400, display.alignTextCenter]}>Claudette Jones</SansSerifText>
                   </View>
                 </TouchableOpacity>
-                <TouchableOpacity style={[styles.avatarCard, gStyle.ml5]}>
-                  <View style={[gStyle.mb3, { borderRadius: 12, overflow: 'hidden' }]}>
+                <TouchableOpacity style={[gStyle.ml5]}>
+                  <View style={[gStyle.mb3, styles.avatarCard, { borderRadius: 12, overflow: 'hidden' }]}>
                     <Image source={images.profileSample.user5} style={styles.avatarImg}/>
                     <SansSerifText style={[gStyle.textLight, gStyle.fs12, gStyle.fw400, display.alignTextCenter]}>Rachel Miller</SansSerifText>
                   </View>
@@ -102,27 +102,27 @@ const Settings = ({ navigation }) => {
             </View>
             <View>
               <SansSerifText style={[gStyle.textLight, gStyle.fw600, gStyle.fs16, gStyle.mt2, gStyle.px4, gStyle.py2]}>Recent Groups</SansSerifText>
-              <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={[gStyle.pt4]}>
-                <TouchableOpacity style={[styles.avatarCard, , gStyle.ml4]}>
-                  <View style={[gStyle.mb3, { borderRadius: 12, overflow: 'hidden' }]}>
+              <ScrollView horizontal={true} contentContainerStyle={styles.scrollViewContent} showsHorizontalScrollIndicator={false} style={[gStyle.pt4]}>
+                <TouchableOpacity style={[gStyle.ml4]}>
+                  <View style={[gStyle.mb3, styles.avatarCard, { borderRadius: 12, overflow: 'hidden' }]}>
                     <Image source={images.groupSample.group1} style={styles.avatarImg}/>
                     <SansSerifText style={[gStyle.textLight, gStyle.fs12, gStyle.fw400, display.alignTextCenter]}>EDC Fam</SansSerifText>
                   </View>
                 </TouchableOpacity>
-                <TouchableOpacity style={[styles.avatarCard, gStyle.ml5]}>
-                  <View style={[gStyle.mb3, { borderRadius: 12, overflow: 'hidden' }]}>
+                <TouchableOpacity style={[gStyle.ml5]}>
+                  <View style={[gStyle.mb3, styles.avatarCard, { borderRadius: 12, overflow: 'hidden' }]}>
                     <Image source={images.groupSample.group2} style={styles.avatarImg}/>
                     <SansSerifText style={[gStyle.textLight, gStyle.fs12, gStyle.fw400, display.alignTextCenter]}>Super Club</SansSerifText>
                   </View>
                 </TouchableOpacity>
-                <TouchableOpacity style={[styles.avatarCard, gStyle.ml5]}>
-                  <View style={[gStyle.mb3, { borderRadius: 12, overflow: 'hidden' }]}>
+                <TouchableOpacity style={[gStyle.ml5]}>
+                  <View style={[gStyle.mb3, styles.avatarCard,  { borderRadius: 12, overflow: 'hidden' }]}>
                     <Image source={images.groupSample.group3} style={styles.avatarImg}/>
                     <SansSerifText style={[gStyle.textLight, gStyle.fs12, gStyle.fw400, display.alignTextCenter]}>Bachelorette Babes</SansSerifText>
                   </View>
                 </TouchableOpacity>
-                <TouchableOpacity style={[styles.avatarCard, gStyle.ml5]}>
-                  <View style={[gStyle.mb3, { borderRadius: 12, overflow: 'hidden' }]}>
+                <TouchableOpacity style={[gStyle.ml5]}>
+                  <View style={[gStyle.mb3, styles.avatarCard, { borderRadius: 12, overflow: 'hidden' }]}>
                     <Image source={images.groupSample.group4} style={styles.avatarImg}/>
                     <SansSerifText style={[gStyle.textLight, gStyle.fs12, gStyle.fw400, display.alignTextCenter]}>Family</SansSerifText>
                   </View>

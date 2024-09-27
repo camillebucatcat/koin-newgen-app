@@ -11,7 +11,7 @@ export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
 
   return (
     <View style={[styles.tabBar]}>
-      <View style={[styles.tabLinks]}>
+      {/* <View style={[styles.tabLinks]}>
         {state.routes.map((route, index) => {
           const { options } = descriptors[route.key];
           const label =
@@ -61,16 +61,16 @@ export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
         })}
       </View>
       <View style={styles.btnQR}>
-          <TouchableOpacity style={{ flex: 1 }} >
-            <Text>
-              QR
-            </Text>
-          </TouchableOpacity>
-        </View>
-      <View style={styles.tabBarBg}>
-        {/* <Image source={images.tabBar.Bg} style={styles.tabBarBgImage} /> */}
+        <TouchableOpacity style={{ flex: 1 }} >
+          <Text>
+            QR
+          </Text>
+        </TouchableOpacity>
+      </View> */}
+      {/* <View style={styles.tabBarBg}>
+        <Image source={images.tabBar.Bg} style={styles.tabBarBgImage} />
         <ImageBackground source={images.tabBar.Bg} resizeMode='cover' style={styles.tabBarBgImage}></ImageBackground>
-      </View>
+      </View> */}
     </View>
   );
 }

@@ -12,6 +12,7 @@ import ThreeDotsLight from '../../assets/icons/svg-icons/three-dots-light';
 import Colors from '../../constants/Colors';
 import SegmentControl from '../../components/SegmentControl';
 import GradientButton from '../../components/GradientButton';
+import { MonoText } from '../../components/StyledText';
 
 const Home = ({ navigation }) => {
   const [activeSegment, setActiveSegment] = useState('For You');
@@ -29,7 +30,9 @@ const Home = ({ navigation }) => {
       <SafeAreaView style={{ flex: 1 }}>
         <ScrollView>
         {activeSegment === 'For You' && (
-          <View style={{paddingHorizontal: 16, paddingVertical: 8, paddingBottom: 150}}>
+          <View style={{paddingHorizontal: 16, paddingVertical: 8}}>
+          <MonoText>Test</MonoText>
+
             <View style={[gStyle.darkCard, gStyle.my4]}>
               <Text style={[gStyle.textLight, gStyle.fw500, gStyle.fs16]}>Total Available Cash</Text>
               <Text style={[gStyle.textLight, gStyle.fw600, gStyle.fs32]}>$8,385.28</Text>

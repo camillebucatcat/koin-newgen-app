@@ -4,12 +4,17 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
+import { useFonts } from 'expo-font';
+import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
+import { useColorScheme } from '../components/useColorScheme';
+
+// pages
 import { TabBar } from '../components/TabBar';
 import Home from './tabs/Home';
-import ButtonSample from './styledDocs/ButtonSample';
-import FormFieldSample from './styledDocs/FormFieldSample';
 import Settings from './tabs/Settings';
 import Discover from './tabs/Discover';
+import ButtonSample from './styledDocs/ButtonSample';
+import FormFieldSample from './styledDocs/FormFieldSample';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -19,14 +24,24 @@ const linking = {
 };
 
 export default function App() {
+  const [loaded, error] = useFonts({
+    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
+    Aventa: require('../assets/fonts/Aventa/Aventa-Regular.otf'),
+    ...FontAwesome.font,
+  });
+  const colorScheme = useColorScheme();
+
+
   return (
-    <NavigationContainer independent={true} linking={linking}>
-      <Stack.Navigator screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="Home" component={HomeTabs} />
-        <Stack.Screen name="styledDocs/ButtonSample" component={ButtonSample} />
-        <Stack.Screen name="styledDocs/FormFieldSample" component={FormFieldSample} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+      <NavigationContainer independent={true} linking={linking}>
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
+          <Stack.Screen name="Home" component={HomeTabs} />
+          <Stack.Screen name="styledDocs/ButtonSample" component={ButtonSample} />
+          <Stack.Screen name="styledDocs/FormFieldSample" component={FormFieldSample} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </ThemeProvider>
   );
 }
 

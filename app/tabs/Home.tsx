@@ -1,17 +1,17 @@
-import { View, Text, StyleSheet, ScrollView, Image, TouchableOpacity, Dimensions, Animated, Easing, LayoutChangeEvent } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, Image, TouchableOpacity,} from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import images from '../../constants/Images';
 import { gStyle } from '../styles/Global';
 import { display } from '../styles/Display';
 import Button from '../../components/Button';
-import { router } from 'expo-router';
 import RecentTransactions from '../../components/RecentTransactions';
 import ArrowCircleGradient from '../../assets/icons/svg-icons/arrow-circle-gradient';
 import InsightDoughnutChart from '../../components/InsightDoughnutChart';
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import ThreeDotsLight from '../../assets/icons/svg-icons/three-dots-light';
 import Colors from '../../constants/Colors';
 import SegmentControl from '../../components/SegmentControl';
+import GradientButton from '../../components/GradientButton';
 
 const Home = ({ navigation }) => {
   const [activeSegment, setActiveSegment] = useState('For You');
@@ -73,7 +73,7 @@ const Home = ({ navigation }) => {
             <View style={[ gStyle.darkCard, gStyle.my4 ]}>
               <View style={[ display.flexBetween, display.alignCenter, gStyle.mb4 ]}>
                 <Text style={[ gStyle.textLight, gStyle.fw700, gStyle.fs14 ]}>Nearby Casinos</Text>
-                <Button title="View All" customStyles={{width: '30%'}} customSpace={{padding: 12}} transform="normal" shape="round" fill="outline" color="light"  centerText={true} handlePress={() => navigation.navigate('')} />
+                <GradientButton title="View All" customStyles={{width: '30%'}}  customSpace={{padding: 12}} transform="normal" shape="round" fill="outline" color="light" centerText={true} handlePress={() => navigation.navigate('')} />
               </View>
               <View style={styles.mapContainer}>
                 <Image source={images.home.map} style={styles.relativeMap} />
@@ -83,20 +83,20 @@ const Home = ({ navigation }) => {
             <View style={[ gStyle.darkCard, gStyle.my4]}>
               <View style={[ display.flexBetween, display.alignCenter, gStyle.mb4 ]}>
                 <Text style={[gStyle.textLight, gStyle.fw700, gStyle.fs14 ]}>Your Player Cards</Text>
-                <Button title="Edit Cards" customStyles={{width: '30%'}} customSpace={{padding: 12}} transform="normal" shape="round" fill="outline" color="light"  centerText={true} handlePress={() => navigation.navigate('')} />
+                <GradientButton title="Edit Cards" customStyles={{width: '30%'}} customSpace={{padding: 12}} transform="normal" shape="round" fill="outline" color="light"  centerText={true} handlePress={() => navigation.navigate('')} />
               </View>
             </View>
             <View style={[ gStyle.darkCard, gStyle.my4]}>
               <View style={[ display.flexBetween, display.alignCenter, gStyle.mb4 ]}>
                 <Text style={[gStyle.textLight, gStyle.fw700, gStyle.fs14 ]}>Insights</Text>
-                <Button title="View Detail" customStyles={{width: '30%'}} customSpace={{padding: 12}} transform="normal" shape="round" fill="outline" color="light"  centerText={true} handlePress={() => navigation.navigate('')} />
+                <GradientButton title="View Detail" customStyles={{width: '30%'}} customSpace={{padding: 12}} transform="normal" shape="round" fill="outline" color="light"  centerText={true} handlePress={() => navigation.navigate('')} />
               </View>
               <InsightDoughnutChart/>
             </View>
             <View style={[ gStyle.darkCard, gStyle.my4]}>
               <View style={[ display.flexBetween, display.alignCenter, gStyle.mb4 ]}>
                 <Text style={[gStyle.textLight, gStyle.fw700, gStyle.fs14 ]}>Your Properties</Text>
-                <Button title="View All" customStyles={{width: '30%'}} customSpace={{padding: 12}} transform="normal" shape="round" fill="outline" color="light"  centerText={true} handlePress={() => navigation.navigate('')} />
+                <GradientButton title="View All" customStyles={{width: '30%'}} customSpace={{padding: 12}} transform="normal" shape="round" fill="outline" color="light"  centerText={true} handlePress={() => navigation.navigate('')} />
               </View>
               <TouchableOpacity style={[ display.dFlex, gStyle.py3, display.flexBetween, display.alignCenter ]} activeOpacity={0.8}>
                 <View style={[]}>

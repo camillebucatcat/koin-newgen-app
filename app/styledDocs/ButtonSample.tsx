@@ -5,12 +5,15 @@ import { router } from 'expo-router';
 import images from '../../constants/Images';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import SafeAreaView from 'react-native-safe-area-view';
+import GradientButton from '../../components/GradientButton';
 
 const ButtonSample = () => {
   return (
     <SafeAreaProvider>
       <SafeAreaView style={{ flex: 1 }} forceInset={{ top: 'always', bottom: 'never' }}> 
         <ScrollView contentContainerStyle={{ paddingHorizontal: 16, paddingVertical: 8 }}>
+          <GradientButton title="Gradient Outline"  handlePress={() => console.log('Pressed!')} fill="outline" expand="block" />
+          <GradientButton title="Gradient Outline" color="dark" background="light" handlePress={() => console.log('Pressed!')} fill="outline" expand="block" />
           <Button title="SOLID" expand="default" shape="default" fill="solid" color="primary" customStyles={{ marginVertical: 8}} centerText={true} handlePress={() => router.push('')} />
           <Button title="CLEAR" shape="round" fill="clear" customStyles={{ marginVertical: 8}} handlePress={() => router.push('')} />
           <Button title="OUTLINE" expand="block" shape="round" fill="outline" color="primary" text="primary" customStyles={{ marginVertical: 8}} handlePress={() => router.push('')} />

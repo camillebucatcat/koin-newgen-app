@@ -5,12 +5,13 @@ import { gStyle } from '../app/styles/Global';
 import { display } from '../app/styles/Display';
 import { router } from 'expo-router';
 import images from '../constants/Images';
+import GradientButton from './GradientButton';
 export default function RecentTransactions (){
 return(
 <View style={[gStyle.darkCard]}>
     <View style={[display.flexBetween, display.alignCenter, {marginBottom: 24}]}>
         <Text style={[gStyle.textLight, gStyle.fw700]}>Recent Transactions</Text>
-        <Button title="View All" customStyles={[gStyle.fs14,{}]} transform="normal" shape="round" fill="outline" color="light"  centerText={true} handlePress={() => router.push('')} />
+        <GradientButton title="View Detail" customStyles={{width: '30%'}} customSpace={{padding: 12}} transform="normal" shape="round" fill="outline" color="light"  centerText={true} handlePress={() => router.push('')} />
     </View>
     <TouchableOpacity style={[display.dFlex, gStyle.py3, display.flexBetween, display.alignCenter, {borderBottomColor: '#FFFFFF1F', borderBottomWidth: 1}]}>
         <View style={[]}>

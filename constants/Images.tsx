@@ -36,9 +36,11 @@ const images = {
         topBg: require(pathImages + 'discover-bg-1.png'),
         edclogo: require(pathIcons + 'edc-logo.png'),
         arrowdown: require(pathIcons + 'double-arrow-down.png'),
+        bookmark: require(pathIcons + 'bookmark.png'),
 
         shopping:{
-            pic1: require(pathImages + 'discover/shopping-1.png')
+            pic1: require(pathImages + 'discover/shopping-1.png'),
+            pic2: require(pathImages + 'discover/shopping-2.png'),
         }
     }
 

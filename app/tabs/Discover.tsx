@@ -23,7 +23,7 @@ const Discover = () => {
       <SafeAreaView style={{ flex: 1 }}>
         <ScrollView>
         {activeSegment === 'Perks' && ( 
-          <View>
+          <View style={{paddingBottom: 200}}>
             <View>
             <ImageBackground 
               source={images.discover.topBg} 
@@ -46,22 +46,246 @@ const Discover = () => {
                 <Button title="View All" customStyles={[gStyle.fw700, gStyle.textLight, gStyle.px0, {}]} transform="normal" shape="default" fill="clear" color="light" centerText={true} handlePress={() => router.push('')} />
               </View>
             </View>
-              <View>
-                <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-                  <View style={[styles.card]}>
-                  <View style={{ borderRadius: 12, overflow: 'hidden' }}>
+              <View style={[gStyle.mb15]}>
+                <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={[]}>
+                <View style={[styles.card, gStyle.ml6]}>
+                  <View style={[gStyle.mb3, { borderRadius: 12, overflow: 'hidden' }]}>
                     <ImageBackground 
                       source={images.discover.shopping.pic1} 
                       style={[gStyle.p3, { height: 128 }]}
                     >
-                      <View style={[display.justifyBetween, {display: 'flex'}]}>
-                        <Text style={[gStyle.fw600, styles.imgtext, gStyle.px3]}>Popular</Text>
-                        <TouchableOpacity>
-                          <Text>bookmark</Text>
-                        </TouchableOpacity>
+                      <View>
+                        <View style={[display.justifyBetween, display.dFlex, display.alignCenter]}>
+                          <Text style={[gStyle.fw600, styles.imgtext, gStyle.px3]}>Popular</Text>
+                          <TouchableOpacity style={[styles.bookmark, gStyle.p1 ]}>
+                            <Image source={images.discover.bookmark}/>
+                          </TouchableOpacity>
+                        </View>
                       </View>
                     </ImageBackground>
                   </View>
+                  <Text style={[gStyle.fw600, gStyle.fs4, gStyle.mb2, gStyle.textLight]}>10% OFF at The Shops</Text>
+                  <Text style={[gStyle.fs3, gStyle.textLight]}>Expires: August 19th, 2024 11:59pm</Text>
+                  </View>
+
+                  <View style={[styles.card, gStyle.ml6]}>
+                  <View style={[gStyle.mb3, { borderRadius: 12, overflow: 'hidden' }]}>
+                    <ImageBackground 
+                      source={images.discover.shopping.pic2} 
+                      style={[gStyle.p3, { height: 128 }]}
+                    >
+                      <View>
+                        <View style={[display.justifyBetween, display.dFlex, display.alignCenter]}>
+                          <Text style={[gStyle.fw600, styles.imgtext, gStyle.px3]}>Popular</Text>
+                          <TouchableOpacity style={[styles.bookmark, gStyle.p1 ]}>
+                            <Image source={images.discover.bookmark}/>
+                          </TouchableOpacity>
+                        </View>
+                      </View>
+                    </ImageBackground>
+                  </View>
+                  <Text style={[gStyle.fw600, gStyle.fs4, gStyle.mb2, gStyle.textLight]}>10% OFF at The Shops</Text>
+                  <Text style={[gStyle.fs3, gStyle.textLight]}>Expires: August 19th, 2024 11:59pm</Text>
+                  </View>
+                </ScrollView>
+              </View>
+
+              <View style={[gStyle.px6]}>
+              <View style={[display.flexBetween, display.alignCenter, gStyle.mb3]}>
+                <Text style={[gStyle.fs4, gStyle.fw700, gStyle.textLight]}>Gaming</Text>
+                <Button title="View All" customStyles={[gStyle.fw700, gStyle.textLight, gStyle.px0, {}]} transform="normal" shape="default" fill="clear" color="light" centerText={true} handlePress={() => router.push('')} />
+              </View>
+            </View>
+              <View style={[gStyle.mb15]}>
+                <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={[]}>
+                <View style={[styles.card, gStyle.ml6]}>
+                  <View style={[gStyle.mb3, { borderRadius: 12, overflow: 'hidden' }]}>
+                    <ImageBackground 
+                      source={images.discover.shopping.pic2} 
+                      style={[gStyle.p3, { height: 128 }]}
+                    >
+                      <View>
+                        <View style={[display.justifyBetween, display.dFlex, display.alignCenter]}>
+                          <Text style={[gStyle.fw600, styles.imgtext, gStyle.px3]}>Popular</Text>
+                          <TouchableOpacity style={[styles.bookmark, gStyle.p1 ]}>
+                            <Image source={images.discover.bookmark}/>
+                          </TouchableOpacity>
+                        </View>
+                      </View>
+                    </ImageBackground>
+                  </View>
+                  <Text style={[gStyle.fw600, gStyle.fs4, gStyle.mb2, gStyle.textLight]}>10% OFF at The Shops</Text>
+                  <Text style={[gStyle.fs3, gStyle.textLight]}>Expires: August 19th, 2024 11:59pm</Text>
+                  </View>
+
+                  <View style={[styles.card, gStyle.ml6]}>
+                  <View style={[gStyle.mb3, { borderRadius: 12, overflow: 'hidden' }]}>
+                    <ImageBackground 
+                      source={images.discover.shopping.pic2} 
+                      style={[gStyle.p3, { height: 128 }]}
+                    >
+                      <View>
+                        <View style={[display.justifyBetween, display.dFlex, display.alignCenter]}>
+                          <Text style={[gStyle.fw600, styles.imgtext, gStyle.px3]}>Popular</Text>
+                          <TouchableOpacity style={[styles.bookmark, gStyle.p1 ]}>
+                            <Image source={images.discover.bookmark}/>
+                          </TouchableOpacity>
+                        </View>
+                      </View>
+                    </ImageBackground>
+                  </View>
+                  <Text style={[gStyle.fw600, gStyle.fs4, gStyle.mb2, gStyle.textLight]}>10% OFF at The Shops</Text>
+                  <Text style={[gStyle.fs3, gStyle.textLight]}>Expires: August 19th, 2024 11:59pm</Text>
+                  </View>
+                </ScrollView>
+              </View>
+
+              <View style={[gStyle.px6]}>
+              <View style={[display.flexBetween, display.alignCenter, gStyle.mb3]}>
+                <Text style={[gStyle.fs4, gStyle.fw700, gStyle.textLight]}>Events</Text>
+                <Button title="View All" customStyles={[gStyle.fw700, gStyle.textLight, gStyle.px0, {}]} transform="normal" shape="default" fill="clear" color="light" centerText={true} handlePress={() => router.push('')} />
+              </View>
+            </View>
+              <View style={[gStyle.mb15]}>
+                <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={[]}>
+                <View style={[styles.card, gStyle.ml6]}>
+                  <View style={[gStyle.mb3, { borderRadius: 12, overflow: 'hidden' }]}>
+                    <ImageBackground 
+                      source={images.discover.shopping.pic2} 
+                      style={[gStyle.p3, { height: 128 }]}
+                    >
+                      <View>
+                        <View style={[display.justifyBetween, display.dFlex, display.alignCenter]}>
+                          <Text style={[gStyle.fw600, styles.imgtext, gStyle.px3]}>Popular</Text>
+                          <TouchableOpacity style={[styles.bookmark, gStyle.p1 ]}>
+                            <Image source={images.discover.bookmark}/>
+                          </TouchableOpacity>
+                        </View>
+                      </View>
+                    </ImageBackground>
+                  </View>
+                  <Text style={[gStyle.fw600, gStyle.fs4, gStyle.mb2, gStyle.textLight]}>10% OFF at The Shops</Text>
+                  <Text style={[gStyle.fs3, gStyle.textLight]}>Expires: August 19th, 2024 11:59pm</Text>
+                  </View>
+
+                  <View style={[styles.card, gStyle.ml6]}>
+                  <View style={[gStyle.mb3, { borderRadius: 12, overflow: 'hidden' }]}>
+                    <ImageBackground 
+                      source={images.discover.shopping.pic2} 
+                      style={[gStyle.p3, { height: 128 }]}
+                    >
+                      <View>
+                        <View style={[display.justifyBetween, display.dFlex, display.alignCenter]}>
+                          <Text style={[gStyle.fw600, styles.imgtext, gStyle.px3]}>Popular</Text>
+                          <TouchableOpacity style={[styles.bookmark, gStyle.p1 ]}>
+                            <Image source={images.discover.bookmark}/>
+                          </TouchableOpacity>
+                        </View>
+                      </View>
+                    </ImageBackground>
+                  </View>
+                  <Text style={[gStyle.fw600, gStyle.fs4, gStyle.mb2, gStyle.textLight]}>10% OFF at The Shops</Text>
+                  <Text style={[gStyle.fs3, gStyle.textLight]}>Expires: August 19th, 2024 11:59pm</Text>
+                  </View>
+                </ScrollView>
+              </View>
+
+              <View style={[gStyle.px6]}>
+              <View style={[display.flexBetween, display.alignCenter, gStyle.mb3]}>
+                <Text style={[gStyle.fs4, gStyle.fw700, gStyle.textLight]}>Dining</Text>
+                <Button title="View All" customStyles={[gStyle.fw700, gStyle.textLight, gStyle.px0, {}]} transform="normal" shape="default" fill="clear" color="light" centerText={true} handlePress={() => router.push('')} />
+              </View>
+            </View>
+              <View style={[gStyle.mb15]}>
+                <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={[]}>
+                <View style={[styles.card, gStyle.ml6]}>
+                  <View style={[gStyle.mb3, { borderRadius: 12, overflow: 'hidden' }]}>
+                    <ImageBackground 
+                      source={images.discover.shopping.pic2} 
+                      style={[gStyle.p3, { height: 128 }]}
+                    >
+                      <View>
+                        <View style={[display.justifyBetween, display.dFlex, display.alignCenter]}>
+                          <Text style={[gStyle.fw600, styles.imgtext, gStyle.px3]}>Popular</Text>
+                          <TouchableOpacity style={[styles.bookmark, gStyle.p1 ]}>
+                            <Image source={images.discover.bookmark}/>
+                          </TouchableOpacity>
+                        </View>
+                      </View>
+                    </ImageBackground>
+                  </View>
+                  <Text style={[gStyle.fw600, gStyle.fs4, gStyle.mb2, gStyle.textLight]}>10% OFF at The Shops</Text>
+                  <Text style={[gStyle.fs3, gStyle.textLight]}>Expires: August 19th, 2024 11:59pm</Text>
+                  </View>
+
+                  <View style={[styles.card, gStyle.ml6]}>
+                  <View style={[gStyle.mb3, { borderRadius: 12, overflow: 'hidden' }]}>
+                    <ImageBackground 
+                      source={images.discover.shopping.pic2} 
+                      style={[gStyle.p3, { height: 128 }]}
+                    >
+                      <View>
+                        <View style={[display.justifyBetween, display.dFlex, display.alignCenter]}>
+                          <Text style={[gStyle.fw600, styles.imgtext, gStyle.px3]}>Popular</Text>
+                          <TouchableOpacity style={[styles.bookmark, gStyle.p1 ]}>
+                            <Image source={images.discover.bookmark}/>
+                          </TouchableOpacity>
+                        </View>
+                      </View>
+                    </ImageBackground>
+                  </View>
+                  <Text style={[gStyle.fw600, gStyle.fs4, gStyle.mb2, gStyle.textLight]}>10% OFF at The Shops</Text>
+                  <Text style={[gStyle.fs3, gStyle.textLight]}>Expires: August 19th, 2024 11:59pm</Text>
+                  </View>
+                </ScrollView>
+              </View>
+
+              <View style={[gStyle.px6]}>
+              <View style={[display.flexBetween, display.alignCenter, gStyle.mb3]}>
+                <Text style={[gStyle.fs4, gStyle.fw700, gStyle.textLight]}>Shows</Text>
+                <Button title="View All" customStyles={[gStyle.fw700, gStyle.textLight, gStyle.px0, {}]} transform="normal" shape="default" fill="clear" color="light" centerText={true} handlePress={() => router.push('')} />
+              </View>
+            </View>
+              <View style={[gStyle.mb15]}>
+                <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={[]}>
+                <View style={[styles.card, gStyle.ml6]}>
+                  <View style={[gStyle.mb3, { borderRadius: 12, overflow: 'hidden' }]}>
+                    <ImageBackground 
+                      source={images.discover.shopping.pic2} 
+                      style={[gStyle.p3, { height: 128 }]}
+                    >
+                      <View>
+                        <View style={[display.justifyBetween, display.dFlex, display.alignCenter]}>
+                          <Text style={[gStyle.fw600, styles.imgtext, gStyle.px3]}>Popular</Text>
+                          <TouchableOpacity style={[styles.bookmark, gStyle.p1 ]}>
+                            <Image source={images.discover.bookmark}/>
+                          </TouchableOpacity>
+                        </View>
+                      </View>
+                    </ImageBackground>
+                  </View>
+                  <Text style={[gStyle.fw600, gStyle.fs4, gStyle.mb2, gStyle.textLight]}>10% OFF at The Shops</Text>
+                  <Text style={[gStyle.fs3, gStyle.textLight]}>Expires: August 19th, 2024 11:59pm</Text>
+                  </View>
+
+                  <View style={[styles.card, gStyle.ml6]}>
+                  <View style={[gStyle.mb3, { borderRadius: 12, overflow: 'hidden' }]}>
+                    <ImageBackground 
+                      source={images.discover.shopping.pic2} 
+                      style={[gStyle.p3, { height: 128 }]}
+                    >
+                      <View>
+                        <View style={[display.justifyBetween, display.dFlex, display.alignCenter]}>
+                          <Text style={[gStyle.fw600, styles.imgtext, gStyle.px3]}>Popular</Text>
+                          <TouchableOpacity style={[styles.bookmark, gStyle.p1 ]}>
+                            <Image source={images.discover.bookmark}/>
+                          </TouchableOpacity>
+                        </View>
+                      </View>
+                    </ImageBackground>
+                  </View>
+                  <Text style={[gStyle.fw600, gStyle.fs4, gStyle.mb2, gStyle.textLight]}>10% OFF at The Shops</Text>
+                  <Text style={[gStyle.fs3, gStyle.textLight]}>Expires: August 19th, 2024 11:59pm</Text>
                   </View>
                 </ScrollView>
               </View>
@@ -98,5 +322,9 @@ const styles = StyleSheet.create({
   imgtext:{
     backgroundColor: '#D6C4FF',
     borderRadius: 100,
+  },
+  bookmark:{
+    backgroundColor: '#1F1F1F5C',
+    borderRadius: 100
   }
 });

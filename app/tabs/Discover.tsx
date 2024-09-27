@@ -42,13 +42,13 @@ const Discover = () => {
             </View>
             <View style={[gStyle.px6]}>
               <View style={[display.flexBetween, display.alignCenter, gStyle.mb3]}>
-                <Text style={[gStyle.fs4, gStyle.fw700, gStyle.textLight]}>Shopping</Text>
+                <Text style={[gStyle.fs16, gStyle.fw700, gStyle.textLight]}>Shopping</Text>
                 <Button title="View All" customStyles={[gStyle.fw700, gStyle.textLight, gStyle.px0, {}]} transform="normal" shape="default" fill="clear" color="light" centerText={true} handlePress={() => router.push('')} />
               </View>
             </View>
               <View style={[gStyle.mb15]}>
                 <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={[]}>
-                <View style={[styles.card, gStyle.ml6]}>
+                <TouchableOpacity style={[styles.card, gStyle.ml6]}>
                   <View style={[gStyle.mb3, { borderRadius: 12, overflow: 'hidden' }]}>
                     <ImageBackground 
                       source={images.discover.shopping.pic1} 
@@ -64,11 +64,11 @@ const Discover = () => {
                       </View>
                     </ImageBackground>
                   </View>
-                  <Text style={[gStyle.fw600, gStyle.fs4, gStyle.mb2, gStyle.textLight]}>10% OFF at The Shops</Text>
+                  <Text style={[gStyle.fw600, gStyle.fs16, gStyle.mb2, gStyle.textLight]}>10% OFF at The Shops</Text>
                   <Text style={[gStyle.fs3, gStyle.textLight]}>Expires: August 19th, 2024 11:59pm</Text>
-                  </View>
+                  </TouchableOpacity>
 
-                  <View style={[styles.card, gStyle.ml6]}>
+                  <TouchableOpacity style={[styles.card, gStyle.ml6]}>
                   <View style={[gStyle.mb3, { borderRadius: 12, overflow: 'hidden' }]}>
                     <ImageBackground 
                       source={images.discover.shopping.pic2} 
@@ -84,21 +84,21 @@ const Discover = () => {
                       </View>
                     </ImageBackground>
                   </View>
-                  <Text style={[gStyle.fw600, gStyle.fs4, gStyle.mb2, gStyle.textLight]}>10% OFF at The Shops</Text>
+                  <Text style={[gStyle.fw600, gStyle.fs16, gStyle.mb2, gStyle.textLight]}>7% Cashback at The District</Text>
                   <Text style={[gStyle.fs3, gStyle.textLight]}>Expires: August 19th, 2024 11:59pm</Text>
-                  </View>
+                  </TouchableOpacity>
                 </ScrollView>
               </View>
 
               <View style={[gStyle.px6]}>
               <View style={[display.flexBetween, display.alignCenter, gStyle.mb3]}>
-                <Text style={[gStyle.fs4, gStyle.fw700, gStyle.textLight]}>Gaming</Text>
+                <Text style={[gStyle.fs16, gStyle.fw700, gStyle.textLight]}>Gaming</Text>
                 <Button title="View All" customStyles={[gStyle.fw700, gStyle.textLight, gStyle.px0, {}]} transform="normal" shape="default" fill="clear" color="light" centerText={true} handlePress={() => router.push('')} />
               </View>
             </View>
               <View style={[gStyle.mb15]}>
                 <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={[]}>
-                <View style={[styles.card, gStyle.ml6]}>
+                <TouchableOpacity style={[styles.card, gStyle.ml6]}>
                   <View style={[gStyle.mb3, { borderRadius: 12, overflow: 'hidden' }]}>
                     <ImageBackground 
                       source={images.discover.gaming.pic1} 
@@ -114,11 +114,11 @@ const Discover = () => {
                       </View>
                     </ImageBackground>
                   </View>
-                  <Text style={[gStyle.fw600, gStyle.fs4, gStyle.mb2, gStyle.textLight]}>10% OFF at The Shops</Text>
+                  <Text style={[gStyle.fw600, gStyle.fs16, gStyle.mb2, gStyle.textLight]}>Free Slot Play</Text>
                   <Text style={[gStyle.fs3, gStyle.textLight]}>Expires: August 19th, 2024 11:59pm</Text>
-                  </View>
+                  </TouchableOpacity>
 
-                  <View style={[styles.card, gStyle.ml6]}>
+                  <TouchableOpacity style={[styles.card, gStyle.ml6]}>
                   <View style={[gStyle.mb3, { borderRadius: 12, overflow: 'hidden' }]}>
                     <ImageBackground 
                       source={images.discover.gaming.pic2} 
@@ -134,21 +134,21 @@ const Discover = () => {
                       </View>
                     </ImageBackground>
                   </View>
-                  <Text style={[gStyle.fw600, gStyle.fs4, gStyle.mb2, gStyle.textLight]}>10% OFF at The Shops</Text>
+                  <Text style={[gStyle.fw600, gStyle.fs16, gStyle.mb2, gStyle.textLight]}>Match Play Coupon</Text>
                   <Text style={[gStyle.fs3, gStyle.textLight]}>Expires: August 19th, 2024 11:59pm</Text>
-                  </View>
+                  </TouchableOpacity>
                 </ScrollView>
               </View>
 
               <View style={[gStyle.px6]}>
               <View style={[display.flexBetween, display.alignCenter, gStyle.mb3]}>
-                <Text style={[gStyle.fs4, gStyle.fw700, gStyle.textLight]}>Events</Text>
+                <Text style={[gStyle.fs16, gStyle.fw700, gStyle.textLight]}>Events</Text>
                 <Button title="View All" customStyles={[gStyle.fw700, gStyle.textLight, gStyle.px0, {}]} transform="normal" shape="default" fill="clear" color="light" centerText={true} handlePress={() => router.push('')} />
               </View>
             </View>
               <View style={[gStyle.mb15]}>
                 <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={[]}>
-                <View style={[styles.card, gStyle.ml6]}>
+                <TouchableOpacity style={[styles.card, gStyle.ml6]}>
                   <View style={[gStyle.mb3, { borderRadius: 12, overflow: 'hidden' }]}>
                     <ImageBackground 
                       source={images.discover.events.pic1} 
@@ -164,11 +164,11 @@ const Discover = () => {
                       </View>
                     </ImageBackground>
                   </View>
-                  <Text style={[gStyle.fw600, gStyle.fs4, gStyle.mb2, gStyle.textLight]}>10% OFF at The Shops</Text>
+                  <Text style={[gStyle.fw600, gStyle.fs16, gStyle.mb2, gStyle.textLight]}>20% off tickets</Text>
                   <Text style={[gStyle.fs3, gStyle.textLight]}>Expires: August 19th, 2024 11:59pm</Text>
-                  </View>
+                  </TouchableOpacity>
 
-                  <View style={[styles.card, gStyle.ml6]}>
+                  <TouchableOpacity style={[styles.card, gStyle.ml6]}>
                   <View style={[gStyle.mb3, { borderRadius: 12, overflow: 'hidden' }]}>
                     <ImageBackground 
                       source={images.discover.events.pic2} 
@@ -184,21 +184,21 @@ const Discover = () => {
                       </View>
                     </ImageBackground>
                   </View>
-                  <Text style={[gStyle.fw600, gStyle.fs4, gStyle.mb2, gStyle.textLight]}>10% OFF at The Shops</Text>
+                  <Text style={[gStyle.fw600, gStyle.fs16, gStyle.mb2, gStyle.textLight]}>50% off tickets</Text>
                   <Text style={[gStyle.fs3, gStyle.textLight]}>Expires: August 19th, 2024 11:59pm</Text>
-                  </View>
+                  </TouchableOpacity>
                 </ScrollView>
               </View>
 
               <View style={[gStyle.px6]}>
               <View style={[display.flexBetween, display.alignCenter, gStyle.mb3]}>
-                <Text style={[gStyle.fs4, gStyle.fw700, gStyle.textLight]}>Dining</Text>
+                <Text style={[gStyle.fs16, gStyle.fw700, gStyle.textLight]}>Dining</Text>
                 <Button title="View All" customStyles={[gStyle.fw700, gStyle.textLight, gStyle.px0, {}]} transform="normal" shape="default" fill="clear" color="light" centerText={true} handlePress={() => router.push('')} />
               </View>
             </View>
               <View style={[gStyle.mb15]}>
                 <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={[]}>
-                <View style={[styles.card, gStyle.ml6]}>
+                <TouchableOpacity style={[styles.card, gStyle.ml6]}>
                   <View style={[gStyle.mb3, { borderRadius: 12, overflow: 'hidden' }]}>
                     <ImageBackground 
                       source={images.discover.dining.pic1} 
@@ -214,11 +214,11 @@ const Discover = () => {
                       </View>
                     </ImageBackground>
                   </View>
-                  <Text style={[gStyle.fw600, gStyle.fs4, gStyle.mb2, gStyle.textLight]}>10% OFF at The Shops</Text>
+                  <Text style={[gStyle.fw600, gStyle.fs16, gStyle.mb2, gStyle.textLight]}>20% OFF food items</Text>
                   <Text style={[gStyle.fs3, gStyle.textLight]}>Expires: August 19th, 2024 11:59pm</Text>
-                  </View>
+                  </TouchableOpacity>
 
-                  <View style={[styles.card, gStyle.ml6]}>
+                  <TouchableOpacity style={[styles.card, gStyle.ml6]}>
                   <View style={[gStyle.mb3, { borderRadius: 12, overflow: 'hidden' }]}>
                     <ImageBackground 
                       source={images.discover.dining.pic2} 
@@ -234,21 +234,21 @@ const Discover = () => {
                       </View>
                     </ImageBackground>
                   </View>
-                  <Text style={[gStyle.fw600, gStyle.fs4, gStyle.mb2, gStyle.textLight]}>10% OFF at The Shops</Text>
+                  <Text style={[gStyle.fw600, gStyle.fs16, gStyle.mb2, gStyle.textLight]}>$50 OFF ticket price</Text>
                   <Text style={[gStyle.fs3, gStyle.textLight]}>Expires: August 19th, 2024 11:59pm</Text>
-                  </View>
+                  </TouchableOpacity>
                 </ScrollView>
               </View>
 
               <View style={[gStyle.px6]}>
               <View style={[display.flexBetween, display.alignCenter, gStyle.mb3]}>
-                <Text style={[gStyle.fs4, gStyle.fw700, gStyle.textLight]}>Shows</Text>
+                <Text style={[gStyle.fs16, gStyle.fw700, gStyle.textLight]}>Shows</Text>
                 <Button title="View All" customStyles={[gStyle.fw700, gStyle.textLight, gStyle.px0, {}]} transform="normal" shape="default" fill="clear" color="light" centerText={true} handlePress={() => router.push('')} />
               </View>
             </View>
               <View style={[gStyle.mb15]}>
                 <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={[]}>
-                <View style={[styles.card, gStyle.ml6]}>
+                <TouchableOpacity style={[styles.card, gStyle.ml6]}>
                   <View style={[gStyle.mb3, { borderRadius: 12, overflow: 'hidden' }]}>
                     <ImageBackground 
                       source={images.discover.shows.pic1} 
@@ -264,11 +264,11 @@ const Discover = () => {
                       </View>
                     </ImageBackground>
                   </View>
-                  <Text style={[gStyle.fw600, gStyle.fs4, gStyle.mb2, gStyle.textLight]}>10% OFF at The Shops</Text>
+                  <Text style={[gStyle.fw600, gStyle.fs16, gStyle.mb2, gStyle.textLight]}>20% off GA tickets</Text>
                   <Text style={[gStyle.fs3, gStyle.textLight]}>Expires: August 19th, 2024 11:59pm</Text>
-                  </View>
+                  </TouchableOpacity>
 
-                  <View style={[styles.card, gStyle.ml6]}>
+                  <TouchableOpacity style={[styles.card, gStyle.ml6]}>
                   <View style={[gStyle.mb3, { borderRadius: 12, overflow: 'hidden' }]}>
                     <ImageBackground 
                       source={images.discover.shows.pic2} 
@@ -284,9 +284,9 @@ const Discover = () => {
                       </View>
                     </ImageBackground>
                   </View>
-                  <Text style={[gStyle.fw600, gStyle.fs4, gStyle.mb2, gStyle.textLight]}>10% OFF at The Shops</Text>
+                  <Text style={[gStyle.fw600, gStyle.fs16, gStyle.mb2, gStyle.textLight]}>50% off tickets</Text>
                   <Text style={[gStyle.fs3, gStyle.textLight]}>Expires: August 19th, 2024 11:59pm</Text>
-                  </View>
+                  </TouchableOpacity>
                 </ScrollView>
               </View>
 

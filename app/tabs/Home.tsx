@@ -12,7 +12,7 @@ import ThreeDotsLight from '../../assets/icons/svg-icons/three-dots-light';
 import Colors from '../../constants/Colors';
 import SegmentControl from '../../components/SegmentControl';
 import GradientButton from '../../components/GradientButton';
-import { MonoText } from '../../components/StyledText';
+import { SansSerifText } from '../../components/SanSerifText';
 
 const Home = ({ navigation }) => {
   const [activeSegment, setActiveSegment] = useState('For You');
@@ -31,11 +31,11 @@ const Home = ({ navigation }) => {
         <ScrollView>
         {activeSegment === 'For You' && (
           <View style={{paddingHorizontal: 16, paddingVertical: 8}}>
-          <MonoText>Test</MonoText>
+            <SansSerifText style={[gStyle.mb6, gStyle.fs12]}>Test</SansSerifText>
 
             <View style={[gStyle.darkCard, gStyle.my4]}>
-              <Text style={[gStyle.textLight, gStyle.fw500, gStyle.fs16]}>Total Available Cash</Text>
-              <Text style={[gStyle.textLight, gStyle.fw600, gStyle.fs32]}>$8,385.28</Text>
+              <SansSerifText style={[gStyle.textLight, gStyle.fw500, gStyle.fs16]}>Total Available Cash</SansSerifText>
+              <SansSerifText style={[gStyle.textLight, gStyle.fw600, gStyle.fs32]}>$8,385.28</SansSerifText>
               <View style={[display.flexBetween, gStyle.gap, gStyle.my4]}>
                 <Button title="Move Funds" customStyles={{ width: '48%', }} transform="normal" shape="round" fill="solid" color="primary" centerText={true} handlePress={() => navigation.navigate('')} />
                 <Button title="Add Funds" customStyles={{ width: '48%', }} transform="normal" shape="round" fill="solid" color="primary" centerText={true} handlePress={() => navigation.navigate('styledDocs/ButtonSample')} />
@@ -43,12 +43,12 @@ const Home = ({ navigation }) => {
             </View>
             <View style={[gStyle.darkCard, gStyle.my4, { position: "relative" }]}>
               <View style={{ width: '45%' }}>
-                <Text style={[gStyle.textLight, gStyle.fw500, gStyle.fs16]}>
+                <SansSerifText style={[gStyle.textLight, gStyle.fw500, gStyle.fs16]}>
                   See the benefits we give you for your
-                  <Text style={gStyle.fw700}> local casino</Text>
-                </Text>
+                  <SansSerifText style={gStyle.fw700}> local casino</SansSerifText>
+                </SansSerifText>
                 <TouchableOpacity activeOpacity={0.8} style={{ marginTop: 20 }}>
-                  <Text style={gStyle.textPrimaryLight}>View benefits</Text>
+                  <SansSerifText style={gStyle.textPrimaryLight}>View benefits</SansSerifText>
                 </TouchableOpacity>
               </View>
               <Image
@@ -65,8 +65,8 @@ const Home = ({ navigation }) => {
                   <View style={[ display.dFlex, display.alignCenter ]}>
                     <Image source={ images.icon.qrCode } />
                     <View style={[ gStyle.ml4 ]}>
-                      <Text style={[ gStyle.textLight, gStyle.fw700, gStyle.fs16 ]}>Connect to Game</Text>
-                      <Text style={[ gStyle.textLight, gStyle.fw500, gStyle.fs14, gStyle.mt2 ]}>With QR Code</Text>
+                      <SansSerifText style={[ gStyle.textLight, gStyle.fw700, gStyle.fs16 ]}>Connect to Game</SansSerifText>
+                      <SansSerifText style={[ gStyle.textLight, gStyle.fw500, gStyle.fs14, gStyle.mt2 ]}>With QR Code</SansSerifText>
                     </View>
                   </View>
                   <ArrowCircleGradient/>
@@ -75,7 +75,7 @@ const Home = ({ navigation }) => {
             </TouchableOpacity>
             <View style={[ gStyle.darkCard, gStyle.my4 ]}>
               <View style={[ display.flexBetween, display.alignCenter, gStyle.mb4 ]}>
-                <Text style={[ gStyle.textLight, gStyle.fw700, gStyle.fs14 ]}>Nearby Casinos</Text>
+                <SansSerifText style={[ gStyle.textLight, gStyle.fw700, gStyle.fs14 ]}>Nearby Casinos</SansSerifText>
                 <GradientButton title="View All" customStyles={{width: '30%'}}  customSpace={{padding: 12}} transform="normal" shape="round" fill="outline" color="light" centerText={true} handlePress={() => navigation.navigate('')} />
               </View>
               <View style={styles.mapContainer}>
@@ -85,7 +85,7 @@ const Home = ({ navigation }) => {
             </View>
             <View style={[ gStyle.darkCard, gStyle.my4]}>
               <View style={[ display.flexBetween, display.alignCenter, gStyle.mb4 ]}>
-                <Text style={[gStyle.textLight, gStyle.fw700, gStyle.fs14, gStyle.pt4 ]}>Your Player Card</Text>
+                <SansSerifText style={[gStyle.textLight, gStyle.fw700, gStyle.fs14, gStyle.pt4 ]}>Your Player Card</SansSerifText>
                 <GradientButton title="View Detail" customStyles={{width: '30%'}} customSpace={{padding: 12}} transform="normal" shape="round" fill="outline" color="light"  centerText={true} handlePress={() => navigation.navigate('')} />
               </View>
               <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={[gStyle.mt6]}>
@@ -94,13 +94,13 @@ const Home = ({ navigation }) => {
                     <View style={[display.dFlex, display.justifyBetween, ]}>
                       <Image source={images.properties.logo.gleamorLogoLight} style={[gStyle.mt1]}/>
                       <View style={styles.poweredBy}>
-                        <Text style={[gStyle.fs8, gStyle.mr2]}>Powered By: </Text>
+                        <SansSerifText style={[gStyle.fs8, gStyle.mr2]}>Powered By: </SansSerifText>
                         <Image source={images.properties.logo.ardentxs} style={styles.logo} />
                       </View>
                     </View>
                     <View>
-                      <Text style={[gStyle.textLight, gStyle.fw500, gStyle.fs12]}>Player Card Number</Text>
-                      <Text style={[gStyle.textLight, gStyle.fw700, gStyle.fs16]}>0123491235</Text>
+                      <SansSerifText style={[gStyle.textLight, gStyle.fw500, gStyle.fs12]}>Player Card Number</SansSerifText>
+                      <SansSerifText style={[gStyle.textLight, gStyle.fw700, gStyle.fs16]}>0123491235</SansSerifText>
                     </View>
                   </ImageBackground>
                 </View>
@@ -109,13 +109,13 @@ const Home = ({ navigation }) => {
                     <View style={[display.dFlex, display.justifyBetween, ]}>
                       <Image source={images.properties.logo.nexyraLogoLight} style={[gStyle.mt1]}/>
                       <View style={styles.poweredBy}>
-                        <Text style={[gStyle.fs8, gStyle.mr2]}>Powered By: </Text>
+                        <SansSerifText style={[gStyle.fs8, gStyle.mr2]}>Powered By: </SansSerifText>
                         <Image source={images.properties.logo.acrexs} style={styles.logo} />
                       </View>
                     </View>
                     <View>
-                      <Text style={[gStyle.textLight, gStyle.fw500, gStyle.fs12]}>Player Card Number</Text>
-                      <Text style={[gStyle.textLight, gStyle.fw700, gStyle.fs16]}>0123491235</Text>
+                      <SansSerifText style={[gStyle.textLight, gStyle.fw500, gStyle.fs12]}>Player Card Number</SansSerifText>
+                      <SansSerifText style={[gStyle.textLight, gStyle.fw700, gStyle.fs16]}>0123491235</SansSerifText>
                     </View>
                   </ImageBackground>
                 </View>
@@ -124,13 +124,13 @@ const Home = ({ navigation }) => {
                     <View style={[display.dFlex, display.justifyBetween, ]}>
                       <Image source={images.properties.logo.gambitLogoDark} style={[gStyle.mt1]}/>
                       <View style={styles.poweredBy}>
-                        <Text style={[gStyle.fs8, gStyle.mr2]}>Powered By: </Text>
+                        <SansSerifText style={[gStyle.fs8, gStyle.mr2]}>Powered By: </SansSerifText>
                         <Image source={images.properties.logo.konamixs} style={styles.logo} />
                       </View>
                     </View>
                     <View>
-                      <Text style={[ gStyle.fw500, gStyle.fs12]}>Player Card Number</Text>
-                      <Text style={[ gStyle.fw700, gStyle.fs16]}>0123491235</Text>
+                      <SansSerifText style={[ gStyle.fw500, gStyle.fs12]}>Player Card Number</SansSerifText>
+                      <SansSerifText style={[ gStyle.fw700, gStyle.fs16]}>0123491235</SansSerifText>
                     </View>
                   </ImageBackground>
                 </View>
@@ -139,13 +139,13 @@ const Home = ({ navigation }) => {
                     <View style={[display.dFlex, display.justifyBetween, ]}>
                       <Image source={images.properties.logo.eliteLogoDark} style={[gStyle.mt1]}/>
                       <View style={styles.poweredBy}>
-                        <Text style={[gStyle.fs8, gStyle.mr2]}>Powered By: </Text>
+                        <SansSerifText style={[gStyle.fs8, gStyle.mr2]}>Powered By: </SansSerifText>
                         <Image source={images.properties.logo.konamiEliteXs} style={styles.logo} />
                       </View>
                     </View>
                     <View>
-                      <Text style={[ gStyle.fw500, gStyle.fs12]}>Player Card Number</Text>
-                      <Text style={[ gStyle.fw700, gStyle.fs16]}>0123491235</Text>
+                      <SansSerifText style={[ gStyle.fw500, gStyle.fs12]}>Player Card Number</SansSerifText>
+                      <SansSerifText style={[ gStyle.fw700, gStyle.fs16]}>0123491235</SansSerifText>
                     </View>
                   </ImageBackground>
                 </View>
@@ -154,13 +154,13 @@ const Home = ({ navigation }) => {
                     <View style={[display.dFlex, display.justifyBetween, ]}>
                       <Image source={images.properties.logo.fortunaLogoLight} style={[gStyle.mt1]}/>
                       <View style={styles.poweredBy}>
-                        <Text style={[gStyle.fs8, gStyle.mr2]}>Powered By:</Text>
+                        <SansSerifText style={[gStyle.fs8, gStyle.mr2]}>Powered By:</SansSerifText>
                         <Image source={images.properties.logo.konamixs} style={styles.logo} />
                       </View>
                     </View>
                     <View>
-                      <Text style={[ gStyle.textLight, gStyle.fw500, gStyle.fs12]}>Player Card Number</Text>
-                      <Text style={[ gStyle.textLight, gStyle.fw700, gStyle.fs16]}>0123491235</Text>
+                      <SansSerifText style={[ gStyle.textLight, gStyle.fw500, gStyle.fs12]}>Player Card Number</SansSerifText>
+                      <SansSerifText style={[ gStyle.textLight, gStyle.fw700, gStyle.fs16]}>0123491235</SansSerifText>
                     </View>
                   </ImageBackground>
                 </View>
@@ -168,14 +168,14 @@ const Home = ({ navigation }) => {
             </View>
             <View style={[ gStyle.darkCard, gStyle.my4]}>
               <View style={[ display.flexBetween, display.alignCenter, gStyle.mb4 ]}>
-                <Text style={[gStyle.textLight, gStyle.fw700, gStyle.fs14 ]}>Insights</Text>
+                <SansSerifText style={[gStyle.textLight, gStyle.fw700, gStyle.fs14 ]}>Insights</SansSerifText>
                 <GradientButton title="View Detail" customStyles={{width: '30%'}} customSpace={{padding: 12}} transform="normal" shape="round" fill="outline" color="light"  centerText={true} handlePress={() => navigation.navigate('')} />
               </View>
               <InsightDoughnutChart/>
             </View>
             <View style={[ gStyle.darkCard, gStyle.my4]}>
               <View style={[ display.flexBetween, display.alignCenter, gStyle.mb4 ]}>
-                <Text style={[gStyle.textLight, gStyle.fw700, gStyle.fs14 ]}>Your Properties</Text>
+                <SansSerifText style={[gStyle.textLight, gStyle.fw700, gStyle.fs14 ]}>Your Properties</SansSerifText>
                 <GradientButton title="View All" customStyles={{width: '30%'}} customSpace={{padding: 12}} transform="normal" shape="round" fill="outline" color="light"  centerText={true} handlePress={() => navigation.navigate('')} />
               </View>
               <TouchableOpacity style={[ display.dFlex, gStyle.py3, display.flexBetween, display.alignCenter ]} activeOpacity={0.8}>
@@ -184,7 +184,7 @@ const Home = ({ navigation }) => {
                 </View>
                 <View style={[display.flexBetween, display.alignCenter, gStyle.mx3]}>
                   <View>
-                    <Text style={[gStyle.textLight, gStyle.fw600, gStyle.fs4]}>The Plaza Hotel & Casino</Text>
+                    <SansSerifText style={[gStyle.textLight, gStyle.fw600, gStyle.fs4]}>The Plaza Hotel & Casino</SansSerifText>
                   </View>
                 </View>
                 <View>
@@ -197,7 +197,7 @@ const Home = ({ navigation }) => {
                 </View>
                 <View style={[display.flexBetween, display.alignCenter, gStyle.mx3]}>
                   <View>
-                    <Text style={[gStyle.textLight, gStyle.fw600, gStyle.fs4]}>Eclipse Gaming</Text>
+                    <SansSerifText style={[gStyle.textLight, gStyle.fw600, gStyle.fs4]}>Eclipse Gaming</SansSerifText>
                   </View>
                 </View>
                 <View>
@@ -210,7 +210,7 @@ const Home = ({ navigation }) => {
                 </View>
                 <View style={[display.flexBetween, display.alignCenter, gStyle.mx3]}>
                   <View>
-                    <Text style={[gStyle.textLight, gStyle.fw600, gStyle.fs4]}>WSKY Bar + Grill</Text>
+                    <SansSerifText style={[gStyle.textLight, gStyle.fw600, gStyle.fs4]}>WSKY Bar + Grill</SansSerifText>
                   </View>
                 </View>
                 <View>
@@ -224,21 +224,21 @@ const Home = ({ navigation }) => {
           <View style={{paddingHorizontal: 16, paddingVertical: 8, paddingBottom: 150}}>
             <View style={[gStyle.darkCard, gStyle.my3,]}>
               <View style={[display.flexCenterBetween]}>
-                <Text style={[gStyle.textLight, gStyle.fw700, gStyle.fs16]}>YOUR CASH</Text>
+                <SansSerifText style={[gStyle.textLight, gStyle.fw700, gStyle.fs16]}>YOUR CASH</SansSerifText>
                 <TouchableOpacity activeOpacity={0.8}>
                   <ThreeDotsLight/>
                 </TouchableOpacity>
               </View>
-              <Text style={[gStyle.textLight, gStyle.fw600, gStyle.fs32, gStyle.my3]}>$8,385.28</Text>
-              <Text style={[gStyle.textGrayLight, gStyle.fw600, gStyle.fs16,]}>Total Available Cash</Text>
+              <SansSerifText style={[gStyle.textLight, gStyle.fw600, gStyle.fs32, gStyle.my3]}>$8,385.28</SansSerifText>
+              <SansSerifText style={[gStyle.textGrayLight, gStyle.fw600, gStyle.fs16,]}>Total Available Cash</SansSerifText>
             </View>
-            <Text style={[gStyle.textLight, gStyle.fw600, gStyle.fs16, gStyle.mt4, gStyle.mb2]}>Koin Accounts</Text>
+            <SansSerifText style={[gStyle.textLight, gStyle.fw600, gStyle.fs16, gStyle.mt4, gStyle.mb2]}>Koin Accounts</SansSerifText>
             <View style={[gStyle.darkCard, gStyle.my3, {borderColor: '#FFFFFF', borderWidth: 1}]}>
               <TouchableOpacity activeOpacity={0.8}>
                 <View style={[display.flexCenterBetween]}>
                   <View style={[display.dFlex, display.alignCenter]}>
                     <Image source={images.lean.leanLeftSuccess} style={[gStyle.mr2]}/>
-                    <Text style={[gStyle.textLight, gStyle.fw600, gStyle.fs14]}>Everyday Spending</Text>
+                    <SansSerifText style={[gStyle.textLight, gStyle.fw600, gStyle.fs14]}>Everyday Spending</SansSerifText>
                   </View>
                   <View>
                     <Image source={images.icon.arrowright}/>
@@ -248,14 +248,14 @@ const Home = ({ navigation }) => {
               <View style={[display.flexCenterBetween, gStyle.mt4, { flexDirection: 'row', alignItems: 'flex-end' }]}>
                 <View>
                   <View>
-                    <Text style={[gStyle.textLight, gStyle.fw600, gStyle.fs32, ]}>2,802</Text>
-                    <Text style={[gStyle.textLight, gStyle.fw600, gStyle.fs12, { position: 'absolute', top: 6, left: '100%' }]}>.99</Text>
+                    <SansSerifText style={[gStyle.textLight, gStyle.fw600, gStyle.fs32, ]}>2,802</SansSerifText>
+                    <SansSerifText style={[gStyle.textLight, gStyle.fw600, gStyle.fs12, { position: 'absolute', top: 6, left: '100%' }]}>.99</SansSerifText>
                   </View>
-                  <Text style={[gStyle.textGrayLight, gStyle.fw600, gStyle.fs12, gStyle.textSuccessLight,]}>Total balance</Text>
+                  <SansSerifText style={[gStyle.textGrayLight, gStyle.fw600, gStyle.fs12, gStyle.textSuccessLight,]}>Total balance</SansSerifText>
                 </View>
                 <View>
-                  <Text style={[gStyle.textLight, gStyle.fw600, gStyle.fs14, display.alignSelfEnd]}>37.5%</Text>
-                  <Text style={[gStyle.textGrayLight, gStyle.fw600, gStyle.fs12, gStyle.textSuccessLight,]}>of total funds</Text>
+                  <SansSerifText style={[gStyle.textLight, gStyle.fw600, gStyle.fs14, display.alignSelfEnd]}>37.5%</SansSerifText>
+                  <SansSerifText style={[gStyle.textGrayLight, gStyle.fw600, gStyle.fs12, gStyle.textSuccessLight,]}>of total funds</SansSerifText>
                 </View>
               </View>
             </View>
@@ -264,7 +264,7 @@ const Home = ({ navigation }) => {
                 <View style={[display.flexCenterBetween]}>
                   <View style={[display.dFlex, display.alignCenter]}>
                     <Image source={images.lean.leanLeftPrimary} style={[gStyle.mr2]}/>
-                    <Text style={[gStyle.textLight, gStyle.fw600, gStyle.fs14]}>Emergency Fund</Text>
+                    <SansSerifText style={[gStyle.textLight, gStyle.fw600, gStyle.fs14]}>Emergency Fund</SansSerifText>
                   </View>
                   <View>
                     <Image source={images.icon.arrowright}/>
@@ -274,24 +274,24 @@ const Home = ({ navigation }) => {
               <View style={[display.flexCenterBetween, gStyle.mt4, { flexDirection: 'row', alignItems: 'flex-end' }]}>
                 <View>
                   <View>
-                    <Text style={[gStyle.textLight, gStyle.fw600, gStyle.fs32, ]}>$5,000</Text>
-                    <Text style={[gStyle.textLight, gStyle.fw600, gStyle.fs12, { position: 'absolute', top: 6, left: '100%' }]}>.00</Text>
+                    <SansSerifText style={[gStyle.textLight, gStyle.fw600, gStyle.fs32, ]}>$5,000</SansSerifText>
+                    <SansSerifText style={[gStyle.textLight, gStyle.fw600, gStyle.fs12, { position: 'absolute', top: 6, left: '100%' }]}>.00</SansSerifText>
                   </View>
-                  <Text style={[gStyle.textGrayLight, gStyle.fw600, gStyle.fs12, gStyle.textPrimaryLight,]}>Total balance</Text>
+                  <SansSerifText style={[gStyle.textGrayLight, gStyle.fw600, gStyle.fs12, gStyle.textPrimaryLight,]}>Total balance</SansSerifText>
                 </View>
                 <View>
-                  <Text style={[gStyle.textLight, gStyle.fw600, gStyle.fs14, display.alignSelfEnd]}>50%</Text>
-                  <Text style={[gStyle.textGrayLight, gStyle.fw600, gStyle.fs12, gStyle.textPrimaryLight,]}>of total funds</Text>
+                  <SansSerifText style={[gStyle.textLight, gStyle.fw600, gStyle.fs14, display.alignSelfEnd]}>50%</SansSerifText>
+                  <SansSerifText style={[gStyle.textGrayLight, gStyle.fw600, gStyle.fs12, gStyle.textPrimaryLight,]}>of total funds</SansSerifText>
                 </View>
               </View>
             </View>
-            <Text style={[gStyle.textLight, gStyle.fw600, gStyle.fs16, gStyle.mt4, gStyle.mb2]}>Gaming Accounts</Text>
+            <SansSerifText style={[gStyle.textLight, gStyle.fw600, gStyle.fs16, gStyle.mt4, gStyle.mb2]}>Gaming Accounts</SansSerifText>
             <View style={[gStyle.darkCard, gStyle.my3, {borderColor: '#FFFFFF', borderWidth: 1}]}>
               <TouchableOpacity activeOpacity={0.8}>
                 <View style={[display.flexCenterBetween]}>
                   <View style={[display.dFlex, display.alignCenter]}>
                     <Image source={images.lean.leanLeftOrange} style={[gStyle.mr2]}/>
-                    <Text style={[gStyle.textLight, gStyle.fw600, gStyle.fs14]}>Draft Kings Account</Text>
+                    <SansSerifText style={[gStyle.textLight, gStyle.fw600, gStyle.fs14]}>Draft Kings Account</SansSerifText>
                   </View>
                   <View>
                     <Image source={images.icon.arrowright}/>
@@ -301,24 +301,24 @@ const Home = ({ navigation }) => {
               <View style={[display.flexCenterBetween, gStyle.mt4, { flexDirection: 'row', alignItems: 'flex-end' }]}>
                 <View>
                   <View>
-                    <Text style={[gStyle.textLight, gStyle.fw600, gStyle.fs32, ]}>$582</Text>
-                    <Text style={[gStyle.textLight, gStyle.fw600, gStyle.fs12, { position: 'absolute', top: 6, left: '100%' }]}>.99</Text>
+                    <SansSerifText style={[gStyle.textLight, gStyle.fw600, gStyle.fs32, ]}>$582</SansSerifText>
+                    <SansSerifText style={[gStyle.textLight, gStyle.fw600, gStyle.fs12, { position: 'absolute', top: 6, left: '100%' }]}>.99</SansSerifText>
                   </View>
-                  <Text style={[gStyle.textGrayLight, gStyle.fw600, gStyle.fs12, gStyle.textOrangeLight,]}>Total balance</Text>
+                  <SansSerifText style={[gStyle.textGrayLight, gStyle.fw600, gStyle.fs12, gStyle.textOrangeLight,]}>Total balance</SansSerifText>
                 </View>
                 <View>
-                  <Text style={[gStyle.textLight, gStyle.fw600, gStyle.fs14, display.alignSelfEnd]}>37.5%</Text>
-                  <Text style={[gStyle.textGrayLight, gStyle.fw600, gStyle.fs12, gStyle.textOrangeLight,]}>of total funds</Text>
+                  <SansSerifText style={[gStyle.textLight, gStyle.fw600, gStyle.fs14, display.alignSelfEnd]}>37.5%</SansSerifText>
+                  <SansSerifText style={[gStyle.textGrayLight, gStyle.fw600, gStyle.fs12, gStyle.textOrangeLight,]}>of total funds</SansSerifText>
                 </View>
               </View>
             </View>
-            <Text style={[gStyle.textLight, gStyle.fw600, gStyle.fs16, gStyle.mt4, gStyle.mb2]}>Linked Accounts</Text>
+            <SansSerifText style={[gStyle.textLight, gStyle.fw600, gStyle.fs16, gStyle.mt4, gStyle.mb2]}>Linked Accounts</SansSerifText>
             <TouchableOpacity activeOpacity={0.8}>
               <View style={[gStyle.darkCard, gStyle.my3, {borderColor: '#FFFFFF', borderWidth: 1}]}>
                 <View style={[display.flexCenterBetween]}>
                   <View style={[display.dFlex, display.alignCenter]}>
                     <Image source={images.icon.bank}/>
-                    <Text style={[gStyle.textLight, gStyle.fw600, gStyle.ml2]}>Wells Fargo</Text>
+                    <SansSerifText style={[gStyle.textLight, gStyle.fw600, gStyle.ml2]}>Wells Fargo</SansSerifText>
                   </View>
                   <View>
                     <Image source={images.icon.arrowright}/>
@@ -331,7 +331,7 @@ const Home = ({ navigation }) => {
                 <View style={[display.flexCenterBetween]}>
                   <View style={[display.dFlex, display.alignCenter]}>
                     <Image source={images.icon.bank}/>
-                    <Text style={[gStyle.textLight, gStyle.fw600, gStyle.ml2]}>Bank of America</Text>
+                    <SansSerifText style={[gStyle.textLight, gStyle.fw600, gStyle.ml2]}>Bank of America</SansSerifText>
                   </View>
                   <View>
                     <Image source={images.icon.arrowright}/>
@@ -343,12 +343,12 @@ const Home = ({ navigation }) => {
         )}
         {activeSegment === 'Credit' && ( 
           <View style={{paddingHorizontal: 16, paddingVertical: 8, paddingBottom: 150}}>
-            <Text style={[gStyle.textLight]}>Credit</Text>
+            <SansSerifText style={[gStyle.textLight]}>Credit</SansSerifText>
           </View>
         )}
         {activeSegment === 'Rewards' && ( 
           <View style={{paddingHorizontal: 16, paddingVertical: 8, paddingBottom: 150}}>
-            <Text style={[gStyle.textLight]}>Rewards</Text>
+            <SansSerifText style={[gStyle.textLight]}>Rewards</SansSerifText>
           </View>
         )}
         </ScrollView>

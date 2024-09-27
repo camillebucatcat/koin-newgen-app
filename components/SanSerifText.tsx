@@ -1,5 +1,5 @@
 import { Text, TextProps } from './Themed';
 
-export function MonoText(props: TextProps) {
+export function SansSerifText(props: TextProps) {
   return <Text {...props} style={[props.style, { fontFamily: 'Aventa' }]} />;
 }

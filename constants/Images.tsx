@@ -17,6 +17,7 @@ const images = {
         arrowright: require(pathIcons + 'arrow-right.png'),
         mapMarker: require(pathIcons + 'map-marker.png'),
         bank: require(pathIcons+ 'bank.png'),
+        notification: require(pathIcons + 'notification-bell.png')
     },
     home: {
         dice: require(pathImages + 'dice.png'),
@@ -101,7 +102,8 @@ const images = {
         casino2: require(pathImages + '/group-sample/casino-2.png'),
         casino3: require(pathImages + '/group-sample/casino-3.png'),
         casino4: require(pathImages + '/group-sample/casino-4.png'),
-    }
+    },
+    header: require(pathImages + 'profile.png'),
 
 }
 export default images;

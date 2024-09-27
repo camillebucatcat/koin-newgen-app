@@ -13,6 +13,8 @@ import RequestLightIcon from '../../assets/icons/svg-icons/request-light-icon';
 import SplitLightIcon from '../../assets/icons/svg-icons/split-light-icon';
 import Colors from '../../constants/Colors';
 import Header from '../../components/Header';
+import RecentTransactions from '../../components/RecentTransactions';
+import Button from '../../components/Button';
 
 const Settings = ({ navigation }) => {
   const [activeSegment, setActiveSegment] = useState('Transfer');
@@ -229,7 +231,19 @@ const Settings = ({ navigation }) => {
 
         {activeSegment === 'History' && ( 
           <View style={{ paddingHorizontal: 16, paddingVertical: 8 }}>
-            <Text style={{ fontSize: 16, color: '#888' }}>History</Text>
+            <View style={[display.flexCenterBetween, gStyle.mt4]}>
+              <Text style={[gStyle.fw600, gStyle.textGrayLight, {flex: 1}]}>Transactions</Text>
+              <View style={[display.dFlex, display.justifyEnd]}>
+                <TouchableOpacity style={[gStyle.mr3]}>
+                  <Image source={images.icon.list}/>
+                </TouchableOpacity>
+                <TouchableOpacity>
+                  <Image source={images.icon.splitup}/>
+                </TouchableOpacity>
+              </View>
+            </View>
+            <Text style={[gStyle.fw700, gStyle.textLight, gStyle.mb1, gStyle.mt5]}>JULY</Text>
+            <RecentTransactions/>
           </View>
         )}
         </ScrollView>

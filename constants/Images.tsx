@@ -17,7 +17,9 @@ const images = {
         arrowright: require(pathIcons + 'arrow-right.png'),
         mapMarker: require(pathIcons + 'map-marker.png'),
         bank: require(pathIcons+ 'bank.png'),
-        notification: require(pathIcons + 'notification-bell.png')
+        notification: require(pathIcons + 'notification-bell.png'),
+        list: require(pathIcons + 'list.png'),
+        splitup: require(pathIcons + 'splitup.png'),
     },
     home: {
         dice: require(pathImages + 'dice.png'),

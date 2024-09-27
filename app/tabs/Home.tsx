@@ -14,6 +14,7 @@ import SegmentControl from '../../components/SegmentControl';
 import GradientButton from '../../components/GradientButton';
 import { SansSerifText } from '../../components/SanSerifText';
 import Header from '../../components/Header';
+import { router } from 'expo-router';
 
 const Home = ({ navigation }) => {
   const [activeSegment, setActiveSegment] = useState('For You');
@@ -58,7 +59,11 @@ const Home = ({ navigation }) => {
                 style={styles.diceImage}
               />
             </View>
-            <View style={[gStyle.my4]}>
+            <View style={[gStyle.my4, gStyle.darkCard]}>
+            <View style={[display.flexBetween, display.alignCenter, {marginBottom: 24}]}>
+              <Text style={[gStyle.textLight, gStyle.fw700]}>Recent Transactions</Text>
+              <GradientButton title="View Detail" customStyles={{width: '30%'}} customSpace={{padding: 12}} transform="normal" shape="round" fill="outline" color="light"  centerText={true} handlePress={() => router.push('')} />
+            </View>
               <RecentTransactions />
             </View>
             <TouchableOpacity activeOpacity={0.8}>

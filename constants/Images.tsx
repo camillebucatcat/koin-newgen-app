@@ -54,6 +54,7 @@ const images = {
     },
     discover: {
         topBg: require(pathImages + 'discover-bg-1.png'),
+        botBg: require(pathImages + 'discover-bg-2.png'),
         edclogo: require(pathIcons + 'edc-logo.png'),
         arrowdown: require(pathIcons + 'double-arrow-down.png'),
         bookmark: require(pathIcons + 'bookmark.png'),
@@ -61,7 +62,23 @@ const images = {
         shopping:{
             pic1: require(pathImages + 'discover/shopping-1.png'),
             pic2: require(pathImages + 'discover/shopping-2.png'),
-        }
+        },
+        gaming:{
+            pic1: require(pathImages + 'discover/gaming-1.png'),
+            pic2: require(pathImages + 'discover/gaming-2.png'),
+        },
+        dining:{
+            pic1: require(pathImages + 'discover/dining-1.png'),
+            pic2: require(pathImages + 'discover/dining-2.png'),
+        },
+        events:{
+            pic1: require(pathImages + 'discover/events-1.png'),
+            pic2: require(pathImages + 'discover/events-2.png'),
+        },
+        shows:{
+            pic1: require(pathImages + 'discover/shows-1.png'),
+            pic2: require(pathImages + 'discover/shows-2.png'),
+        },
     }
 
 }

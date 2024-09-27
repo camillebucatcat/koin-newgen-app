@@ -36,7 +36,7 @@ const dynamicSpaces = Object.entries(spaces).reduce((styles: any, [key, value]) 
   styles[`my${key}`] = { marginVertical: value };
 
   //padding
-  styles[`p-${key}`] = { padding: value };
+  styles[`p${key}`] = { padding: value };
   styles[`pt${key}`] = { paddingTop: value };
   styles[`pb${key}`] = { paddingBottom: value };
   styles[`pr${key}`] = { paddingRight: value };

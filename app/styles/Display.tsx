@@ -5,6 +5,9 @@ export const display = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
   },
+  alignTextCenter: {
+    textAlign: 'center'
+  },
   alignSelfEnd: {
     alignSelf: 'flex-end',
   },

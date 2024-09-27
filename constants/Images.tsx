@@ -84,6 +84,23 @@ const images = {
             pic2: require(pathImages + 'discover/shows-2.png'),
             pic3: require(pathImages + 'discover/shows-3.png'),
         },
+    },
+    profileSample: {
+        user1: require(pathImages + '/profile-sample/user-1.png'),
+        user2: require(pathImages + '/profile-sample/user-2.png'),
+        user3: require(pathImages + '/profile-sample/user-3.png'),
+        user4: require(pathImages + '/profile-sample/user-4.png'),
+        user5: require(pathImages + '/profile-sample/user-5.png'),
+    },
+    groupSample: {
+        group1: require(pathImages + '/group-sample/group-1.png'),
+        group2: require(pathImages + '/group-sample/group-2.png'),
+        group3: require(pathImages + '/group-sample/group-3.png'),
+        group4: require(pathImages + '/group-sample/group-4.png'),
+        casino1: require(pathImages + '/group-sample/casino-1.png'),
+        casino2: require(pathImages + '/group-sample/casino-2.png'),
+        casino3: require(pathImages + '/group-sample/casino-3.png'),
+        casino4: require(pathImages + '/group-sample/casino-4.png'),
     }
 
 }

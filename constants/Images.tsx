@@ -62,22 +62,27 @@ const images = {
         shopping:{
             pic1: require(pathImages + 'discover/shopping-1.png'),
             pic2: require(pathImages + 'discover/shopping-2.png'),
+            pic3: require(pathImages + 'discover/shopping-3.png'),
         },
         gaming:{
             pic1: require(pathImages + 'discover/gaming-1.png'),
             pic2: require(pathImages + 'discover/gaming-2.png'),
+            pic3: require(pathImages + 'discover/gaming-3.png'),
         },
         dining:{
             pic1: require(pathImages + 'discover/dining-1.png'),
             pic2: require(pathImages + 'discover/dining-2.png'),
+            pic3: require(pathImages + 'discover/dining-3.png'),
         },
         events:{
             pic1: require(pathImages + 'discover/events-1.png'),
             pic2: require(pathImages + 'discover/events-2.png'),
+            pic3: require(pathImages + 'discover/events-3.png'),
         },
         shows:{
             pic1: require(pathImages + 'discover/shows-1.png'),
             pic2: require(pathImages + 'discover/shows-2.png'),
+            pic3: require(pathImages + 'discover/shows-3.png'),
         },
     }
 

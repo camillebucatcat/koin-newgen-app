@@ -87,6 +87,26 @@ const Discover = () => {
                   <Text style={[gStyle.fw600, gStyle.fs16, gStyle.mb2, gStyle.textLight]}>7% Cashback at The District</Text>
                   <Text style={[gStyle.fs3, gStyle.textLight]}>Expires: August 19th, 2024 11:59pm</Text>
                   </TouchableOpacity>
+
+                  <TouchableOpacity style={[styles.card, gStyle.ml6]}>
+                  <View style={[gStyle.mb3, { borderRadius: 12, overflow: 'hidden' }]}>
+                    <ImageBackground 
+                      source={images.discover.shopping.pic3} 
+                      style={[gStyle.p3, { height: 128 }]}
+                    >
+                      <View>
+                        <View style={[display.justifyBetween, display.dFlex, display.alignCenter]}>
+                          <Text style={[gStyle.fw600, styles.imgtext, gStyle.px3]}>Popular</Text>
+                          <TouchableOpacity style={[styles.bookmark, gStyle.p1 ]}>
+                            <Image source={images.discover.bookmark}/>
+                          </TouchableOpacity>
+                        </View>
+                      </View>
+                    </ImageBackground>
+                  </View>
+                  <Text style={[gStyle.fw600, gStyle.fs16, gStyle.mb2, gStyle.textLight]}>5% Cashback at Wynn Resort</Text>
+                  <Text style={[gStyle.fs3, gStyle.textLight]}>Expires: August 19th, 2024 11:59pm</Text>
+                  </TouchableOpacity>
                 </ScrollView>
               </View>
 
@@ -135,6 +155,26 @@ const Discover = () => {
                     </ImageBackground>
                   </View>
                   <Text style={[gStyle.fw600, gStyle.fs16, gStyle.mb2, gStyle.textLight]}>Match Play Coupon</Text>
+                  <Text style={[gStyle.fs3, gStyle.textLight]}>Expires: August 19th, 2024 11:59pm</Text>
+                  </TouchableOpacity>
+
+                  <TouchableOpacity style={[styles.card, gStyle.ml6]}>
+                  <View style={[gStyle.mb3, { borderRadius: 12, overflow: 'hidden' }]}>
+                    <ImageBackground 
+                      source={images.discover.gaming.pic3} 
+                      style={[gStyle.p3, { height: 128 }]}
+                    >
+                      <View>
+                        <View style={[display.justifyBetween, display.dFlex, display.alignCenter]}>
+                          <Text style={[gStyle.fw600, styles.imgtext, gStyle.px3]}>Popular</Text>
+                          <TouchableOpacity style={[styles.bookmark, gStyle.p1 ]}>
+                            <Image source={images.discover.bookmark}/>
+                          </TouchableOpacity>
+                        </View>
+                      </View>
+                    </ImageBackground>
+                  </View>
+                  <Text style={[gStyle.fw600, gStyle.fs16, gStyle.mb2, gStyle.textLight]}>Private Gaming Room</Text>
                   <Text style={[gStyle.fs3, gStyle.textLight]}>Expires: August 19th, 2024 11:59pm</Text>
                   </TouchableOpacity>
                 </ScrollView>
@@ -187,6 +227,25 @@ const Discover = () => {
                   <Text style={[gStyle.fw600, gStyle.fs16, gStyle.mb2, gStyle.textLight]}>50% off tickets</Text>
                   <Text style={[gStyle.fs3, gStyle.textLight]}>Expires: August 19th, 2024 11:59pm</Text>
                   </TouchableOpacity>
+                  <TouchableOpacity style={[styles.card, gStyle.ml6]}>
+                  <View style={[gStyle.mb3, { borderRadius: 12, overflow: 'hidden' }]}>
+                    <ImageBackground 
+                      source={images.discover.events.pic3} 
+                      style={[gStyle.p3, { height: 128 }]}
+                    >
+                      <View>
+                        <View style={[display.justifyBetween, display.dFlex, display.alignCenter]}>
+                          <Text style={[gStyle.fw600, styles.imgtext, gStyle.px3]}>Popular</Text>
+                          <TouchableOpacity style={[styles.bookmark, gStyle.p1 ]}>
+                            <Image source={images.discover.bookmark}/>
+                          </TouchableOpacity>
+                        </View>
+                      </View>
+                    </ImageBackground>
+                  </View>
+                  <Text style={[gStyle.fw600, gStyle.fs16, gStyle.mb2, gStyle.textLight]}>Free Tasting Experience</Text>
+                  <Text style={[gStyle.fs3, gStyle.textLight]}>Expires: August 19th, 2024 11:59pm</Text>
+                  </TouchableOpacity>
                 </ScrollView>
               </View>
 
@@ -237,6 +296,26 @@ const Discover = () => {
                   <Text style={[gStyle.fw600, gStyle.fs16, gStyle.mb2, gStyle.textLight]}>$50 OFF ticket price</Text>
                   <Text style={[gStyle.fs3, gStyle.textLight]}>Expires: August 19th, 2024 11:59pm</Text>
                   </TouchableOpacity>
+
+                  <TouchableOpacity style={[styles.card, gStyle.ml6]}>
+                  <View style={[gStyle.mb3, { borderRadius: 12, overflow: 'hidden' }]}>
+                    <ImageBackground 
+                      source={images.discover.dining.pic3} 
+                      style={[gStyle.p3, { height: 128 }]}
+                    >
+                      <View>
+                        <View style={[display.justifyBetween, display.dFlex, display.alignCenter]}>
+                          <Text style={[gStyle.fw600, styles.imgtext, gStyle.px3]}>Popular</Text>
+                          <TouchableOpacity style={[styles.bookmark, gStyle.p1 ]}>
+                            <Image source={images.discover.bookmark}/>
+                          </TouchableOpacity>
+                        </View>
+                      </View>
+                    </ImageBackground>
+                  </View>
+                  <Text style={[gStyle.fw600, gStyle.fs16, gStyle.mb2, gStyle.textLight]}>FREE Confetti Milkshake</Text>
+                  <Text style={[gStyle.fs3, gStyle.textLight]}>Expires: August 19th, 2024 11:59pm</Text>
+                  </TouchableOpacity>
                 </ScrollView>
               </View>
 
@@ -285,6 +364,26 @@ const Discover = () => {
                     </ImageBackground>
                   </View>
                   <Text style={[gStyle.fw600, gStyle.fs16, gStyle.mb2, gStyle.textLight]}>50% off tickets</Text>
+                  <Text style={[gStyle.fs3, gStyle.textLight]}>Expires: August 19th, 2024 11:59pm</Text>
+                  </TouchableOpacity>
+
+                  <TouchableOpacity style={[styles.card, gStyle.ml6]}>
+                  <View style={[gStyle.mb3, { borderRadius: 12, overflow: 'hidden' }]}>
+                    <ImageBackground 
+                      source={images.discover.shows.pic3} 
+                      style={[gStyle.p3, { height: 128 }]}
+                    >
+                      <View>
+                        <View style={[display.justifyBetween, display.dFlex, display.alignCenter]}>
+                          <Text style={[gStyle.fw600, styles.imgtext, gStyle.px3]}>Popular</Text>
+                          <TouchableOpacity style={[styles.bookmark, gStyle.p1 ]}>
+                            <Image source={images.discover.bookmark}/>
+                          </TouchableOpacity>
+                        </View>
+                      </View>
+                    </ImageBackground>
+                  </View>
+                  <Text style={[gStyle.fw600, gStyle.fs16, gStyle.mb2, gStyle.textLight]}>10% off tickets</Text>
                   <Text style={[gStyle.fs3, gStyle.textLight]}>Expires: August 19th, 2024 11:59pm</Text>
                   </TouchableOpacity>
                 </ScrollView>

@@ -31,6 +31,15 @@ const images = {
         plazaDark: require(pathImages + 'properties/plaza-dark.png'),
         eclipseDark: require(pathImages + 'properties/eclipse-dark.png'),
         wskyDark: require(pathImages + 'properties/wsky-dark.png'),
+    },
+    discover: {
+        topBg: require(pathImages + 'discover-bg-1.png'),
+        edclogo: require(pathIcons + 'edc-logo.png'),
+        arrowdown: require(pathIcons + 'double-arrow-down.png'),
+
+        shopping:{
+            pic1: require(pathImages + 'discover/shopping-1.png')
+        }
     }
 
 }

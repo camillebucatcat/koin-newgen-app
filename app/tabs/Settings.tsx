@@ -12,6 +12,7 @@ import SendLightIcon from '../../assets/icons/svg-icons/send-light-icon';
 import RequestLightIcon from '../../assets/icons/svg-icons/request-light-icon';
 import SplitLightIcon from '../../assets/icons/svg-icons/split-light-icon';
 import Colors from '../../constants/Colors';
+import Header from '../../components/Header';
 
 const Settings = ({ navigation }) => {
   const [activeSegment, setActiveSegment] = useState('Transfer');
@@ -21,6 +22,7 @@ const Settings = ({ navigation }) => {
   };
   return (
     <SafeAreaProvider style={gStyle.darkBg}>
+      <Header />
       <SegmentControl 
         titles={['Transfer', 'Manage', 'History' ]}
         onSegmentChange={handleSegmentChange}
@@ -40,7 +42,7 @@ const Settings = ({ navigation }) => {
                 <SansSerifText style={[gStyle.textLight, gStyle.fw600, gStyle.fs32, gStyle.my3]}>$8,385.28</SansSerifText>
                 <SansSerifText style={[gStyle.textGrayLight, gStyle.fw600, gStyle.fs16,]}>Total Available Cash</SansSerifText>
               </View>
-              <View style={[display.flexCenterBetween, { width: '100%', flexDirection: 'row', justifyContent: 'space-between' }]}>
+              <View style={[display.flexCenterBetween, gStyle.pt4, { width: '100%', flexDirection: 'row', justifyContent: 'space-between' }]}>
                 <TouchableOpacity activeOpacity={0.8} style={{ flex: 1, marginRight: 8 }}>
                   <View style={[styles.btnContainer]}>
                     <SendLightIcon />
@@ -60,6 +62,70 @@ const Settings = ({ navigation }) => {
                   </View>
                 </TouchableOpacity>
               </View>
+            </View>
+            <View>
+              <SansSerifText style={[gStyle.textLight, gStyle.fw600, gStyle.fs16, gStyle.mt2, gStyle.px4, gStyle.py2]}>Recent</SansSerifText>
+              <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={[gStyle.pt4]}>
+                <TouchableOpacity style={[styles.avatarCard, , gStyle.ml4]}>
+                  <View style={[gStyle.mb3, { borderRadius: 12, overflow: 'hidden' }]}>
+                    <Image source={images.profileSample.user1} style={styles.avatarImg}/>
+                    <SansSerifText style={[gStyle.textLight, gStyle.fs12, gStyle.fw400, display.alignTextCenter]}>Olivia Rhye</SansSerifText>
+                  </View>
+                </TouchableOpacity>
+                <TouchableOpacity style={[styles.avatarCard, gStyle.ml5]}>
+                  <View style={[gStyle.mb3, { borderRadius: 12, overflow: 'hidden' }]}>
+                    <Image source={images.profileSample.user2} style={styles.avatarImg}/>
+                    <SansSerifText style={[gStyle.textLight, gStyle.fs12, gStyle.fw400, display.alignTextCenter]}>Joshua Smith</SansSerifText>
+                  </View>
+                </TouchableOpacity>
+                <TouchableOpacity style={[styles.avatarCard, gStyle.ml5]}>
+                  <View style={[gStyle.mb3, { borderRadius: 12, overflow: 'hidden' }]}>
+                    <Image source={images.profileSample.user3} style={styles.avatarImg}/>
+                    <SansSerifText style={[gStyle.textLight, gStyle.fs12, gStyle.fw400, display.alignTextCenter]}>Hailey Williams</SansSerifText>
+                  </View>
+                </TouchableOpacity>
+                <TouchableOpacity style={[styles.avatarCard, gStyle.ml5]}>
+                  <View style={[gStyle.mb3, { borderRadius: 12, overflow: 'hidden' }]}>
+                    <Image source={images.profileSample.user4} style={styles.avatarImg}/>
+                    <SansSerifText style={[gStyle.textLight, gStyle.fs12, gStyle.fw400, display.alignTextCenter]}>Claudette Jones</SansSerifText>
+                  </View>
+                </TouchableOpacity>
+                <TouchableOpacity style={[styles.avatarCard, gStyle.ml5]}>
+                  <View style={[gStyle.mb3, { borderRadius: 12, overflow: 'hidden' }]}>
+                    <Image source={images.profileSample.user5} style={styles.avatarImg}/>
+                    <SansSerifText style={[gStyle.textLight, gStyle.fs12, gStyle.fw400, display.alignTextCenter]}>Rachel Miller</SansSerifText>
+                  </View>
+                </TouchableOpacity>
+              </ScrollView>
+            </View>
+            <View>
+              <SansSerifText style={[gStyle.textLight, gStyle.fw600, gStyle.fs16, gStyle.mt2, gStyle.px4, gStyle.py2]}>Recent Groups</SansSerifText>
+              <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={[gStyle.pt4]}>
+                <TouchableOpacity style={[styles.avatarCard, , gStyle.ml4]}>
+                  <View style={[gStyle.mb3, { borderRadius: 12, overflow: 'hidden' }]}>
+                    <Image source={images.groupSample.group1} style={styles.avatarImg}/>
+                    <SansSerifText style={[gStyle.textLight, gStyle.fs12, gStyle.fw400, display.alignTextCenter]}>EDC Fam</SansSerifText>
+                  </View>
+                </TouchableOpacity>
+                <TouchableOpacity style={[styles.avatarCard, gStyle.ml5]}>
+                  <View style={[gStyle.mb3, { borderRadius: 12, overflow: 'hidden' }]}>
+                    <Image source={images.groupSample.group2} style={styles.avatarImg}/>
+                    <SansSerifText style={[gStyle.textLight, gStyle.fs12, gStyle.fw400, display.alignTextCenter]}>Super Club</SansSerifText>
+                  </View>
+                </TouchableOpacity>
+                <TouchableOpacity style={[styles.avatarCard, gStyle.ml5]}>
+                  <View style={[gStyle.mb3, { borderRadius: 12, overflow: 'hidden' }]}>
+                    <Image source={images.groupSample.group3} style={styles.avatarImg}/>
+                    <SansSerifText style={[gStyle.textLight, gStyle.fs12, gStyle.fw400, display.alignTextCenter]}>Bachelorette Babes</SansSerifText>
+                  </View>
+                </TouchableOpacity>
+                <TouchableOpacity style={[styles.avatarCard, gStyle.ml5]}>
+                  <View style={[gStyle.mb3, { borderRadius: 12, overflow: 'hidden' }]}>
+                    <Image source={images.groupSample.group4} style={styles.avatarImg}/>
+                    <SansSerifText style={[gStyle.textLight, gStyle.fs12, gStyle.fw400, display.alignTextCenter]}>Family</SansSerifText>
+                  </View>
+                </TouchableOpacity>
+              </ScrollView>
             </View>
           </View>
         )}
@@ -95,7 +161,7 @@ const Settings = ({ navigation }) => {
             </View>
             <View style={[gStyle.darkCard, gStyle.my4]}>
               <SansSerifText style={[gStyle.textLight, gStyle.fw700, gStyle.fs16]}>Groups</SansSerifText>
-              <SansSerifText style={[gStyle.textLight, gStyle.fw400, gStyle.fs14]}>Manage your groups...</SansSerifText>
+              <SansSerifText style={[gStyle.textLight, gStyle.fw400, gStyle.fs14, gStyle.mt2]}>Manage your groups...</SansSerifText>
               <ScrollView horizontal={true} contentContainerStyle={styles.scrollViewContent} showsHorizontalScrollIndicator={false} style={[gStyle.mt6,]}>
                 <View style={[styles.avatarCard,]}>
                   <Image source={images.groupSample.group1} style={styles.avatarImg}/>
@@ -118,7 +184,7 @@ const Settings = ({ navigation }) => {
             </View>
             <View style={[gStyle.darkCard, gStyle.my4]}>
               <Text style={[gStyle.textLight, gStyle.fw700, gStyle.fs16]}>Markers</Text>
-              <Text style={[gStyle.textLight, gStyle.fw400, gStyle.fs14]}>Manage your markers...</Text>
+              <Text style={[gStyle.textLight, gStyle.fw400, gStyle.fs14, gStyle.mt2]}>Manage your markers...</Text>
               <ScrollView horizontal={true} contentContainerStyle={styles.scrollViewContent} showsHorizontalScrollIndicator={false} style={[gStyle.mt6,]}>
                 <View style={[styles.avatarCard, gStyle.ml1]}>
                   <Image source={images.groupSample.casino1} style={styles.avatarImg}/>
@@ -137,7 +203,7 @@ const Settings = ({ navigation }) => {
             </View>
             <View style={[gStyle.darkCard, gStyle.my4]}>
               <Text style={[gStyle.textLight, gStyle.fw700, gStyle.fs16]}>Wristbands</Text>
-              <Text style={[gStyle.textLight, gStyle.fw400, gStyle.fs14]}>Manage your NFC wristbands...</Text>
+              <Text style={[gStyle.textLight, gStyle.fw400, gStyle.fs14, gStyle.mt2]}>Manage your NFC wristbands...</Text>
               <ScrollView horizontal={true} contentContainerStyle={styles.scrollViewContent} showsHorizontalScrollIndicator={false} style={[gStyle.mt6,]}>
                 <View style={[styles.avatarCard, gStyle.ml1]}>
                   <Image source={images.groupSample.group1} style={styles.avatarImg}/>

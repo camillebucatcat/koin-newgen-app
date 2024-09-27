@@ -7,6 +7,7 @@ import images from '../../constants/Images';
 import Button from '../../components/Button';
 import { router } from 'expo-router';
 import { display } from '../styles/Display';
+import Header from '../../components/Header';
 
 const Discover = () => {
   const [activeSegment, setActiveSegment] = useState('Perks');
@@ -16,6 +17,7 @@ const Discover = () => {
   };
   return (
     <SafeAreaProvider style={gStyle.darkBg}>
+      <Header />
       <SegmentControl 
         titles={['Perks', 'Partners', 'Events' ]}
         onSegmentChange={handleSegmentChange}

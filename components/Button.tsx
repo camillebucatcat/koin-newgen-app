@@ -80,6 +80,7 @@ const Buttons: React.FC<ButtonProps> = ({
               color === 'danger' && fill === 'outline' && texts.danger,
               color === 'dark' && fill === 'solid' && texts.white,
               color === 'dark' && fill === 'clear' && texts.dark,
+              color === 'light' && fill === 'clear' && texts.white,
               color === 'dark' && fill === 'outline' && texts.dark,
               color === 'light' && fill === 'solid' && texts.light,
               color === 'light' && fill === 'outline' && texts.white,

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, ScrollView, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { gStyle } from '../styles/Global';
 import Button from '../../components/Button';
@@ -7,14 +7,18 @@ import { SansSerifText } from '../../components/SanSerifText';
 import FormField from '../../components/FormField';
 import { router } from 'expo-router';
 import { display } from '../styles/Display';
+import RadioButton from '../../components/RadioButton';
+import images from '../../constants/Images';
 
 const  AddFunds= ()=>{
-    
     const [selectedAmount, setSelectedAmount] = useState(null);
-    const [form, setForm] = useState({
-      amount: ''
-    });
-    const amounts = ['10', '20', '50', '100'];
+  const [form, setForm] = useState({
+    amount: ''
+  });
+  const [selectedOption, setSelectedOption] = useState<string | null>(null);
+  const [isDropdownVisible, setDropdownVisible] = useState(false);
+
+  const amounts = ['10', '20', '50', '100'];
   
     //amount choice buttons
     const handlePress = (amount) => {
@@ -37,6 +41,20 @@ const  AddFunds= ()=>{
         amount: value
       });
     };
+
+       // Define your options
+  const options = [
+    { label: 'Everyday Spending', value: 'option1' },
+    { label: 'Entertainment Fund', value: 'option2' },
+    { label: 'Wells Fargo', value: 'option3' },
+    { label:'Bank of America', value: 'option4' },
+  ];
+
+  // Function to handle option selection
+  const handleSelect = (option: { title: string; label: string; value: string }) => {
+    setSelectedOption(option.value); // Update the selected option
+    setDropdownVisible(false);
+  };
 return(
     <SafeAreaProvider style={gStyle.darkBg}>
         <SafeAreaView>
@@ -92,6 +110,23 @@ return(
                     </View>
 
                     <SansSerifText style={[gStyle.fw600, gStyle.mb5, gStyle.textLight, {}]}>Select Funding Source:</SansSerifText>
+                    <View style={[gStyle.darkCard, { borderRadius: 12 }]}>
+                        <TouchableOpacity activeOpacity={0.5} onPress={() => setDropdownVisible(prev => !prev)}>
+                        <View style={[display.flexCenterBetween]}>
+                            <SansSerifText style={[gStyle.fs14, gStyle.fw400]}>Koin Everyday Spending (default)</SansSerifText>
+                            <Image source={images.icon.arrowDown}/>
+                        </View>
+                        </TouchableOpacity>
+                        {isDropdownVisible && ( // Conditionally render the RadioButton
+                        <View style={[gStyle.mt4]}>
+                            <RadioButton
+                            options={options}
+                            selectedOption={selectedOption}
+                            onSelect={handleSelect}
+                            />
+                        </View>
+                        )}
+                    </View>
 
                     <View style={[gStyle.mb8, {}]}></View>
 

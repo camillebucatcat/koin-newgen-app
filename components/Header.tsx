@@ -12,7 +12,7 @@ interface TitleProps {
 
 const Header: React.FC<TitleProps> = ({ title }) => {
   return (
-    <View style={[gStyle.py8, gStyle.px6,]}>
+    <View style={[gStyle.py6, gStyle.px6,]}>
       <View style={[ display.dFlex, display.alignCenter ]}>
         <TouchableOpacity style={[ gStyle.mr4]}>
             <Image source={images.icon.arrowBack}/>

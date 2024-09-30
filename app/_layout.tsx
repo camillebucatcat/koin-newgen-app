@@ -21,8 +21,10 @@ import Draftkings from './account/DraftKings';
 import TransactionDetails from './transaction/TransactionDetails';
 // import SendFunds from './send-funds/SendFunds';
 import AddFunds from './funds/AddFunds';
-import SendFunds from './send-funds/SendFunds';
+import SendFunds from './move-transfer/send-funds/SendFunds';
 import ReviewTransaction from './funds/Review';
+import SendFundReviewTransaction from './move-transfer/send-funds/ReviewTransaction';
+import RequestFund from './move-transfer/request-funds/RequestFund';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -53,6 +55,8 @@ export default function App() {
           <Stack.Screen name="TransactionDetails" component={TransactionDetails}/>
           <Stack.Screen name="AddFunds" component={AddFunds} />
           <Stack.Screen name="SendFunds" component={SendFunds}/>
+          <Stack.Screen name="RequestFund" component={RequestFund}/>
+          <Stack.Screen name="ReviewTransaction" component={SendFundReviewTransaction}/>
           <Stack.Screen name="Review" component={ReviewTransaction}/>
         </Stack.Navigator>
       </NavigationContainer>

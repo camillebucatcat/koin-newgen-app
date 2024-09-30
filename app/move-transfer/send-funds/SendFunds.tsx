@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { View, Image, Modal, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
-import { gStyle } from '../styles/Global';
-import { SansSerifText } from '../../components/SanSerifText';
-import { display } from '../styles/Display';
-import images from '../../constants/Images';
-import FormField from '../../components/FormField';
-import Button from '../../components/Button';
-import TextAreaField from '../../components/TextAreaField';
-import RadioButton from '../../components/RadioButton';
+import { gStyle } from '../../styles/Global';
+import { SansSerifText } from '../../../components/SanSerifText';
+import { display } from '../../styles/Display';
+import images from '../../../constants/Images';
+import FormField from '../../../components/FormField';
+import Button from '../../../components/Button';
+import TextAreaField from '../../../components/TextAreaField';
+import RadioButton from '../../../components/RadioButton';
 
 
 interface ModalProps {
@@ -185,7 +185,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
   },
   header: {
-    paddingVertical: 16,
+    paddingVertical: 32,
     paddingHorizontal: 24,
   },
   content: {

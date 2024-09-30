@@ -15,9 +15,19 @@ import Colors from '../../constants/Colors';
 import Header from '../../components/Header';
 import RecentTransactions from '../../components/RecentTransactions';
 import Button from '../../components/Button';
+import SendFunds from '../send-funds/SendFunds';
 
 const Settings = ({ navigation }) => {
   const [activeSegment, setActiveSegment] = useState('Transfer');
+  const [modalVisible, setModalVisible] = useState(false);
+
+  const openModal = () => {
+    setModalVisible(true);
+  };
+
+  const closeModal = () => {
+    setModalVisible(false);
+  };
 
   const handleSegmentChange = (segment: string) => {
     setActiveSegment(segment);
@@ -45,7 +55,7 @@ const Settings = ({ navigation }) => {
                 <SansSerifText style={[gStyle.textGrayLight, gStyle.fw600, gStyle.fs16,]}>Total Available Cash</SansSerifText>
               </View>
               <View style={[display.flexCenterBetween, gStyle.pt4, { width: '100%', flexDirection: 'row', justifyContent: 'space-between' }]}>
-                <TouchableOpacity activeOpacity={0.8} style={{ flex: 1, marginRight: 8 }}>
+                <TouchableOpacity activeOpacity={0.8} style={{ flex: 1, marginRight: 8 }} onPress={openModal}>
                   <View style={[styles.btnContainer]}>
                     <SendLightIcon />
                     <SansSerifText style={[gStyle.textLight, gStyle.fw700, gStyle.fs14, gStyle.mt2]}>Send</SansSerifText>
@@ -248,6 +258,7 @@ const Settings = ({ navigation }) => {
         )}
         </ScrollView>
       </SafeAreaView>
+      <SendFunds visible={modalVisible} onClose={closeModal}/>
     </SafeAreaProvider>
   );
 }

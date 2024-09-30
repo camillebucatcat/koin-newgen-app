@@ -1,5 +1,5 @@
 import React, {useRef, useState} from 'react';
-import {Animated, Platform, StyleSheet, TextInput, TouchableOpacity, View} from 'react-native';
+import {Animated, Platform, StyleProp, StyleSheet, TextInput, TextStyle, TouchableOpacity, View} from 'react-native';
 import Colors from '../constants/Colors';
 import Svg, { Path } from 'react-native-svg';
 import EyeIcon from '../assets/icons/svg-icons/eye';
@@ -14,9 +14,12 @@ interface FormField {
   securityMask?: boolean;
   showClearBtn?: boolean;
   showEditIcon?: boolean;
+  textStyles?: StyleProp<TextStyle>;
+  backgroundStyles?: StyleProp<TextStyle>;
+  labelColor?: StyleProp<TextStyle>;
 }
 
-const FormField: React.FC<FormField> = ({title, securityMask=false,  showEditIcon = false, showClearBtn = false, isFloating = true,  placeholder = ''}) => {
+const FormField: React.FC<FormField> = ({title, securityMask=false, labelColor, textStyles, backgroundStyles, showEditIcon = false, showClearBtn = false, isFloating = true,  placeholder = ''}) => {
   const [text, setText] = useState('');
   const floatingLabelAnimation = useRef(new Animated.Value(text ? 1 : 0)).current;
   const borderAnimation = useRef(new Animated.Value(0)).current;
@@ -90,19 +93,19 @@ const FormField: React.FC<FormField> = ({title, securityMask=false,  showEditIco
   };
 
   return (
-    <Animated.View style={[styles.container, borderStyle]}>
+    <Animated.View style={[styles.container, borderStyle, backgroundStyles]}>
       {isFloating && (
-        <Animated.Text style={[styles.label, floatingLabelStyle]}>
+        <Animated.Text style={[styles.label, floatingLabelStyle, labelColor]}>
           {title}
         </Animated.Text>
       )}
       {!isFloating && (
-        <Animated.Text style={[styles.label, stackedLabelStyle]}>
+        <Animated.Text style={[styles.label, stackedLabelStyle, labelColor]}>
           {title}
         </Animated.Text>
       )}
       <TextInput
-        style={styles.input}
+        style={[styles.input, textStyles]}
         value={text}
         placeholder={isFloating ? (isFocused || text ? placeholder : '') : placeholder} // Adjusted here
         placeholderTextColor="#B8BBBF"

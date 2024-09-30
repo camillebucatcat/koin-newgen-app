@@ -39,7 +39,7 @@ const Home = ({ navigation }) => {
               <SansSerifText style={[gStyle.textLight, gStyle.fw600, gStyle.fs32]}>$8,385.28</SansSerifText>
               <View style={[display.flexBetween, gStyle.gap, gStyle.my4]}>
                 <Button title="Move Funds" customStyles={{ width: '48%', }} transform="normal" shape="round" fill="solid" color="primary" centerText={true} handlePress={() => navigation.navigate('')} />
-                <Button title="Add Funds" customStyles={{ width: '48%', }} transform="normal" shape="round" fill="solid" color="primary" centerText={true} handlePress={() => navigation.navigate('styledDocs/ButtonSample')} />
+                <Button title="Add Funds" customStyles={{ width: '48%', }} transform="normal" shape="round" fill="solid" color="primary" centerText={true} handlePress={() => navigation.navigate('styledDocs/FormFieldSample')} />
               </View>
             </View>
             <View style={[gStyle.darkCard, gStyle.my4, { position: "relative" }]}>

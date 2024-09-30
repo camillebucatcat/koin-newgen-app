@@ -7,15 +7,14 @@ import { display } from '../styles/Display';
 import Button from '../../components/Button';
 import { router } from 'expo-router';
 
-const  ReviewTransaction= ()=>{
+const  FundTransfered= ()=>{
 return(
 <SafeAreaProvider style={gStyle.darkBg}>
 <SafeAreaView>
 <ScrollView>
 <View style={{paddingHorizontal: 16, paddingVertical: 8}}>
     <View style={[gStyle.darkCard, gStyle.mb4,{}]}>
-        <SansSerifText style={[gStyle.fw600, gStyle.fs16, gStyle.textGrayLight, gStyle.mb3,{}]}>Add funds</SansSerifText>
-        <SansSerifText style={[gStyle.textLight, gStyle.fw600, gStyle.fs16, gStyle.mb3,{}]}>You’re about to transfer </SansSerifText>
+        <SansSerifText style={[gStyle.fw600, gStyle.fs16, gStyle.textGrayLight, gStyle.mb3,{}]}>You Transfered</SansSerifText>
         <SansSerifText style={[gStyle.textLight, gStyle.fw600, gStyle.fs32,{}]}>$100</SansSerifText>
     </View>
     <View style={[gStyle.darkCard, gStyle.mb4, display.dFlex,{}]}>
@@ -28,16 +27,12 @@ return(
             <SansSerifText style={[gStyle.fw700, gStyle.fs16,{}]}>Draft Kings Account</SansSerifText>
         </View>
     </View>
-    <View style={[gStyle.darkCard, gStyle.mb4, gStyle.py6,{}]}>
-            <SansSerifText style={[gStyle.fs16, gStyle.textGrayLight, gStyle.mb2, {}]}>Transaction Date</SansSerifText>
-            <SansSerifText style={[gStyle.fw700, gStyle.fs16, {}]}>05 Aug, 2024 (today)</SansSerifText>
-    </View>
-    <Button title="Confirm & Deposit Now" customStyles={[gStyle.fw700, gStyle.mb4]} transform="normal" shape="round" fill="solid" color="primary" expand="block" centerText={true} handlePress={() => router.navigate('')} />
-    <Button title="Depositing Funds" customStyles={[gStyle.fw700, gStyle.mb4]} transform="normal" shape="round" fill="solid" color="primary" expand="block" centerText={true} handlePress={() => router.navigate('')} />
+    
+    <Button title="Return to Account" customStyles={[gStyle.fw700, gStyle.mb4]} transform="normal" shape="round" fill="solid" color="primary" expand="block" centerText={true} handlePress={() => router.navigate('')} />
 </View>
 </ScrollView>
 </SafeAreaView>
 </SafeAreaProvider>
 )
 }
-export default ReviewTransaction;
+export default FundTransfered;

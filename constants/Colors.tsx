@@ -67,5 +67,6 @@ export default {
     light: '#ffffff',
     medium: '#5f5f5f',
     dark: '#2f2f2f',
+    darkgray: '#A8A8A8',
   }
 };

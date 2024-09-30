@@ -15,6 +15,7 @@ import Settings from './tabs/Settings';
 import Discover from './tabs/Discover';
 import ButtonSample from './styledDocs/ButtonSample';
 import FormFieldSample from './styledDocs/FormFieldSample';
+import EverydaySpending from './account/EverydaySpending';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -39,6 +40,7 @@ export default function App() {
           <Stack.Screen name="Home" component={HomeTabs} />
           <Stack.Screen name="styledDocs/ButtonSample" component={ButtonSample} />
           <Stack.Screen name="styledDocs/FormFieldSample" component={FormFieldSample} />
+          <Stack.Screen name="EverydaySpending" component={EverydaySpending} />
         </Stack.Navigator>
       </NavigationContainer>
     </ThemeProvider>

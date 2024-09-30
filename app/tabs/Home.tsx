@@ -13,8 +13,9 @@ import Colors from '../../constants/Colors';
 import SegmentControl from '../../components/SegmentControl';
 import GradientButton from '../../components/GradientButton';
 import { SansSerifText } from '../../components/SanSerifText';
-import Header from '../../components/Header';
+
 import { router } from 'expo-router';
+import HomeHeader from '../../components/HomeHeader';
 
 const Home = ({ navigation }) => {
   const [activeSegment, setActiveSegment] = useState('For You');
@@ -25,7 +26,7 @@ const Home = ({ navigation }) => {
 
   return (
     <SafeAreaProvider style={gStyle.darkBg}>
-      <Header />
+      <HomeHeader />
       <SegmentControl 
         titles={['For You', 'Accounts', 'Credit', 'Rewards' ]}
         onSegmentChange={handleSegmentChange}

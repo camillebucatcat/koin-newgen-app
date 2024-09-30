@@ -12,11 +12,11 @@ import SendLightIcon from '../../assets/icons/svg-icons/send-light-icon';
 import RequestLightIcon from '../../assets/icons/svg-icons/request-light-icon';
 import SplitLightIcon from '../../assets/icons/svg-icons/split-light-icon';
 import Colors from '../../constants/Colors';
-import Header from '../../components/Header';
 import RecentTransactions from '../../components/RecentTransactions';
 import Button from '../../components/Button';
 import SendFunds from '../move-transfer/send-funds/SendFunds';
 import RequestFund from '../move-transfer/request-funds/RequestFund';
+import HomeHeader from '../../components/HomeHeader';
 
 const Settings = ({ navigation }) => {
   const [activeSegment, setActiveSegment] = useState('Transfer');
@@ -40,7 +40,7 @@ const Settings = ({ navigation }) => {
   };
   return (
     <SafeAreaProvider style={gStyle.darkBg}>
-      <Header />
+      <HomeHeader />
       <SegmentControl 
         titles={['Transfer', 'Manage', 'History' ]}
         onSegmentChange={handleSegmentChange}

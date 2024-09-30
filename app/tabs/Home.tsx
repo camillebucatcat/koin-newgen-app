@@ -34,8 +34,6 @@ const Home = ({ navigation }) => {
         <ScrollView>
         {activeSegment === 'For You' && (
           <View style={{paddingHorizontal: 16, paddingVertical: 8}}>
-            <SansSerifText style={[gStyle.mb6, gStyle.fs12]}>Test</SansSerifText>
-
             <View style={[gStyle.darkCard, gStyle.my4]}>
               <SansSerifText style={[gStyle.textLight, gStyle.fw500, gStyle.fs16]}>Total Available Cash</SansSerifText>
               <SansSerifText style={[gStyle.textLight, gStyle.fw600, gStyle.fs32]}>$8,385.28</SansSerifText>
@@ -61,7 +59,7 @@ const Home = ({ navigation }) => {
             </View>
             <View style={[gStyle.my4, gStyle.darkCard]}>
             <View style={[display.flexBetween, display.alignCenter, {marginBottom: 24}]}>
-              <Text style={[gStyle.textLight, gStyle.fw700]}>Recent Transactions</Text>
+              <SansSerifText style={[gStyle.textLight, gStyle.fw700]}>Recent Transactions</SansSerifText>
               <GradientButton title="View Detail" customStyles={{width: '30%'}} customSpace={{padding: 12}} transform="normal" shape="round" fill="outline" color="light"  centerText={true} handlePress={() => router.push('')} />
             </View>
               <RecentTransactions />

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { View, Text, TouchableOpacity, Animated, Easing, LayoutChangeEvent, StyleSheet } from 'react-native';
+import { View, TouchableOpacity, Animated, Easing, LayoutChangeEvent, StyleSheet } from 'react-native';
 import Colors from '../constants/Colors';
+import { SansSerifText } from './SanSerifText';
 
 interface SegmentControlProps {
   titles: string[]; 
@@ -48,7 +49,7 @@ const SegmentControl: React.FC<SegmentControlProps> = ({ titles, onSegmentChange
           onLayout={measureSegment(index)}
           style={styles.segmentButton}
         >
-          <Text
+          <SansSerifText
             maxFontSizeMultiplier={1.1}
             minimumFontScale={1.1}
             style={[
@@ -57,7 +58,7 @@ const SegmentControl: React.FC<SegmentControlProps> = ({ titles, onSegmentChange
             ]}
           >
             {title}
-          </Text>
+          </SansSerifText>
         </TouchableOpacity>
       ))}
       <Animated.View

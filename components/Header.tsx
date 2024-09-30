@@ -5,6 +5,7 @@ import { display } from '../app/styles/Display';
 import Button from './Button';
 import images from '../constants/Images';
 import { LinearGradient } from 'expo-linear-gradient';
+import { SansSerifText } from './SanSerifText';
 const  Header= ()=>{
 return(
 <View style={[gStyle.py4, gStyle.px6]}>
@@ -22,7 +23,7 @@ return(
         </View>
         </LinearGradient>
         </TouchableOpacity>
-        <Text style={[gStyle.textLight, gStyle.fw400, gStyle.ml6, gStyle.fs18, {textAlign: 'left', flex: 1}]}>Morning, <Text style={[gStyle.fw500]}>Ethan</Text></Text>
+        <SansSerifText style={[gStyle.textLight, gStyle.fw400, gStyle.ml6, gStyle.fs18, {textAlign: 'left', flex: 1}]}>Morning, <SansSerifText style={[gStyle.fw500]}>Ethan</SansSerifText></SansSerifText>
         <TouchableOpacity>
             <Image source={images.icon.notification}/>
         </TouchableOpacity>

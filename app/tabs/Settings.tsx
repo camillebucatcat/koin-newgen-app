@@ -68,31 +68,31 @@ const Settings = ({ navigation }) => {
             <View>
               <SansSerifText style={[gStyle.textLight, gStyle.fw600, gStyle.fs16, gStyle.mt2, gStyle.px4, gStyle.py2]}>Recent</SansSerifText>
               <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={[gStyle.pt4]}>
-                <TouchableOpacity style={[gStyle.ml4]}>
+                <TouchableOpacity style={[gStyle.ml4]} activeOpacity={0.5}>
                   <View style={[gStyle.mb3, styles.avatarCard, { borderRadius: 12, overflow: 'hidden' }]}>
                     <Image source={images.profileSample.user1} style={styles.avatarImg}/>
                     <SansSerifText style={[gStyle.textLight, gStyle.fs12, gStyle.fw400, display.alignTextCenter]}>Olivia Rhye</SansSerifText>
                   </View>
                 </TouchableOpacity>
-                <TouchableOpacity style={[gStyle.ml5]}>
+                <TouchableOpacity style={[gStyle.ml5]} activeOpacity={0.5}>
                   <View style={[gStyle.mb3, styles.avatarCard, { borderRadius: 12, overflow: 'hidden' }]}>
                     <Image source={images.profileSample.user2} style={styles.avatarImg}/>
                     <SansSerifText style={[gStyle.textLight, gStyle.fs12, gStyle.fw400, display.alignTextCenter]}>Joshua Smith</SansSerifText>
                   </View>
                 </TouchableOpacity>
-                <TouchableOpacity style={[gStyle.ml5]}>
+                <TouchableOpacity style={[gStyle.ml5]} activeOpacity={0.5}>
                   <View style={[gStyle.mb3, styles.avatarCard, { borderRadius: 12, overflow: 'hidden' }]}>
                     <Image source={images.profileSample.user3} style={styles.avatarImg}/>
                     <SansSerifText style={[gStyle.textLight, gStyle.fs12, gStyle.fw400, display.alignTextCenter]}>Hailey Williams</SansSerifText>
                   </View>
                 </TouchableOpacity>
-                <TouchableOpacity style={[gStyle.ml5]}>
+                <TouchableOpacity style={[gStyle.ml5]} activeOpacity={0.5}>
                   <View style={[gStyle.mb3, styles.avatarCard, { borderRadius: 12, overflow: 'hidden' }]}>
                     <Image source={images.profileSample.user4} style={styles.avatarImg}/>
                     <SansSerifText style={[gStyle.textLight, gStyle.fs12, gStyle.fw400, display.alignTextCenter]}>Claudette Jones</SansSerifText>
                   </View>
                 </TouchableOpacity>
-                <TouchableOpacity style={[gStyle.ml5]}>
+                <TouchableOpacity style={[gStyle.ml5]} activeOpacity={0.5}>
                   <View style={[gStyle.mb3, styles.avatarCard, { borderRadius: 12, overflow: 'hidden' }]}>
                     <Image source={images.profileSample.user5} style={styles.avatarImg}/>
                     <SansSerifText style={[gStyle.textLight, gStyle.fs12, gStyle.fw400, display.alignTextCenter]}>Rachel Miller</SansSerifText>
@@ -103,25 +103,25 @@ const Settings = ({ navigation }) => {
             <View>
               <SansSerifText style={[gStyle.textLight, gStyle.fw600, gStyle.fs16, gStyle.mt2, gStyle.px4, gStyle.py2]}>Recent Groups</SansSerifText>
               <ScrollView horizontal={true} contentContainerStyle={styles.scrollViewContent} showsHorizontalScrollIndicator={false} style={[gStyle.pt4]}>
-                <TouchableOpacity style={[gStyle.ml4]}>
+                <TouchableOpacity style={[gStyle.ml4]} activeOpacity={0.5}>
                   <View style={[gStyle.mb3, styles.avatarCard, { borderRadius: 12, overflow: 'hidden' }]}>
                     <Image source={images.groupSample.group1} style={styles.avatarImg}/>
                     <SansSerifText style={[gStyle.textLight, gStyle.fs12, gStyle.fw400, display.alignTextCenter]}>EDC Fam</SansSerifText>
                   </View>
                 </TouchableOpacity>
-                <TouchableOpacity style={[gStyle.ml5]}>
+                <TouchableOpacity style={[gStyle.ml5]} activeOpacity={0.5}>
                   <View style={[gStyle.mb3, styles.avatarCard, { borderRadius: 12, overflow: 'hidden' }]}>
                     <Image source={images.groupSample.group2} style={styles.avatarImg}/>
                     <SansSerifText style={[gStyle.textLight, gStyle.fs12, gStyle.fw400, display.alignTextCenter]}>Super Club</SansSerifText>
                   </View>
                 </TouchableOpacity>
-                <TouchableOpacity style={[gStyle.ml5]}>
+                <TouchableOpacity style={[gStyle.ml5]} activeOpacity={0.5}>
                   <View style={[gStyle.mb3, styles.avatarCard,  { borderRadius: 12, overflow: 'hidden' }]}>
                     <Image source={images.groupSample.group3} style={styles.avatarImg}/>
                     <SansSerifText style={[gStyle.textLight, gStyle.fs12, gStyle.fw400, display.alignTextCenter]}>Bachelorette Babes</SansSerifText>
                   </View>
                 </TouchableOpacity>
-                <TouchableOpacity style={[gStyle.ml5]}>
+                <TouchableOpacity style={[gStyle.ml5]} activeOpacity={0.5}>
                   <View style={[gStyle.mb3, styles.avatarCard, { borderRadius: 12, overflow: 'hidden' }]}>
                     <Image source={images.groupSample.group4} style={styles.avatarImg}/>
                     <SansSerifText style={[gStyle.textLight, gStyle.fs12, gStyle.fw400, display.alignTextCenter]}>Family</SansSerifText>
@@ -185,43 +185,43 @@ const Settings = ({ navigation }) => {
               <GradientButton title="Manage Groups" transform="normal" handlePress={() => navigation.navigate('')} fill="outline" expand="block" />
             </View>
             <View style={[gStyle.darkCard, gStyle.my4]}>
-              <Text style={[gStyle.textLight, gStyle.fw700, gStyle.fs16]}>Markers</Text>
-              <Text style={[gStyle.textLight, gStyle.fw400, gStyle.fs14, gStyle.mt2]}>Manage your markers...</Text>
+              <SansSerifText style={[gStyle.textLight, gStyle.fw700, gStyle.fs16]}>Markers</SansSerifText>
+              <SansSerifText style={[gStyle.textLight, gStyle.fw400, gStyle.fs14, gStyle.mt2]}>Manage your markers...</SansSerifText>
               <ScrollView horizontal={true} contentContainerStyle={styles.scrollViewContent} showsHorizontalScrollIndicator={false} style={[gStyle.mt6,]}>
                 <View style={[styles.avatarCard, gStyle.ml1]}>
                   <Image source={images.groupSample.casino1} style={styles.avatarImg}/>
-                  <Text style={[gStyle.textLight, gStyle.fs12, gStyle.fw400, display.alignTextCenter]}>Casino</Text>
+                  <SansSerifText style={[gStyle.textLight, gStyle.fs12, gStyle.fw400, display.alignTextCenter]}>Casino</SansSerifText>
                 </View>
                 <View style={[styles.avatarCard, gStyle.ml5]}>
                   <Image source={images.groupSample.casino2} style={styles.avatarImg}/>
-                  <Text style={[gStyle.textLight, gStyle.fs12, gStyle.fw400, display.alignTextCenter]}>Casino</Text>
+                  <SansSerifText style={[gStyle.textLight, gStyle.fs12, gStyle.fw400, display.alignTextCenter]}>Casino</SansSerifText>
                 </View>
                 <View style={[styles.avatarCard, gStyle.ml5]}>
                   <Image source={images.groupSample.casino3} style={styles.avatarImg}/>
-                  <Text style={[gStyle.textLight, gStyle.fs12, gStyle.fw400, display.alignTextCenter]}>Casino</Text>
+                  <SansSerifText style={[gStyle.textLight, gStyle.fs12, gStyle.fw400, display.alignTextCenter]}>Casino</SansSerifText>
                 </View>
               </ScrollView>
               <GradientButton title="Manage Markers" transform="normal" handlePress={() => navigation.navigate('')} fill="outline" expand="block" />
             </View>
             <View style={[gStyle.darkCard, gStyle.my4]}>
-              <Text style={[gStyle.textLight, gStyle.fw700, gStyle.fs16]}>Wristbands</Text>
-              <Text style={[gStyle.textLight, gStyle.fw400, gStyle.fs14, gStyle.mt2]}>Manage your NFC wristbands...</Text>
+              <SansSerifText style={[gStyle.textLight, gStyle.fw700, gStyle.fs16]}>Wristbands</SansSerifText>
+              <SansSerifText style={[gStyle.textLight, gStyle.fw400, gStyle.fs14, gStyle.mt2]}>Manage your NFC wristbands...</SansSerifText>
               <ScrollView horizontal={true} contentContainerStyle={styles.scrollViewContent} showsHorizontalScrollIndicator={false} style={[gStyle.mt6,]}>
                 <View style={[styles.avatarCard, gStyle.ml1]}>
                   <Image source={images.groupSample.group1} style={styles.avatarImg}/>
-                  <Text style={[gStyle.textLight, gStyle.fs12, gStyle.fw400, display.alignTextCenter]}>EDC Fam</Text>
+                  <SansSerifText style={[gStyle.textLight, gStyle.fs12, gStyle.fw400, display.alignTextCenter]}>EDC Fam</SansSerifText>
                 </View>
                 <View style={[styles.avatarCard, gStyle.ml5]}>
                   <Image source={images.groupSample.group2} style={styles.avatarImg}/>
-                  <Text style={[gStyle.textLight, gStyle.fs12, gStyle.fw400, display.alignTextCenter]}>Super Club</Text>
+                  <SansSerifText style={[gStyle.textLight, gStyle.fs12, gStyle.fw400, display.alignTextCenter]}>Super Club</SansSerifText>
                 </View>
                 <View style={[styles.avatarCard, gStyle.ml5]}>
                   <Image source={images.groupSample.group3} style={styles.avatarImg}/>
-                  <Text style={[gStyle.textLight, gStyle.fs12, gStyle.fw400, display.alignTextCenter]}>Bachelorette Babes</Text>
+                  <SansSerifText style={[gStyle.textLight, gStyle.fs12, gStyle.fw400, display.alignTextCenter]}>Bachelorette Babes</SansSerifText>
                 </View>
                 <View style={[styles.avatarCard, gStyle.ml5]}>
                   <Image source={images.groupSample.group4} style={styles.avatarImg}/>
-                  <Text style={[gStyle.textLight, gStyle.fs12, gStyle.fw400, display.alignTextCenter]}>Family</Text>
+                  <SansSerifText style={[gStyle.textLight, gStyle.fs12, gStyle.fw400, display.alignTextCenter]}>Family</SansSerifText>
                 </View>
               </ScrollView>
               <GradientButton title="Manage Wristbands" transform="normal" handlePress={() => navigation.navigate('')} fill="outline" expand="block" />

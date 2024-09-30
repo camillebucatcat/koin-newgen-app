@@ -2,6 +2,7 @@ import React from 'react';
 import { ImageSourcePropType, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import Colors from '../constants/Colors';
+import { SansSerifText } from './SanSerifText';
 
 interface ButtonProps {
   title: string;
@@ -63,14 +64,14 @@ const GradientButton: React.FC<ButtonProps> = ({
           ]}
         >
           {image && <Image source={image} style={styles.image} />}
-          <Text style={[
+          <SansSerifText style={[
             styles.baseText,
             color === 'light' ? texts.light : texts.dark,
             transform === '' ? transforms.default : transforms.normal,
             customSpace
           ]}>
             {title}
-          </Text>
+          </SansSerifText>
         </View>
       </LinearGradient>
     </TouchableOpacity>

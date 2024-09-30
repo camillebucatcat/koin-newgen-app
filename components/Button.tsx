@@ -1,6 +1,7 @@
 import { TouchableOpacity, Text, Image, StyleSheet, View, ImageSourcePropType } from 'react-native';
 import React from 'react';
 import Colors from '../constants/Colors';
+import { SansSerifText } from './SanSerifText';
 
 interface ButtonProps {
   title: string;
@@ -64,7 +65,7 @@ const Buttons: React.FC<ButtonProps> = ({
           ]}
         >
           {image && <Image source={image} style={styles.image} />}
-          <Text
+          <SansSerifText
             style={[
               styles.baseText,
               transform === '' ? transforms.default : transforms.normal,
@@ -87,7 +88,7 @@ const Buttons: React.FC<ButtonProps> = ({
             ]}
           >
             {title}
-          </Text>
+          </SansSerifText>
         </View>
       </View>
     </TouchableOpacity>
@@ -113,7 +114,6 @@ const styles = StyleSheet.create({
   },
   baseText: {
     fontSize: 14,
-    // fontFamily: 'AventaBold',
   },
   centerButtonText: {
     justifyContent: 'center',

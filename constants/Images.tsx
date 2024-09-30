@@ -107,6 +107,9 @@ const images = {
         casino4: require(pathImages + '/group-sample/casino-4.png'),
     },
     header: require(pathImages + 'profile.png'),
+    account:{
+        draftkings: require(pathImages + 'draftkings.png')
+    }
 
 }
 export default images;

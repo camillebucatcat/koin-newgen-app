@@ -18,6 +18,8 @@ import FormFieldSample from './styledDocs/FormFieldSample';
 import EverydaySpending from './account/EverydaySpending';
 import EntertainmentFunds from './account/EntertainmentFunds';
 import Draftkings from './account/DraftKings';
+import TransactionDetails from './transaction/TransactionDetails';
+import SendFunds from './send-funds/SendFunds';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -45,6 +47,7 @@ export default function App() {
           <Stack.Screen name="EverydaySpending" component={EverydaySpending} />
           <Stack.Screen name="EntertainmentFunds" component={EntertainmentFunds} />
           <Stack.Screen name="DraftKings" component={Draftkings} />
+          <Stack.Screen name="TransactionDetails" component={TransactionDetails}/>
         </Stack.Navigator>
       </NavigationContainer>
     </ThemeProvider>

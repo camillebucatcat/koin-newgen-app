@@ -223,7 +223,7 @@ const Home = ({ navigation }) => {
                 </View>
               </TouchableOpacity>
             </View>
-          </View>
+        </View>
         )}  
         {activeSegment === 'Accounts' && ( 
           <View style={{paddingHorizontal: 16, paddingVertical: 8, paddingBottom: 150}}>

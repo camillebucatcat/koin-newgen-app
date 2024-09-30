@@ -5,7 +5,7 @@ export const display = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
   },
-  alignTextCenter: {
+  textCenter: {
     textAlign: 'center'
   },
   alignSelfEnd: {
@@ -38,6 +38,11 @@ export const display = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
+  },
+  flexCenterStart: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   flexCenterCenter: {
     flex: 1,

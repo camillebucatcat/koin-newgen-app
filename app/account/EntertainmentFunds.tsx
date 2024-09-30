@@ -9,7 +9,7 @@ import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import images from '../../constants/Images';
 import RecentTransactions from '../../components/RecentTransactions';
 
-const  EverydaySpending= ()=>{
+const  EntertainmentFunds= ()=>{
 return(
     <SafeAreaProvider style={gStyle.darkBg}>
         <SafeAreaView>
@@ -18,8 +18,8 @@ return(
                     {/* card  */}
                 <View style={[gStyle.darkCard, gStyle.mt4, gStyle.mb8]}>
                     <View style={[display.dFlex, display.alignCenter, gStyle.mb6]}>
-                        <Image source={images.lean.leanLeftSuccess} style={[gStyle.mr2]}/>
-                        <SansSerifText style={[gStyle.fw600, gStyle.textLight]}>Everyday Spending</SansSerifText>
+                        <Image source={images.lean.leanLeftPrimary} style={[gStyle.mr2]}/>
+                        <SansSerifText style={[gStyle.fw600, gStyle.textLight]}>Entertainment</SansSerifText>
                     </View>
                             <SansSerifText style={[gStyle.textLight, gStyle.fw500, gStyle.fs16, gStyle.mb1]}>Total Available Cash</SansSerifText>
                             <SansSerifText style={[gStyle.textLight, gStyle.fw600, gStyle.fs32]}>$8,385.28</SansSerifText>
@@ -61,4 +61,4 @@ return(
     </SafeAreaProvider>
 )
 }
-export default EverydaySpending;
+export default EntertainmentFunds;

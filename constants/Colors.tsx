@@ -22,6 +22,7 @@ export default {
     color: '#282828',
     darkShade: '#232323',
     darkTint: '#3e3e3e',
+    darkgray: '#545454',
   },
   primary:{
     color: '#543D8A',

@@ -10,7 +10,7 @@ interface ButtonProps {
   customSpace?: object;
   shape?: 'default' | 'round';
   fill?: 'solid' | 'clear' | 'outline';
-  color?: 'primary' | 'success' | 'danger' | 'light' | 'dark';
+  color?: 'primary' | 'success' | 'danger' | 'light' | 'dark' | 'darkgray';
   text?: 'primary' | 'success' | 'danger' | 'light' | 'dark' | 'white';
   image?: ImageSourcePropType;
   transform?: '' | 'normal';
@@ -164,6 +164,9 @@ const colorStyles = StyleSheet.create({
   light: {
     backgroundColor: Colors.light.color,
   },
+  darkgray: {
+    backgroundColor: Colors.dark.darkgray,
+  },
 });
 
 const borderStyles = StyleSheet.create({
@@ -186,6 +189,10 @@ const borderStyles = StyleSheet.create({
   light: {
     borderWidth: 1,
     borderColor: Colors.light.color,
+  },
+  darkgray: {
+    borderWidth: 1,
+    backgroundColor: Colors.dark.darkgray,
   },
 });
 

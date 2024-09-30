@@ -20,6 +20,7 @@ import EntertainmentFunds from './account/EntertainmentFunds';
 import Draftkings from './account/DraftKings';
 import TransactionDetails from './transaction/TransactionDetails';
 import SendFunds from './send-funds/SendFunds';
+import AddFunds from './funds/AddFunds';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -48,6 +49,7 @@ export default function App() {
           <Stack.Screen name="EntertainmentFunds" component={EntertainmentFunds} />
           <Stack.Screen name="DraftKings" component={Draftkings} />
           <Stack.Screen name="TransactionDetails" component={TransactionDetails}/>
+          <Stack.Screen name="AddFunds" component={AddFunds} />
         </Stack.Navigator>
       </NavigationContainer>
     </ThemeProvider>

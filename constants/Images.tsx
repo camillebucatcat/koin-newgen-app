@@ -20,7 +20,8 @@ const images = {
         notification: require(pathIcons + 'notification-bell.png'),
         list: require(pathIcons + 'list.png'),
         splitup: require(pathIcons + 'splitup.png'),
-        plus: require(pathIcons + 'plus.png')
+        plus: require(pathIcons + 'plus.png'),
+        arrowDown: require(pathIcons + 'arrow-down.png'),
     },
     home: {
         dice: require(pathImages + 'dice.png'),

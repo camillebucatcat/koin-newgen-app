@@ -6,12 +6,14 @@ import { SansSerifText } from '../../components/SanSerifText';
 import { display } from '../styles/Display';
 import Button from '../../components/Button';
 import { router } from 'expo-router';
+import Header from '../../components/Header';
 
 const  ReviewTransaction= ()=>{
 return(
 <SafeAreaProvider style={gStyle.darkBg}>
 <SafeAreaView>
 <ScrollView>
+<Header title='Review'/>
 <View style={{paddingHorizontal: 16, paddingVertical: 8}}>
     <View style={[gStyle.darkCard, gStyle.mb4,{}]}>
         <SansSerifText style={[gStyle.fw600, gStyle.fs16, gStyle.textGrayLight, gStyle.mb3,{}]}>Add funds</SansSerifText>

@@ -17,7 +17,7 @@ const Header: React.FC<TitleProps> = ({ title }) => {
         <TouchableOpacity style={[ gStyle.mr4]}>
             <Image source={images.icon.arrowBack}/>
         </TouchableOpacity>
-        <SansSerifText style={[gStyle.fw400,  gStyle.fs18, {textAlign: 'left', flex: 1}]}>{title}</SansSerifText>
+        <SansSerifText style={[gStyle.fw500,  gStyle.fs18, {textAlign: 'left', flex: 1}]}>{title}</SansSerifText>
       </View>
     </View>
   )

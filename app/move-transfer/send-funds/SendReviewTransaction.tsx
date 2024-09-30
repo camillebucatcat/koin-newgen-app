@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, ScrollView } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
-
 import { router } from 'expo-router';
 import { gStyle } from '../../styles/Global';
 import { SansSerifText } from '../../../components/SanSerifText';

@@ -6,10 +6,12 @@ import { gStyle } from '../styles/Global';
 import { display } from '../styles/Display';
 import { SansSerifText } from '../../components/SanSerifText';
 import Button from '../../components/Button';
+import Header from '../../components/Header';
 
 const TransactionDetails = ({ navigation }) => {
   return (
     <SafeAreaProvider style={gStyle.darkBg}>
+      <Header title='Transaction Details'/>
       <SafeAreaView style={{ flex: 1 }}>
         <ScrollView>
           <View style={{paddingHorizontal: 16, paddingVertical: 8}}>

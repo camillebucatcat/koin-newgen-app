@@ -109,7 +109,8 @@ const images = {
     },
     header: require(pathImages + 'profile.png'),
     account:{
-        draftkings: require(pathImages + 'draftkings.png')
+        draftkings: require(pathImages + 'draftkings.png'),
+        confetti: require(pathImages + 'confetti.png')
     }
 
 }

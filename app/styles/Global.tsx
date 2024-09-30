@@ -76,9 +76,17 @@ export const gStyle = StyleSheet.create({
   textOrangeLight: {
     color: '#FA8F5C'
   },
+  textLightBeige:{
+    color: '#FFE7DC'
+  },
 
   darkCard: {
     backgroundColor: '#3C3A3C',
+    borderRadius: 20,
+    padding: 20,
+  },
+  successCard: {
+    backgroundColor: '#257554',
     borderRadius: 20,
     padding: 20,
   },

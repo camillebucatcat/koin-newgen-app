@@ -22,13 +22,23 @@ return(
                     <View style={[gStyle.mt8,{}]}>
                         <SansSerifText style={[gStyle.fs12, gStyle.textLight, gStyle.mb4,{}]}>Or quick select one of the following amounts:</SansSerifText>
 
-                        <View style={[display.flexCenterBetween,{}]}>
+                        <View style={[display.flexCenterBetween, gStyle.mb8,{}]}>
                         <Button title="$10" transform="normal" shape="default"  customStyles={[gStyle.fs700, gStyle.fs16,{ width: '23%', }]}  fill="solid" color="darkgray" centerText={true} handlePress={() =>('')} />
                         <Button title="$20" transform="normal" shape="default"  customStyles={[gStyle.fs700, gStyle.fs16,{ width: '23%', }]}  fill="solid" color="darkgray" centerText={true} handlePress={() =>('')} />
                         <Button title="$50" transform="normal" shape="default"  customStyles={[gStyle.fs700, gStyle.fs16,{ width: '23%', }]} fill="solid" color="darkgray" centerText={true} handlePress={() =>('')} />
                         <Button title="$100" transform="normal" shape="default"  customStyles={[gStyle.fs700, gStyle.fs16,{ width: '23%', }]}  fill="solid" color="darkgray" centerText={true} handlePress={() =>('')} />
                         </View>
                     </View>
+
+                    <SansSerifText style={[gStyle.fw600, gStyle.mb5, gStyle.textLight, {}]}>Select Funding Source:</SansSerifText>
+
+                    <View style={[gStyle.mb8, {}]}></View>
+
+                    <SansSerifText style={[gStyle.fw600, gStyle.mb5, gStyle.textLight, {}]}>Transaction Date</SansSerifText>
+
+                    <View style={[gStyle.mb8, {}]}></View>
+
+                    <Button title="Review Transaction" transform="normal" shape="round"  customStyles={[gStyle.fs700]} expand="block" fill="solid" color="primary" centerText={true} handlePress={() =>('')} />
                 </View>
             </ScrollView>
         </SafeAreaView>

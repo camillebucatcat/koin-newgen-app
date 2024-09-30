@@ -22,6 +22,7 @@ import TransactionDetails from './transaction/TransactionDetails';
 // import SendFunds from './send-funds/SendFunds';
 import AddFunds from './funds/AddFunds';
 import SendFunds from './send-funds/SendFunds';
+import ReviewTransaction from './funds/Review';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -52,6 +53,7 @@ export default function App() {
           <Stack.Screen name="TransactionDetails" component={TransactionDetails}/>
           <Stack.Screen name="AddFunds" component={AddFunds} />
           <Stack.Screen name="SendFunds" component={SendFunds}/>
+          <Stack.Screen name="Review" component={ReviewTransaction}/>
         </Stack.Navigator>
       </NavigationContainer>
     </ThemeProvider>

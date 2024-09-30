@@ -17,7 +17,19 @@ return(
                     <SansSerifText style={[gStyle.textLight, gStyle.fs16, gStyle.mb2,{}]}>How much do you want to add to your</SansSerifText>
                     <SansSerifText style={[gStyle.mb8, {}]}><Text style={[gStyle.fw700,{}]}>“Draft Kings” Account</Text>?</SansSerifText>
 
-                    <FormField title="Amount" isFloating={false} placeholder="$ 0.00"></FormField>
+                    <FormField
+                        title="Amount to transfer"
+                        placeholder="$ 0.00"
+                        isFloating={false}
+                        backgroundStyles={{ backgroundColor: '#3C3A3C',  borderColor: '#A8A8A8',}}
+                        labelColor={{ color: '#fff'}}
+                        textStyles={{fontWeight: 600, fontSize: 24, marginTop: 12, color: '#fff', fontFamily: 'Aventa' }}
+                        maxLength={50}
+                        securityMask={false}
+                        onPress={() => { }}
+                        onKeyPress={() => { }}
+                        isActive={false}
+                        />
 
                     <View style={[gStyle.mt8,{}]}>
                         <SansSerifText style={[gStyle.fs12, gStyle.textLight, gStyle.mb4,{}]}>Or quick select one of the following amounts:</SansSerifText>

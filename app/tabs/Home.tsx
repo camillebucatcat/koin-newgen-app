@@ -48,7 +48,7 @@ const Home = ({ navigation }) => {
                   See the benefits we give you for your
                   <SansSerifText style={gStyle.fw700}> local casino</SansSerifText>
                 </SansSerifText>
-                <TouchableOpacity activeOpacity={0.8} style={{ marginTop: 20 }}>
+                <TouchableOpacity activeOpacity={0.8} style={{ marginTop: 20 }} onPress={() => navigation.navigate('Discover')}>
                   <SansSerifText style={gStyle.textPrimaryLight}>View benefits</SansSerifText>
                 </TouchableOpacity>
               </View>
@@ -60,7 +60,7 @@ const Home = ({ navigation }) => {
             <View style={[gStyle.my4, gStyle.darkCard]}>
             <View style={[display.flexBetween, display.alignCenter, {marginBottom: 24}]}>
               <SansSerifText style={[gStyle.textLight, gStyle.fw700]}>Recent Transactions</SansSerifText>
-              <GradientButton title="View Detail" customStyles={{width: '30%'}} customSpace={{padding: 12}} transform="normal" shape="round" fill="outline" color="light"  centerText={true} handlePress={() => router.push('')} />
+              <GradientButton title="View Detail" customStyles={{width: '35%'}} customSpace={{padding: 12}} transform="normal" shape="round" fill="outline" color="light"  centerText={true} handlePress={() => router.push('')} />
             </View>
               <RecentTransactions />
             </View>
@@ -81,7 +81,7 @@ const Home = ({ navigation }) => {
             <View style={[ gStyle.darkCard, gStyle.my4 ]}>
               <View style={[ display.flexBetween, display.alignCenter, gStyle.mb4 ]}>
                 <SansSerifText style={[ gStyle.textLight, gStyle.fw700, gStyle.fs14 ]}>Nearby Casinos</SansSerifText>
-                <GradientButton title="View All" customStyles={{width: '30%'}}  customSpace={{padding: 12}} transform="normal" shape="round" fill="outline" color="light" centerText={true} handlePress={() => navigation.navigate('')} />
+                <GradientButton title="View All" customStyles={{width: '35%'}}  customSpace={{padding: 12}} transform="normal" shape="round" fill="outline" color="light" centerText={true} handlePress={() => navigation.navigate('')} />
               </View>
               <View style={styles.mapContainer}>
                 <Image source={images.home.map} style={styles.relativeMap} />
@@ -91,7 +91,7 @@ const Home = ({ navigation }) => {
             <View style={[ gStyle.darkCard, gStyle.my4]}>
               <View style={[ display.flexBetween, display.alignCenter, gStyle.mb4 ]}>
                 <SansSerifText style={[gStyle.textLight, gStyle.fw700, gStyle.fs14, gStyle.pt4 ]}>Your Player Card</SansSerifText>
-                <GradientButton title="View Detail" customStyles={{width: '30%'}} customSpace={{padding: 12}} transform="normal" shape="round" fill="outline" color="light"  centerText={true} handlePress={() => navigation.navigate('')} />
+                <GradientButton title="View Detail" customStyles={{width: '35%'}} customSpace={{padding: 12}} transform="normal" shape="round" fill="outline" color="light"  centerText={true} handlePress={() => navigation.navigate('')} />
               </View>
               <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={[gStyle.mt6]}>
                 <View style={[styles.playerCard,]}>
@@ -174,14 +174,14 @@ const Home = ({ navigation }) => {
             <View style={[ gStyle.darkCard, gStyle.my4]}>
               <View style={[ display.flexBetween, display.alignCenter, gStyle.mb4 ]}>
                 <SansSerifText style={[gStyle.textLight, gStyle.fw700, gStyle.fs14 ]}>Insights</SansSerifText>
-                <GradientButton title="View Detail" customStyles={{width: '30%'}} customSpace={{padding: 12}} transform="normal" shape="round" fill="outline" color="light"  centerText={true} handlePress={() => navigation.navigate('')} />
+                <GradientButton title="View Detail" customStyles={{width: '35%'}} customSpace={{padding: 12}} transform="normal" shape="round" fill="outline" color="light"  centerText={true} handlePress={() => navigation.navigate('')} />
               </View>
               <InsightDoughnutChart/>
             </View>
             <View style={[ gStyle.darkCard, gStyle.my4]}>
               <View style={[ display.flexBetween, display.alignCenter, gStyle.mb4 ]}>
                 <SansSerifText style={[gStyle.textLight, gStyle.fw700, gStyle.fs14 ]}>Your Properties</SansSerifText>
-                <GradientButton title="View All" customStyles={{width: '30%'}} customSpace={{padding: 12}} transform="normal" shape="round" fill="outline" color="light"  centerText={true} handlePress={() => navigation.navigate('')} />
+                <GradientButton title="View All" customStyles={{width: '35%'}} customSpace={{padding: 12}} transform="normal" shape="round" fill="outline" color="light"  centerText={true} handlePress={() => navigation.navigate('')} />
               </View>
               <TouchableOpacity style={[ display.dFlex, gStyle.py3, display.flexBetween, display.alignCenter ]} activeOpacity={0.8}>
                 <View style={[]}>

@@ -26,8 +26,19 @@ const  AddFunds= ()=>{
   const [buttonYPosition, setButtonYPosition] = useState(0); // To store button Y position
   const buttonRef = useRef(null);
 
+  // Function to format the date to "01 Aug, 2024"
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    const day = String(date.getDate()).padStart(2, '0');
+    const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    const month = monthNames[date.getMonth()];
+    const year = date.getFullYear();
+    return `${day} ${month}, ${year}`;
+  };
+
   const onDayPress = (day) => {
-    setSelectedDate(day.dateString); // Update the date when selected
+    const formattedDate = formatDate(day.dateString); // Format the selected date
+    setSelectedDate(formattedDate); // Update the date in the required format
     setShowCalendar(false); // Close the calendar modal after selection
   };
 

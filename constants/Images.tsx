@@ -26,6 +26,7 @@ const images = {
         calendar: require(pathIcons + 'calendar.png'),
         arrowUp: require(pathIcons + 'arrow-up.png'),
         checkcirclesuccess: require(pathIcons + 'check-circle.png'),
+        trash: require(pathIcons + 'trash.png'),
     },
     home: {
         dice: require(pathImages + 'dice.png'),

@@ -9,7 +9,7 @@ import { router } from 'expo-router';
 import { display } from '../styles/Display';
 import RadioButton from '../../components/RadioButton';
 import images from '../../constants/Images';
-import { Calendar } from 'react-native-calendars';
+
 
 const  AutoDeposit= ()=>{
     const [selectedAmount, setSelectedAmount] = useState(null);
@@ -132,7 +132,7 @@ return(
                     <SansSerifText style={[gStyle.fw600, gStyle.mb5,gStyle.mt8, gStyle.textLight, {}]}>Select Frequency</SansSerifText>
                         
 
-                    <Button title="Review Auto Deposit" transform="normal" shape="round"  customStyles={[gStyle.fs700]} expand="block" fill="solid" color="primary" centerText={true} handlePress={() =>('')} />
+                    <Button title="Review Auto Deposit" transform="normal" shape="round"  customStyles={[gStyle.fs700, gStyle.mb4]} expand="block" fill="solid" color="primary" centerText={true} handlePress={() =>('')} />
                 </View>
             </ScrollView>
         </SafeAreaView>

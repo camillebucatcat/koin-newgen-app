@@ -6,6 +6,7 @@ import { SansSerifText } from '../../components/SanSerifText';
 import { display } from '../styles/Display';
 import Button from '../../components/Button';
 import { router } from 'expo-router';
+import GradientButton from '../../components/GradientButton';
 import images from '../../constants/Images';
 
 const  DepositSuccessful= ()=>{
@@ -37,6 +38,7 @@ return(
     </View>
     
     <Button title="Return to Account" customStyles={[gStyle.fw700, gStyle.mb4]} transform="normal" shape="round" fill="solid" color="primary" expand="block" centerText={true} handlePress={() => router.navigate('')} />
+    <GradientButton title="Manage Auto Deposit" transform="normal" shape="round" fill="outline" color="light" background="dark" expand="block"  centerText={true} handlePress={() => router.push('')} />
 </View>
 </ScrollView>
 </SafeAreaView>

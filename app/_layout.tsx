@@ -29,6 +29,8 @@ import SendFundReviewTransaction from './move-transfer/send-funds/SendReviewTran
 import RequestReviewTransaction from './move-transfer/request-funds/RequestReviewTransaction';
 import AutoDeposit from './funds/AutoDeposit';
 import ReviewAutoDeposit from './funds/ReviewAutoDeposit';
+import DepositSuccessful from './funds/DepositSuccessful';
+import EditAutoDeposit from './funds/EditAutoDeposit';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -66,6 +68,8 @@ export default function App() {
           <Stack.Screen name="FundTransfered" component={FundTransfered}/>
           <Stack.Screen name="AutoDeposit" component={AutoDeposit}/>
           <Stack.Screen name="ReviewAutoDeposit" component={ReviewAutoDeposit}/>
+          <Stack.Screen name="DepositSuccessful" component={DepositSuccessful}/>
+          <Stack.Screen name="EditAutoDeposit" component={EditAutoDeposit}/>
         </Stack.Navigator>
       </NavigationContainer>
     </ThemeProvider>

@@ -8,12 +8,14 @@ import { router } from 'expo-router';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import images from '../../constants/Images';
 import RecentTransactions from '../../components/RecentTransactions';
+import Header from '../../components/Header';
 
 const  Draftkings= ()=>{
 return(
     <SafeAreaProvider style={gStyle.darkBg}>
         <SafeAreaView>
             <ScrollView>
+            <Header title='Draft Kings Account'/>
                 <View style={{paddingHorizontal: 16, paddingVertical: 8}}>
                     {/* card  */}
                 <View style={[gStyle.darkCard, gStyle.mt4, gStyle.mb8]}>

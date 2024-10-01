@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { View, Text, ScrollView, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import React, { useState, useRef, useEffect} from 'react';
+import { View, Text, ScrollView, StyleSheet, TouchableOpacity, Image, Modal } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { gStyle } from '../styles/Global';
 import Button from '../../components/Button';
@@ -9,6 +9,7 @@ import { router } from 'expo-router';
 import { display } from '../styles/Display';
 import RadioButton from '../../components/RadioButton';
 import images from '../../constants/Images';
+import { Calendar } from 'react-native-calendars';
 
 const  AddFunds= ()=>{
     const [selectedAmount, setSelectedAmount] = useState(null);
@@ -19,6 +20,31 @@ const  AddFunds= ()=>{
   const [isDropdownVisible, setDropdownVisible] = useState(false);
 
   const amounts = ['10', '20', '50', '100'];
+
+  const [selectedDate, setSelectedDate] = useState('01 Aug, 2024');
+  const [showCalendar, setShowCalendar] = useState(false);
+  const [buttonYPosition, setButtonYPosition] = useState(0); // To store button Y position
+  const buttonRef = useRef(null);
+
+  const onDayPress = (day) => {
+    setSelectedDate(day.dateString); // Update the date when selected
+    setShowCalendar(false); // Close the calendar modal after selection
+  };
+
+  // Function to calculate button position
+  const calculateButtonPosition = () => {
+    if (buttonRef.current) {
+      buttonRef.current.measureInWindow((x, y, width, height) => {
+        setButtonYPosition(y + height); // Store Y position + button height to place calendar below
+      });
+    }
+  };
+
+  useEffect(() => {
+    if (showCalendar) {
+      calculateButtonPosition(); // Calculate the position whenever the calendar is shown
+    }
+  }, [showCalendar]);
   
     //amount choice buttons
     const handlePress = (amount) => {
@@ -109,7 +135,7 @@ return(
                         </View>
                     </View>
 
-                    <SansSerifText style={[gStyle.fw600, gStyle.mb5, gStyle.textLight, {}]}>Select Funding Source:</SansSerifText>
+                    <SansSerifText style={[gStyle.fw600, gStyle.mb5, gStyle.mt8, gStyle.textLight, {}]}>Select Funding Source:</SansSerifText>
                     <View style={[gStyle.darkCard, { borderRadius: 12 }]}>
                         <TouchableOpacity activeOpacity={0.5} onPress={() => setDropdownVisible(prev => !prev)}>
                         <View style={[display.flexCenterBetween]}>
@@ -128,11 +154,128 @@ return(
                         )}
                     </View>
 
-                    <View style={[gStyle.mb8, {}]}></View>
-
-                    <SansSerifText style={[gStyle.fw600, gStyle.mb5, gStyle.textLight, {}]}>Transaction Date</SansSerifText>
-
-                    <View style={[gStyle.mb8, {}]}></View>
+                    <SansSerifText style={[gStyle.fw600, gStyle.mb5,gStyle.mt8, gStyle.textLight, {}]}>Transaction Date</SansSerifText>
+                        {/* calendar  */}
+                    <View style={[gStyle.mb8,{ position: 'relative'}]}>
+                    <TouchableOpacity
+                    ref={buttonRef} // Ref to measure button position
+                        onPress={() => setShowCalendar(!showCalendar)}
+                        style={[gStyle.darkCard, display.flexBetween,{
+                          borderRadius: showCalendar ? 20 : 20,  // Set top radius to 10 when calendar is open
+                          borderTopLeftRadius: showCalendar ? 20 : 20,
+                          borderTopRightRadius: showCalendar ? 20 : 20,
+                          borderBottomLeftRadius: showCalendar ? 0 : 20,
+                          borderBottomRightRadius: showCalendar ? 0 : 20,
+                        }]}
+                      >
+                        <SansSerifText style={[gStyle.textLight,gStyle.fs16,{}]}>{selectedDate} <SansSerifText style={[gStyle.fw300,gStyle.fs16,{fontStyle: 'italic'}]}>(today)</SansSerifText></SansSerifText>
+                        <Image source={showCalendar ? images.icon.arrowUp : images.icon.calendar} />
+                      </TouchableOpacity>
+                      {showCalendar && (
+                          <Modal
+                            transparent={true}
+                            visible={showCalendar}
+                            animationType="none"
+                            onRequestClose={() => setShowCalendar(false)}
+                          >
+                            <View
+                              style={{
+                                flex: 1,
+                                justifyContent: 'flex-start',
+                                alignItems: 'center',
+                                marginTop: buttonYPosition,
+                                marginHorizontal: 16,
+                              }}
+                            >
+                              <View
+                                style={{
+                                  backgroundColor: '#3C3A3C',
+                                  padding: 10,
+                                  borderRadius: 10,
+                                  borderTopLeftRadius: 0,
+                                  borderTopRightRadius: 0,
+                                  width: '100%'
+                                }}
+                              >
+                                <Calendar
+                                  onDayPress={onDayPress}
+                                  markedDates={{
+                                    [selectedDate]: {
+                                      selected: true,
+                                      selectedColor: '#FA8F5C',
+                                      selectedTextColor: '#fff',
+                                    },
+                                  }}
+                                  theme={{
+                                    backgroundColor: '#3C3A3C',
+                                    calendarBackground: '#3C3A3C',
+                                    textSectionTitleColor: '#fff',
+                                    dayTextColor: '#fff',
+                                    todayTextColor: '#FA8F5C', // Highlight today's date
+                                    monthTextColor: '#fff',
+                                    // Custom header without year and align month to the left
+                                    'stylesheet.calendar.header': {
+                                      arrow: { display: 'none' }, // Hide arrows
+                                      monthText: {
+                                        fontSize: 16,
+                                        fontWeight: 'bold',
+                                        color: '#fff',
+                                        alignSelf: 'flex-start', // Align month text to the left
+                                      },
+                                      week: {
+                                        marginTop: 5,
+                                        flexDirection: 'row',
+                                        justifyContent: 'space-between',
+                                      },
+                                      header: {
+                                        flexDirection: 'row',
+                                        justifyContent: 'flex-start', // Align header left
+                                        marginLeft: 10,
+                                      },
+                                    },
+                                    // Custom day styles
+                                    'stylesheet.day.basic': {
+                                      base: {
+                                        width: 32,
+                                        height: 32,
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        backgroundColor: '#545454', // Default day background
+                                        borderRadius: 8, // Custom border radius
+                                      },
+                                      selected: {
+                                        backgroundColor: '#FA8F5C', // Selected date background
+                                        borderRadius: 8, // Same border radius for selected
+                                      },
+                                      today: {
+                                        backgroundColor: '#545454',
+                                        borderRadius: 8, // Same border radius for today
+                                      },
+                                    },
+                                  }}
+                                  // Render only the month, remove the year from the display
+                                  renderHeader={(date) => {
+                                    const month = date.toString('MMMM yyyy').split(' ')[0]; // Extract month
+                                    return (
+                                      <Text
+                                        style={{
+                                          fontSize: 16,
+                                          fontWeight: 'bold',
+                                          color: '#fff',
+                                          alignSelf: 'flex-start',
+                                        }}
+                                      >
+                                        {month}
+                                      </Text>
+                                    );
+                                  }}
+                                  hideDayNames={true} // This will remove the weekdays (Mon, Tue, etc.)
+                                />
+                              </View>
+                            </View>
+                          </Modal>
+                        )}
+                    </View>
 
                     <Button title="Review Transaction" transform="normal" shape="round"  customStyles={[gStyle.fs700]} expand="block" fill="solid" color="primary" centerText={true} handlePress={() =>('')} />
                 </View>

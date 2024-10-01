@@ -22,7 +22,9 @@ const images = {
         splitup: require(pathIcons + 'splitup.png'),
         plus: require(pathIcons + 'plus.png'),
         arrowDown: require(pathIcons + 'arrow-down.png'),
-        arrowBack: require(pathIcons + 'arrow-back.png')
+        arrowBack: require(pathIcons + 'arrow-back.png'),
+        calendar: require(pathIcons + 'calendar.png'),
+        arrowUp: require(pathIcons + 'arrow-up.png'),
     },
     home: {
         dice: require(pathImages + 'dice.png'),

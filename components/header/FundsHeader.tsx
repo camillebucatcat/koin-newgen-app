@@ -15,7 +15,11 @@ const FundsHeader: React.FC<TitleProps> = ({ title }) => {
     <View style={[gStyle.py6, gStyle.px6,]}>
       <View style={[ display.dFlex, display.alignCenter ]}>
         <SansSerifText style={[gStyle.fw500,  gStyle.fs18, {textAlign: 'left', flex: 1, color: '#F6F6F6'}]}>{title}</SansSerifText>
-        <Button title="Cancel" transform="normal" shape="round"  customStyles={[gStyle.fs700]} fill="clear" color="light" centerText={true} handlePress={() =>('')} />
+        <TouchableOpacity activeOpacity={0.8}>
+          <View>
+            <SansSerifText style={[gStyle.fw700]}>Cancel</SansSerifText>
+          </View>
+        </TouchableOpacity>
       </View>
     </View>
   )

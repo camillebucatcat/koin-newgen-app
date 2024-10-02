@@ -11,6 +11,7 @@ import RadioButton from '../../../components/RadioButton';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import SelectContact from '../SelectContact';
 import FundsHeader from '../../../components/header/FundsHeader';
+import SelectCategory from '../SelectCategory';
 
 
 
@@ -22,6 +23,7 @@ const SendFunds = () => {
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [isDropdownVisible, setDropdownVisible] = useState(false);
   const [modalSelectContact, setModalSelectContact] = useState(false);
+  const [modalSelectCategory, setModalSelectCategory] = useState(false);
 
   const amounts = ['10', '20', '50', '100'];
 
@@ -47,11 +49,15 @@ const SendFunds = () => {
     });
   };
 
-  const openModalSelectModal = () => {
+  const openModalSelectContact = () => {
     setModalSelectContact(true);
   };
-const closeModal = () => {
-  setModalSelectContact(false);
+  const openModalSelectCategory = () => {
+    setModalSelectCategory(true);
+  };
+  const closeModal = () => {
+    setModalSelectContact(false);
+    setModalSelectCategory(false);
   };
   
    // Define your options
@@ -75,7 +81,7 @@ const closeModal = () => {
         <ScrollView>
           <View style={styles.content}>
             <SansSerifText style={[gStyle.fs12, gStyle.fw600]}>Select Payee</SansSerifText>
-            <TouchableOpacity activeOpacity={0.5} onPress={openModalSelectModal}>
+            <TouchableOpacity activeOpacity={0.5} onPress={openModalSelectContact}>
               <View style={[gStyle.darkCard, gStyle.my4, { borderRadius: 12 }]}>
                 <View style={[display.flexCenterBetween]}>
                   <SansSerifText style={[gStyle.fs14, gStyle.fw400]}>Select Contact</SansSerifText>
@@ -163,7 +169,7 @@ const closeModal = () => {
             </View>
             <View style={[gStyle.mb4]}>
               <SansSerifText style={[ gStyle.fs12, gStyle.textLight, gStyle.my4 ]}>What’s this for?</SansSerifText>
-              <TouchableOpacity activeOpacity={0.5}>
+              <TouchableOpacity activeOpacity={0.5} onPress={openModalSelectCategory}>
                 <View style={[gStyle.darkCard, { borderRadius: 12 }]}>
                   <View style={[display.flexCenterBetween]}>
                     <SansSerifText style={[gStyle.fs14, gStyle.fw400]}>Select Category</SansSerifText>
@@ -183,6 +189,7 @@ const closeModal = () => {
         </ScrollView>
       </SafeAreaView>
       <SelectContact  visible={modalSelectContact} onClose={closeModal}/>
+      <SelectCategory  visible={modalSelectCategory} onClose={closeModal}/>
     </SafeAreaProvider>
   );
 };

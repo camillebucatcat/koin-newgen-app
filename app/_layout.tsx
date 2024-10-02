@@ -35,6 +35,8 @@ import ReviewAutoDeposit from './funds/auto-deposit/ReviewAutoDeposit';
 import DepositSuccessful from './funds/auto-deposit/DepositSuccessful';
 import SelectContact from './move-transfer/SelectContact';
 import InviteContact from './contacts/InviteContact';
+import SelectCategory from './move-transfer/SelectCategory';
+import RadioButtonSample from './styledDocs/RadioButtonSample';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -78,6 +80,8 @@ export default function App() {
           <Stack.Screen name="RequestTransactionSent" component={RequestTransactionSent}/>
           <Stack.Screen name="SelectContact" component={SelectContact}/>
           <Stack.Screen name="InviteContact" component={InviteContact}/>
+          <Stack.Screen name="SelectCategory" component={SelectCategory}/>
+          <Stack.Screen name="RadioButtonSample" component={RadioButtonSample} />
         </Stack.Navigator>
       </NavigationContainer>
     </ThemeProvider>

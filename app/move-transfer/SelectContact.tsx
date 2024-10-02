@@ -27,10 +27,10 @@ const SelectContact: React.FC<ModalProps> = ({ visible, onClose }) => {
           <View style={styles.headerContainer}>
             <SansSerifText style={[gStyle.fw600, gStyle.fs18]}>Select Contact</SansSerifText>
             <TouchableOpacity onPress={onClose}>
-            <View>
-              <Image source={images.icon.close}/>
-            </View>
-          </TouchableOpacity>
+              <View>
+                <Image source={images.icon.close}/>
+              </View>
+            </TouchableOpacity>
           </View>
           <ScrollView showsVerticalScrollIndicator={false} style={styles.scrollView}>
             <View style={[styles.searchContainer, gStyle.mx4]}>

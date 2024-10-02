@@ -9,6 +9,7 @@ import { display } from '../../styles/Display';
 import RadioButton from '../../../components/RadioButton';
 import images from '../../../constants/Images';
 import Colors from '../../../constants/Colors';
+import FundsHeader from '../../../components/header/FundsHeader';
 
 
 const  AutoDeposit= ()=>{
@@ -79,6 +80,7 @@ return(
     <SafeAreaProvider style={gStyle.darkBg}>
         <SafeAreaView>
             <ScrollView>
+              <FundsHeader title='Auto Deposit'/>
                 <View style={{paddingHorizontal: 16, paddingVertical: 8}}>
                     <SansSerifText style={[gStyle.textLight, gStyle.fs16, gStyle.mb2,{lineHeight: '1.5'}]}>Enter the amount you would like to auto deposit into your <SansSerifText style={[gStyle.fw700,{}]}>“Draft Kings” Account</SansSerifText></SansSerifText>
 

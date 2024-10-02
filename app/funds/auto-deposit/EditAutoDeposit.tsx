@@ -9,6 +9,7 @@ import { router } from 'expo-router';
 import images from '../../../constants/Images';
 import Colors from '../../../constants/Colors';
 import GradientButton from '../../../components/GradientButton';
+import FundsHeader from '../../../components/header/FundsHeader';
 
 const  EditAutoDeposit= ()=>{
   const [modalVisible, setModalVisible] = useState(false);
@@ -24,6 +25,7 @@ return(
 <SafeAreaProvider style={gStyle.darkBg}>
 <SafeAreaView>
 <ScrollView>
+  <FundsHeader title='Auto Deposit' />
 <View style={{paddingHorizontal: 16, paddingVertical: 8}}>
     <View style={[gStyle.darkCard, gStyle.mb4,{}]}>
         <SansSerifText style={[gStyle.fw600, gStyle.fs16, gStyle.textGrayLight, gStyle.mb3,{}]}>Auto Deposit</SansSerifText>

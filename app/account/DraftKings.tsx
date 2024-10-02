@@ -14,7 +14,7 @@ import Header from '../../components/header/Header';
 const  Draftkings= ()=>{
 return(
     <SafeAreaProvider style={gStyle.darkBg}>
-        <SafeAreaView>
+        <SafeAreaView style={{ flex: 1 }}>
             <ScrollView>
             <Header title='Draft Kings Account'/>
                 <View style={{paddingHorizontal: 16, paddingVertical: 8}}>
@@ -34,10 +34,16 @@ return(
                 {/* deposit  */}
                 <View style={[gStyle.mb13]}>
                     <SansSerifText style={[gStyle.fw600, gStyle.textLight, gStyle.mb4]}>Auto Deposit </SansSerifText>
-                    <TouchableOpacity style={[gStyle.darkCard, display.flexCenterBetween]}>
-                        <SansSerifText style={[gStyle.textLight]}>Set-Up New Auto Deposit</SansSerifText>
-                        <Image source={images.icon.plus}/>
-                    </TouchableOpacity>
+                    <View style={[gStyle.darkCard, gStyle.p0,{}]}>
+                        <TouchableOpacity style={[ display.flexCenterBetween, gStyle.p5,{borderBottomColor: '#545454', borderBottomWidth: 1}]}>
+                            <SansSerifText style={[gStyle.textLight]}>Monthly on the 1st – $50</SansSerifText>
+                            <Image source={images.icon.arrowright}/>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={[ display.flexCenterBetween, gStyle.p5]}>
+                            <SansSerifText style={[gStyle.textLight]}>Set-Up New Auto Deposit</SansSerifText>
+                            <Image source={images.icon.plus}/>
+                        </TouchableOpacity>
+                    </View>
                 </View>
 
                 {/* recent transactions  */}

@@ -34,6 +34,7 @@ import AutoDeposit from './funds/auto-deposit/AutoDeposit';
 import ReviewAutoDeposit from './funds/auto-deposit/ReviewAutoDeposit';
 import DepositSuccessful from './funds/auto-deposit/DepositSuccessful';
 import SelectContact from './move-transfer/SelectContact';
+import InviteContact from './contacts/InviteContact';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -76,6 +77,7 @@ export default function App() {
           <Stack.Screen name="SendTransactionSent" component={SendTransactionSent}/>
           <Stack.Screen name="RequestTransactionSent" component={RequestTransactionSent}/>
           <Stack.Screen name="SelectContact" component={SelectContact}/>
+          <Stack.Screen name="InviteContact" component={InviteContact}/>
         </Stack.Navigator>
       </NavigationContainer>
     </ThemeProvider>

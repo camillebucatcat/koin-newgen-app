@@ -78,10 +78,10 @@ const  AutoDeposit= ()=>{
   };
 return(
     <SafeAreaProvider style={gStyle.darkBg}>
-        <SafeAreaView>
-            <ScrollView>
+        <SafeAreaView style={{ flex: 1 }}>
+            <ScrollView style={[{}]}>
               <FundsHeader title='Auto Deposit'/>
-                <View style={{paddingHorizontal: 16, paddingVertical: 8}}>
+                <View style={[{paddingHorizontal: 16, paddingVertical: 8}]}>
                     <SansSerifText style={[gStyle.textLight, gStyle.fs16, gStyle.mb2,{lineHeight: '1.5'}]}>Enter the amount you would like to auto deposit into your <SansSerifText style={[gStyle.fw700,{}]}>“Draft Kings” Account</SansSerifText></SansSerifText>
 
                     <FormField

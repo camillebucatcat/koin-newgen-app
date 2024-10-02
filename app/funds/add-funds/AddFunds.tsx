@@ -1,14 +1,14 @@
 import React, { useState, useRef, useEffect} from 'react';
 import { View, Text, ScrollView, StyleSheet, TouchableOpacity, Image, Modal } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
-import { gStyle } from '../styles/Global';
-import Button from '../../components/Button';
-import { SansSerifText } from '../../components/SanSerifText';
-import FormField from '../../components/FormField';
+import { gStyle } from '../../styles/Global';
+import Button from '../../../components/Button';
+import { SansSerifText } from '../../../components/SanSerifText';
+import FormField from '../../../components/FormField';
 import { router } from 'expo-router';
-import { display } from '../styles/Display';
-import RadioButton from '../../components/RadioButton';
-import images from '../../constants/Images';
+import { display } from '../../styles/Display';
+import RadioButton from '../../../components/RadioButton';
+import images from '../../../constants/Images';
 import { Calendar } from 'react-native-calendars';
 
 const  AddFunds= ()=>{

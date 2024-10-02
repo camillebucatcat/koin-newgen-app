@@ -1,13 +1,13 @@
 import React from 'react';
 import { View, Text, ScrollView, Image, TouchableOpacity, StyleSheet } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
-import { gStyle } from '../styles/Global';
-import { SansSerifText } from '../../components/SanSerifText';
-import { display } from '../styles/Display';
-import Button from '../../components/Button';
+import { gStyle } from '../../styles/Global';
+import { SansSerifText } from '../../../components/SanSerifText';
+import { display } from '../../styles/Display';
+import Button from '../../../components/Button';
 import { router } from 'expo-router';
-import GradientButton from '../../components/GradientButton';
-import images from '../../constants/Images';
+import GradientButton from '../../../components/GradientButton';
+import images from '../../../constants/Images';
 
 const  DepositSuccessful= ()=>{
 return(

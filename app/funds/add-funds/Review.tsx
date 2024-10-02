@@ -1,12 +1,12 @@
 import React from 'react';
 import { View, Text, ScrollView } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
-import { gStyle } from '../styles/Global';
-import { SansSerifText } from '../../components/SanSerifText';
-import { display } from '../styles/Display';
-import Button from '../../components/Button';
+import { gStyle } from '../../styles/Global';
+import { SansSerifText } from '../../../components/SanSerifText';
+import { display } from '../../styles/Display';
+import Button from '../../../components/Button';
 import { router } from 'expo-router';
-import Header from '../../components/Header';
+import Header from '../../../components/Header';
 
 const  ReviewTransaction= ()=>{
 return(

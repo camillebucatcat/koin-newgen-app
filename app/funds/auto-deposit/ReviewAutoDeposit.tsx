@@ -1,16 +1,15 @@
 import React from 'react';
 import { View, Text, ScrollView, Image, TouchableOpacity, StyleSheet } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
-import { gStyle } from '../styles/Global';
-import { SansSerifText } from '../../components/SanSerifText';
-import { display } from '../styles/Display';
-import Button from '../../components/Button';
+import { gStyle } from '../../styles/Global';
+import { SansSerifText } from '../../../components/SanSerifText';
+import { display } from '../../styles/Display';
+import Button from '../../../components/Button';
 import { router } from 'expo-router';
-import images from '../../constants/Images';
-import Colors from '../../constants/Colors';
-import GradientButton from '../../components/GradientButton';
+import images from '../../../constants/Images';
+import Colors from '../../../constants/Colors';
 
-const  EditAutoDeposit= ()=>{
+const  ReviewAutoDeposit= ()=>{
 return(
 <SafeAreaProvider style={gStyle.darkBg}>
 <SafeAreaView>
@@ -51,15 +50,14 @@ return(
       </View>
     </View>
     
-                    <Button title="Edit Auto Deposit" transform="normal" shape="round"  customStyles={[gStyle.fs700, gStyle.mb4]} expand="block" fill="solid" color="primary" centerText={true} handlePress={() =>('')} />
-                    <GradientButton title="Delete Auto Deposit" transform="normal" shape="round" fill="outline" color="light" background="dark" expand="block" image={images.icon.trash}  centerText={true} handlePress={() => router.push('')} />
+    <Button title="Set-up Auto Deposit" customStyles={[gStyle.fw700, gStyle.mb4]} transform="normal" shape="round" fill="solid" color="primary" expand="block" centerText={true} handlePress={() => router.navigate('')} />
 </View>
 </ScrollView>
 </SafeAreaView>
 </SafeAreaProvider>
 )
 }
-export default EditAutoDeposit;
+export default ReviewAutoDeposit;
 
 const styles = StyleSheet.create({
     row: {

@@ -220,7 +220,7 @@ const styles = StyleSheet.create({
     dayChoice: {
       width: '10%',
       height: 40,
-      borderRadius: 12,
+      borderRadius: 8,
       padding: 8,
       backgroundColor: '#545454',
       justifyContent: 'center',

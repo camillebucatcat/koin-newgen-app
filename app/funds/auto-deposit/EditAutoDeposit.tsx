@@ -1,5 +1,5 @@
-import React from 'react';
-import { View, Text, ScrollView, Image, TouchableOpacity, StyleSheet } from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, ScrollView, Image, TouchableOpacity, StyleSheet, Modal } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { gStyle } from '../../styles/Global';
 import { SansSerifText } from '../../../components/SanSerifText';
@@ -11,6 +11,15 @@ import Colors from '../../../constants/Colors';
 import GradientButton from '../../../components/GradientButton';
 
 const  EditAutoDeposit= ()=>{
+  const [modalVisible, setModalVisible] = useState(false);
+
+  const openModal = () => {
+    setModalVisible(true);
+  };
+
+  const closeModal = () => {
+    setModalVisible(false);
+  };
 return(
 <SafeAreaProvider style={gStyle.darkBg}>
 <SafeAreaView>
@@ -52,7 +61,28 @@ return(
     </View>
     
                     <Button title="Edit Auto Deposit" transform="normal" shape="round"  customStyles={[gStyle.fs700, gStyle.mb4]} expand="block" fill="solid" color="primary" centerText={true} handlePress={() =>('')} />
-                    <GradientButton title="Delete Auto Deposit" transform="normal" shape="round" fill="outline" color="light" background="dark" expand="block" image={images.icon.trash}  centerText={true} handlePress={() => router.push('')} />
+                    <GradientButton title="Delete Auto Deposit" transform="normal" shape="round" fill="outline" color="light" background="dark" expand="block" image={images.icon.trash}  centerText={true} handlePress={() => {
+                                      openModal();
+                                  }}/>
+
+                    <Modal
+        transparent={true}
+        visible={modalVisible}
+        animationType="fade"
+        onRequestClose={closeModal}
+      >
+        <TouchableOpacity style={styles.backdrop} onPress={closeModal}>
+          <View style={styles.modalContent}>
+            <View style={[display.flexCenterBetween, gStyle.mb4,{}]}>
+              <SansSerifText style={[gStyle.fs16, gStyle.fw700, gStyle.textLight,{}]}>Delete Auto Deposit!</SansSerifText>
+              <Button title="" transform="normal" shape="round"  customStyles={[gStyle.mr0]} fill="clear" color="light" centerText={true} handlePress={() =>('')} image={images.icon.close} />
+            </View>
+            <SansSerifText style={[gStyle.textLight, gStyle.pr11, gStyle.mb8,{}]}>Are you sure you want to delete this auto deposit?  Once deleted this action can’t be undone. </SansSerifText>
+            <Button title="Delete Auto Deposit" transform="normal" shape="round"  customStyles={[gStyle.fs700]} expand="block" fill="solid" color="primary" centerText={true} handlePress={() =>('')} />
+            <Button title="Go Back" transform="normal" shape="round"  customStyles={[gStyle.fs700]} expand="block" fill="clear" color="light" centerText={true} handlePress={() =>('')} />
+          </View>
+        </TouchableOpacity>
+      </Modal>
 </View>
 </ScrollView>
 </SafeAreaView>
@@ -87,5 +117,17 @@ const styles = StyleSheet.create({
     },
     title: {
       color: Colors.primary.primary300,
+    },
+    backdrop: {
+      flex: 1,
+      backgroundColor: '#00000099',
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    modalContent: {
+      width: '80%',
+      padding: 24,
+      backgroundColor: '#211F21',
+      borderRadius: 14,
     },
   });

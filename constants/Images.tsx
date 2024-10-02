@@ -29,6 +29,8 @@ const images = {
         trash: require(pathIcons + 'trash.png'),
         noPfp: require(pathIcons + 'user-no-pfp.png'),
         info: require(pathIcons + 'info.png'),
+        close: require(pathIcons + 'close.png'),
+        clockPending: require(pathIcons + 'clock-pending.png')
     },
     home: {
         dice: require(pathImages + 'dice.png'),

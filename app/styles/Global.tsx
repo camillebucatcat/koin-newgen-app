@@ -64,6 +64,9 @@ export const gStyle = StyleSheet.create({
   textLight: {
     color: Colors.text.light,
   },
+  textDark: {
+    color: '#211F21',
+  },
   textPrimaryLight: {
     color: Colors.primary.primary300
   },
@@ -79,9 +82,13 @@ export const gStyle = StyleSheet.create({
   textLightBeige:{
     color: '#FFE7DC'
   },
-
   darkCard: {
     backgroundColor: '#3C3A3C',
+    borderRadius: 20,
+    padding: 20,
+  },
+  pendingCard: {
+    backgroundColor: '#FA8F5C',
     borderRadius: 20,
     padding: 20,
   },

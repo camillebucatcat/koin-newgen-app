@@ -97,6 +97,11 @@ export const gStyle = StyleSheet.create({
     borderRadius: 20,
     padding: 20,
   },
+  contactCard: {
+    borderRadius: 12,
+    backgroundColor: '#404040',
+    padding: 12
+  },
   darkBg: {
     backgroundColor: '#211F21',
   },

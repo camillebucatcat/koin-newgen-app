@@ -4,6 +4,7 @@ import { SansSerifText } from '../../components/SanSerifText';
 import { gStyle } from '../styles/Global';
 import images from '../../constants/Images';
 import { display } from '../styles/Display';
+import GradientButton from '../../components/GradientButton';
 
 interface ModalProps {
   visible: boolean;
@@ -11,7 +12,7 @@ interface ModalProps {
 }
 
 const SelectContact: React.FC<ModalProps> = ({ visible, onClose }) => {
-  
+
   const alphabets = ['#', ...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')];
 
   return (
@@ -38,6 +39,12 @@ const SelectContact: React.FC<ModalProps> = ({ visible, onClose }) => {
             </View>
             <SansSerifText style={[gStyle.fw600, gStyle.fs16, gStyle.pl4, gStyle.pb4, gStyle.pt4]}>Recent</SansSerifText>
             <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={[gStyle.pt4]}>
+            <TouchableOpacity style={[gStyle.ml4]} activeOpacity={0.5}>
+                <View style={[gStyle.mb3, styles.avatarCard, { borderRadius: 12, overflow: 'hidden' }]}>
+                  <Image source={images.icon.noPfp} style={styles.avatarImg}/>
+                  <SansSerifText style={[gStyle.textLight, gStyle.fs12, gStyle.fw400, display.alignTextCenter]}>Jerry Seinfeld <SansSerifText style={[gStyle.fw600]}>(invited)</SansSerifText></SansSerifText>
+                </View>
+              </TouchableOpacity>
               <TouchableOpacity style={[gStyle.ml4]} activeOpacity={0.5}>
                 <View style={[gStyle.mb3, styles.avatarCard, { borderRadius: 12, overflow: 'hidden' }]}>
                   <Image source={images.profileSample.user1} style={styles.avatarImg}/>
@@ -74,31 +81,96 @@ const SelectContact: React.FC<ModalProps> = ({ visible, onClose }) => {
               <View style={styles.contactList}>
                 <SansSerifText style={[gStyle.textGrayLight, gStyle.fw700, gStyle.pb5]}>A</SansSerifText>
                 <View>
-
+                  <TouchableOpacity style={[gStyle.contactCard, gStyle.mb4]} activeOpacity={0.5}>
+                    <View style={[display.dFlex, display.alignCenter]}>
+                      <Image source={images.profileSample.user1} style={styles.contactImg}/>
+                      <SansSerifText style={[gStyle.fs14, gStyle.fw400]}>Ada Wilson</SansSerifText>
+                    </View>
+                  </TouchableOpacity>
+                  <TouchableOpacity style={[gStyle.contactCard, gStyle.mb4]} activeOpacity={0.5}>
+                    <View style={[display.dFlex, display.alignCenter]}>
+                      <Image source={images.profileSample.user2} style={styles.contactImg}/>
+                      <SansSerifText style={[gStyle.fs14, gStyle.fw400]}>Aiden Rodríguez</SansSerifText>
+                    </View>
+                  </TouchableOpacity>
+                  <TouchableOpacity style={[gStyle.contactCard, gStyle.mb4]} activeOpacity={0.5}>
+                    <View style={[display.flexCenterBetween]}>
+                      <View style={[display.dFlex, display.alignCenter]}>
+                        <Image source={images.icon.noPfp} style={styles.contactImg}/>
+                        <SansSerifText style={[gStyle.fs14, gStyle.fw400]}>Angela Jones</SansSerifText>
+                      </View>
+                      <View style={styles.invitedContainer}>
+                        <SansSerifText style={[gStyle.fs14, gStyle.fw600]}>Invited</SansSerifText>
+                      </View>
+                    </View>
+                  </TouchableOpacity>
+                  <TouchableOpacity style={[gStyle.contactCard, gStyle.mb4]} activeOpacity={0.5}>
+                    <View style={[display.flexCenterBetween]}>
+                      <View style={[display.dFlex, display.alignCenter]}>
+                        <Image source={images.icon.noPfp} style={styles.contactImg}/>
+                        <SansSerifText style={[gStyle.fs14, gStyle.fw400]}>Arian Williams</SansSerifText>
+                      </View>
+                      <View style={styles.invitedContainer}>
+                        <SansSerifText style={[gStyle.fs14, gStyle.fw600]}>Invited</SansSerifText>
+                      </View>
+                    </View>                 
+                  </TouchableOpacity>
                 </View>
                 <SansSerifText style={[gStyle.textGrayLight, gStyle.fw700, gStyle.py5]}>B</SansSerifText>
                 <View>
-                  
+                  <TouchableOpacity style={[gStyle.contactCard, gStyle.mb4]} activeOpacity={0.5}>
+                    <View style={[display.dFlex, display.alignCenter]}>
+                      <Image source={images.profileSample.user3} style={styles.contactImg}/>
+                      <SansSerifText style={[gStyle.fs14, gStyle.fw400]}>Betty Luo</SansSerifText>
+                    </View>
+                  </TouchableOpacity>
+                  <TouchableOpacity style={[gStyle.contactCard, gStyle.mb4]} activeOpacity={0.5}>
+                    <View style={[display.flexCenterBetween]}>
+                      <View style={[display.dFlex, display.alignCenter]}>
+                        <Image source={images.icon.noPfp} style={styles.contactImg}/>
+                        <SansSerifText style={[gStyle.fs14, gStyle.fw400]}>Bill Jones</SansSerifText>
+                      </View>
+                      <View style={styles.invitedContainer}>
+                        <SansSerifText style={[gStyle.fs14, gStyle.fw600]}>Invited</SansSerifText>
+                      </View>
+                    </View>                 
+                  </TouchableOpacity>
                 </View>
                 <SansSerifText style={[gStyle.textGrayLight, gStyle.fw700, gStyle.py5]}>C</SansSerifText>
                 <View>
-                  
-                </View>
-                <SansSerifText style={[gStyle.textGrayLight, gStyle.fw700, gStyle.py5]}>D</SansSerifText>
-                <View>
-                  
+                  <TouchableOpacity style={[gStyle.contactCard, gStyle.mb4]} activeOpacity={0.5}>
+                    <View style={[display.dFlex, display.alignCenter]}>
+                      <Image source={images.profileSample.user5} style={styles.contactImg}/>
+                      <SansSerifText style={[gStyle.fs14, gStyle.fw400]}>Chloe Davis</SansSerifText>
+                    </View>
+                  </TouchableOpacity>
                 </View>
                 <SansSerifText style={[gStyle.textGrayLight, gStyle.fw700, gStyle.py5]}>M</SansSerifText>
                 <View>
-                  
+                  <TouchableOpacity style={[gStyle.contactCard, gStyle.mb4]} activeOpacity={0.5}>
+                    <View style={[display.dFlex, display.alignCenter]}>
+                      <Image source={images.profileSample.user6} style={styles.contactImg}/>
+                      <SansSerifText style={[gStyle.fs14, gStyle.fw400]}>Mia Chen</SansSerifText>
+                    </View>
+                  </TouchableOpacity>
                 </View>
                 <SansSerifText style={[gStyle.textGrayLight, gStyle.fw700, gStyle.py5]}>R</SansSerifText>
                 <View>
-                  
+                  <TouchableOpacity style={[gStyle.contactCard, gStyle.mb4]} activeOpacity={0.5}>
+                    <View style={[display.dFlex, display.alignCenter]}>
+                      <Image source={images.profileSample.user} style={styles.contactImg}/>
+                      <SansSerifText style={[gStyle.fs14, gStyle.fw400]}>Rachel Miller</SansSerifText>
+                    </View>
+                  </TouchableOpacity>
                 </View>
                 <SansSerifText style={[gStyle.textGrayLight, gStyle.fw700, gStyle.py5]}>T</SansSerifText>
                 <View>
-                  
+                  <TouchableOpacity style={[gStyle.contactCard, gStyle.mb4]} activeOpacity={0.5}>
+                    <View style={[display.dFlex, display.alignCenter]}>
+                      <Image source={images.profileSample.user7} style={styles.contactImg}/>
+                      <SansSerifText style={[gStyle.fs14, gStyle.fw400]}>Tommy Johnson</SansSerifText>
+                    </View>
+                  </TouchableOpacity>
                 </View>
               </View>
               <View style={styles.alphabetIndex}>
@@ -109,6 +181,9 @@ const SelectContact: React.FC<ModalProps> = ({ visible, onClose }) => {
                   </TouchableOpacity>
                 ))}
               </View>
+            </View>
+            <View style={[gStyle.p4]}>
+              <GradientButton title="Invite To Koin" transform="normal" expand='block'/>
             </View>
           </ScrollView>
         </View>
@@ -171,7 +246,7 @@ const styles = StyleSheet.create({
   },
   contactList: {
     flex: 1,
-    paddingLeft: 16,
+    paddingHorizontal: 16,
   },
   contactItem: {
     flexDirection: 'row',
@@ -190,6 +265,18 @@ const styles = StyleSheet.create({
   alphabetText: {
     fontSize: 14,
   },
+  contactImg: {
+    width: 44, 
+    height: 44,
+    borderRadius: 12,
+    marginRight: 8,
+  },
+  invitedContainer: {
+    backgroundColor: '#4F4F4F',
+    paddingHorizontal: 12,
+    paddingVertical: 4,
+    borderRadius: 50
+  }
 });
 
 export default SelectContact;

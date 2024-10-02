@@ -107,6 +107,7 @@ const images = {
         user4: require(pathImages + '/profile-sample/user-4.png'),
         user5: require(pathImages + '/profile-sample/user-5.png'),
         user6: require(pathImages + '/profile-sample/user-6.png'),
+        user7: require(pathImages + '/profile-sample/user-7.png'),
     },
     groupSample: {
         group1: require(pathImages + '/group-sample/group-1.png'),

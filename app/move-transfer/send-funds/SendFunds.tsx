@@ -76,9 +76,24 @@ const SendFunds = () => {
             <SansSerifText style={[gStyle.fs12, gStyle.fw600]}>Select Payee</SansSerifText>
             <TouchableOpacity activeOpacity={0.5}>
               <View style={[gStyle.darkCard, gStyle.my4, { borderRadius: 12 }]}>
-                <View style={[display.flexCenterBetween]}>
+                {/* <View style={[display.flexCenterBetween]}>
                   <SansSerifText style={[gStyle.fs14, gStyle.fw400]}>Select Contact</SansSerifText>
                   <Image source={images.icon.arrowright}/>
+                </View> */}
+
+                {/* user invited */}
+                <View style={[display.flexCenterBetween]}>
+                  <View style={[display.dFlex, display.alignCenter]}>
+                    <Image source={images.icon.noPfp}/>
+                    <SansSerifText style={[gStyle.fs14, gStyle.fw400, gStyle.ml3]}>Jerry Seinfeld</SansSerifText>
+                  </View>
+                  <View style={{ flexDirection: 'row', alignItems: 'center', gap: 2 }}>
+                    <View style={[styles.invitedContainer, { flexDirection: 'row', alignItems: 'center' }]}>
+                      <Image source={images.icon.info} />
+                      <SansSerifText style={[gStyle.fw600, gStyle.fs14, gStyle.ml1]}>Invited</SansSerifText>
+                    </View>
+                    <Image source={images.icon.arrowright} />
+                  </View>
                 </View>
               </View>
             </TouchableOpacity>
@@ -211,7 +226,15 @@ const styles = StyleSheet.create({
   selectedText: {
     color: '#ffffff',
   },
-
+  invitedContainer:{
+    borderRadius: 50,
+    backgroundColor: '#4F4F4F',
+    paddingVertical: 4,
+    paddingRight: 12,
+    paddingLeft: 8,
+    flexDirection: 'row', 
+    alignItems: 'center'
+  }
 });
 
 export default SendFunds;

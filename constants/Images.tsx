@@ -27,6 +27,8 @@ const images = {
         arrowUp: require(pathIcons + 'arrow-up.png'),
         checkcirclesuccess: require(pathIcons + 'check-circle.png'),
         trash: require(pathIcons + 'trash.png'),
+        noPfp: require(pathIcons + 'user-no-pfp.png'),
+        info: require(pathIcons + 'info.png'),
     },
     home: {
         dice: require(pathImages + 'dice.png'),

@@ -1,13 +1,14 @@
 import React from 'react';
-import { View, TouchableOpacity, Image, StyleSheet, ImageSourcePropType } from 'react-native';
+import { View, TouchableOpacity, StyleSheet, ImageSourcePropType } from 'react-native';
 import { SansSerifText } from './SanSerifText';
+import { gStyle } from '../app/styles/Global';
 
 interface Option {
   title?: string; // Make title optional
   label: string;
   value: string;
   image?: ImageSourcePropType; // Optional image property
-  layout?: 'left' | 'space-between'; // New prop to determine layout
+  layout?: 'left' | 'right' | 'space-between'; // New prop to determine layout
 }
 
 interface RadioButtonProps {
@@ -25,41 +26,82 @@ const RadioButton: React.FC<RadioButtonProps> = ({ options, selectedOption, onSe
           style={styles.optionContainer}
           onPress={() => onSelect(option)}
         >
-          {option.layout === 'left' && ( // Render radio button on the left
-            <View style={styles.radioButtonContainer}>
-              <View
-                style={[
-                  styles.radioButton,
-                  selectedOption === option.value && styles.selectedRadioButton,
-                ]}
-              >
-                {selectedOption === option.value && <View style={styles.innerCircle} />}
+          {option.layout === 'left' && (
+            <>
+              {/* Radio button on the left */}
+              <View style={styles.radioButtonContainer}>
+                <View
+                  style={[
+                    styles.radioButton,
+                    selectedOption === option.value && styles.selectedRadioButton,
+                  ]}
+                >
+                  {selectedOption === option.value && <View style={styles.innerCircle} />}
+                </View>
               </View>
-            </View>
+              <View style={styles.textContainer}>
+                {option.title && (
+                  <SansSerifText maxFontSizeMultiplier={1} minimumFontScale={1} style={styles.titleText}>
+                    {option.title}
+                  </SansSerifText>
+                )}
+                <SansSerifText maxFontSizeMultiplier={1} minimumFontScale={1} style={styles.optionText}>
+                  {option.label}
+                </SansSerifText>
+              </View>
+            </>
           )}
 
-          <View style={styles.textContainer}>
-            {option.title && ( // Render title only if it exists
-              <SansSerifText maxFontSizeMultiplier={1} minimumFontScale={1} style={styles.titleText}>
-                {option.title}
-              </SansSerifText>
-            )}
-            <SansSerifText maxFontSizeMultiplier={1} minimumFontScale={1} style={styles.optionText}>
-              {option.label}
-            </SansSerifText>
-          </View>
-
-          {option.layout === 'space-between' && ( // Render radio button for space-between layout
-            <View style={styles.radioButtonContainerSpaceBetween}>
-              <View
-                style={[
-                  styles.radioButton,
-                  selectedOption === option.value && styles.selectedRadioButton,
-                ]}
-              >
-                {selectedOption === option.value && <View style={styles.innerCircle} />}
+          {option.layout === 'right' && (
+            <>
+              {/* Text on the left, radio button on the right */}
+              <View style={[gStyle.mr3]}>
+                {option.title && (
+                  <SansSerifText maxFontSizeMultiplier={1} minimumFontScale={1} style={styles.titleText}>
+                    {option.title}
+                  </SansSerifText>
+                )}
+                <SansSerifText maxFontSizeMultiplier={1} minimumFontScale={1} style={styles.optionText}>
+                  {option.label}
+                </SansSerifText>
               </View>
-            </View>
+              <View>
+                <View
+                  style={[
+                    styles.radioButton,
+                    selectedOption === option.value && styles.selectedRadioButton,
+                  ]}
+                >
+                  {selectedOption === option.value && <View style={styles.innerCircle} />}
+                </View>
+              </View>
+            </>
+          )}
+
+          {option.layout === 'space-between' && (
+            <>
+              {/* Text on the left, radio button on the far right */}
+              <View style={styles.textContainer}>
+                {option.title && (
+                  <SansSerifText maxFontSizeMultiplier={1} minimumFontScale={1} style={styles.titleText}>
+                    {option.title}
+                  </SansSerifText>
+                )}
+                <SansSerifText maxFontSizeMultiplier={1} minimumFontScale={1} style={styles.optionText}>
+                  {option.label}
+                </SansSerifText>
+              </View>
+              <View style={styles.radioButtonContainerSpaceBetween}>
+                <View
+                  style={[
+                    styles.radioButton,
+                    selectedOption === option.value && styles.selectedRadioButton,
+                  ]}
+                >
+                  {selectedOption === option.value && <View style={styles.innerCircle} />}
+                </View>
+              </View>
+            </>
           )}
         </TouchableOpacity>
       ))}
@@ -77,22 +119,18 @@ const styles = StyleSheet.create({
   optionContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingTop: 16,
     paddingVertical: 16,
     borderRadius: 8,
     width: '100%',
   },
   radioButtonContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'flex-start', 
-    marginRight: 10, 
+    marginRight: 8, // Space between radio button and text
   },
   radioButtonContainerSpaceBetween: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'flex-end', 
-    flex: 1, 
+    justifyContent: 'flex-end',
+    flex: 1,
   },
   radioButton: {
     height: 20,
@@ -116,7 +154,6 @@ const styles = StyleSheet.create({
   textContainer: {
     flexDirection: 'column',
     flex: 1,
-    marginRight: 10, 
   },
   titleText: {
     fontSize: 14,
@@ -124,11 +161,6 @@ const styles = StyleSheet.create({
   },
   optionText: {
     fontSize: 16,
-  },
-  image: {
-    width: 20,
-    height: 20,
-    marginBottom: 4,
   },
 });
 

@@ -156,6 +156,7 @@ const styles = StyleSheet.create({
     padding: 16,
     fontSize: 16,
     marginTop: 12,
+    fontFamily: 'Aventa',
     ...Platform.select({
       web: {
         outlineStyle: 'none', 

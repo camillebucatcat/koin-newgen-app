@@ -9,6 +9,7 @@ import Button from '../../../components/Button';
 import TextAreaField from '../../../components/TextAreaField';
 import RadioButton from '../../../components/RadioButton';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import SelectContact from '../SelectContact';
 
 
 
@@ -19,6 +20,7 @@ const SendFunds = () => {
   });
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [isDropdownVisible, setDropdownVisible] = useState(false);
+  const [modalSelectContact, setModalSelectContact] = useState(false);
 
   const amounts = ['10', '20', '50', '100'];
 
@@ -42,6 +44,13 @@ const SendFunds = () => {
       ...form,
       amount: value
     });
+  };
+
+  const openModalSelectModal = () => {
+    setModalSelectContact(true);
+  };
+const closeModal = () => {
+  setModalSelectContact(false);
   };
   
    // Define your options
@@ -74,15 +83,15 @@ const SendFunds = () => {
         <ScrollView>
           <View style={styles.content}>
             <SansSerifText style={[gStyle.fs12, gStyle.fw600]}>Select Payee</SansSerifText>
-            <TouchableOpacity activeOpacity={0.5}>
+            <TouchableOpacity activeOpacity={0.5} onPress={openModalSelectModal}>
               <View style={[gStyle.darkCard, gStyle.my4, { borderRadius: 12 }]}>
-                {/* <View style={[display.flexCenterBetween]}>
+                <View style={[display.flexCenterBetween]}>
                   <SansSerifText style={[gStyle.fs14, gStyle.fw400]}>Select Contact</SansSerifText>
                   <Image source={images.icon.arrowright}/>
-                </View> */}
+                </View>
 
                 {/* user invited */}
-                <View style={[display.flexCenterBetween]}>
+                {/* <View style={[display.flexCenterBetween]}>
                   <View style={[display.dFlex, display.alignCenter]}>
                     <Image source={images.icon.noPfp}/>
                     <SansSerifText style={[gStyle.fs14, gStyle.fw400, gStyle.ml3]}>Jerry Seinfeld</SansSerifText>
@@ -94,7 +103,7 @@ const SendFunds = () => {
                     </View>
                     <Image source={images.icon.arrowright} />
                   </View>
-                </View>
+                </View> */}
               </View>
             </TouchableOpacity>
             <View>
@@ -181,6 +190,7 @@ const SendFunds = () => {
           </View>
         </ScrollView>
       </SafeAreaView>
+      <SelectContact  visible={modalSelectContact} onClose={closeModal}/>
     </SafeAreaProvider>
   );
 };

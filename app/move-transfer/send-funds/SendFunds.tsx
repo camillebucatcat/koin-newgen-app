@@ -10,6 +10,7 @@ import TextAreaField from '../../../components/TextAreaField';
 import RadioButton from '../../../components/RadioButton';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import SelectContact from '../SelectContact';
+import FundsHeader from '../../../components/header/FundsHeader';
 
 
 
@@ -70,16 +71,7 @@ const closeModal = () => {
   return (
     <SafeAreaProvider style={gStyle.darkBg}>
       <SafeAreaView style={{ flex: 1 }}>
-        <View style={[display.flexCenterBetween, styles.header]}>
-          <View>
-            <SansSerifText>Send Funds</SansSerifText>
-          </View>
-          <TouchableOpacity>
-            <View>
-              <SansSerifText style={[gStyle.fw700]}>Cancel</SansSerifText>
-            </View>
-          </TouchableOpacity>
-        </View>
+        <FundsHeader title='Send Funds'/>
         <ScrollView>
           <View style={styles.content}>
             <SansSerifText style={[gStyle.fs12, gStyle.fw600]}>Select Payee</SansSerifText>

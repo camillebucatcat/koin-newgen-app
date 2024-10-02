@@ -14,7 +14,7 @@ import SplitLightIcon from '../../assets/icons/svg-icons/split-light-icon';
 import Colors from '../../constants/Colors';
 import RecentTransactions from '../../components/RecentTransactions';
 import Button from '../../components/Button';
-import HomeHeader from '../../components/HomeHeader';
+import HomeHeader from '../../components/header/HomeHeader';
 
 const Settings = ({ navigation }) => {
   const [activeSegment, setActiveSegment] = useState('Transfer');

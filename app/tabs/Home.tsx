@@ -13,9 +13,9 @@ import Colors from '../../constants/Colors';
 import SegmentControl from '../../components/SegmentControl';
 import GradientButton from '../../components/GradientButton';
 import { SansSerifText } from '../../components/SanSerifText';
-
 import { router } from 'expo-router';
-import HomeHeader from '../../components/HomeHeader';
+import HomeHeader from '../../components/header/HomeHeader';
+
 
 const Home = ({ navigation }) => {
   const [activeSegment, setActiveSegment] = useState('For You');

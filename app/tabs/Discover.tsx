@@ -7,7 +7,7 @@ import images from '../../constants/Images';
 import Button from '../../components/Button';
 import { router } from 'expo-router';
 import { display } from '../styles/Display';
-import HomeHeader from '../../components/HomeHeader';
+import HomeHeader from '../../components/header/HomeHeader';
 
 const Discover = () => {
   const [activeSegment, setActiveSegment] = useState('Perks');

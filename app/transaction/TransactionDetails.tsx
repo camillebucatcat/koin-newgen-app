@@ -6,7 +6,8 @@ import { gStyle } from '../styles/Global';
 import { display } from '../styles/Display';
 import { SansSerifText } from '../../components/SanSerifText';
 import Button from '../../components/Button';
-import Header from '../../components/Header';
+import Header from '../../components/header/Header';
+
 
 const TransactionDetails = ({ navigation }) => {
   return (

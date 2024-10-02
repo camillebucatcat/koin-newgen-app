@@ -1,10 +1,10 @@
 import React from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet, ImageBackground } from 'react-native';
-import { gStyle } from '../app/styles/Global';
-import { display } from '../app/styles/Display';
-import Button from './Button';
-import images from '../constants/Images';
-import { SansSerifText } from './SanSerifText';
+import { gStyle } from '../../app/styles/Global';
+import { display } from '../../app/styles/Display';
+import { SansSerifText } from '../SanSerifText';
+import images from '../../constants/Images';
+
 
 interface TitleProps {
   title: string;

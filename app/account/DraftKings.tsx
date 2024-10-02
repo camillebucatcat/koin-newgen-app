@@ -8,7 +8,8 @@ import { router } from 'expo-router';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import images from '../../constants/Images';
 import RecentTransactions from '../../components/RecentTransactions';
-import Header from '../../components/Header';
+import Header from '../../components/header/Header';
+
 
 const  Draftkings= ()=>{
 return(

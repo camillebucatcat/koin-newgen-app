@@ -10,6 +10,7 @@ import { display } from '../../styles/Display';
 import RadioButton from '../../../components/RadioButton';
 import images from '../../../constants/Images';
 import { Calendar } from 'react-native-calendars';
+import FundsHeader from '../../../components/header/FundsHeader';
 
 const  AddFunds= ()=>{
     const [selectedAmount, setSelectedAmount] = useState(null);
@@ -91,7 +92,7 @@ const  AddFunds= ()=>{
 
        // Define your options
   const options = [
-    { label: 'Everyday Spending', value: 'option1' },
+    { label: 'Everyday Spending', value: '81' },
     { label: 'Entertainment Fund', value: 'option2' },
     { label: 'Wells Fargo', value: 'option3' },
     { label:'Bank of America', value: 'option4' },
@@ -106,6 +107,7 @@ return(
     <SafeAreaProvider style={gStyle.darkBg}>
         <SafeAreaView>
             <ScrollView>
+              <FundsHeader title='Add Funds'/>
                 <View style={{paddingHorizontal: 16, paddingVertical: 8}}>
                     <SansSerifText style={[gStyle.textLight, gStyle.fs16, gStyle.mb2,{}]}>How much do you want to add to your</SansSerifText>
                     <SansSerifText style={[gStyle.mb8, {}]}><Text style={[gStyle.fw700,{}]}>“Draft Kings” Account</Text>?</SansSerifText>
@@ -182,11 +184,11 @@ return(
                             ref={buttonRef} // Ref to measure button position
                             onPress={() => setShowCalendar(!showCalendar)}
                             style={[gStyle.darkCard, display.flexBetween, {
-                              borderRadius: 20,  // Set top radius to 10 when calendar is open
-                              borderTopLeftRadius: 20,
-                              borderTopRightRadius: 20,
-                              borderBottomLeftRadius: showCalendar ? 0 : 20,
-                              borderBottomRightRadius: showCalendar ? 0 : 20,
+                              borderRadius: 8,  // Set top radius to 10 when calendar is open
+                              borderTopLeftRadius: 8,
+                              borderTopRightRadius: 8,
+                              borderBottomLeftRadius: showCalendar ? 0 : 8,
+                              borderBottomRightRadius: showCalendar ? 0 : 8,
                             }]}
                           >
                             <Text style={[gStyle.textLight, gStyle.fs16]}>

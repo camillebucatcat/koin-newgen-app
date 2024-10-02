@@ -60,12 +60,32 @@ const SendFunds = () => {
     setModalSelectCategory(false);
   };
   
-   // Define your options
+  //options for radio button
   const options = [
-    { label: 'Everyday Spending', value: 'option1' },
-    { label: 'Entertainment Fund', value: 'option2' },
-    { label: 'Wells Fargo', value: 'option3' },
-    { label:'Bank of America', value: 'option4' },
+    {
+      image: images.lean.leanLeftSuccess,
+      label: 'Everyday Spending',
+      value: 'option1',
+      layout: 'space-between', 
+    },
+    {
+      image: images.lean.leanLeftPrimary,
+      label: 'Entertainment Fund',
+      value: 'option2',
+      layout: 'space-between', 
+    },
+    {
+      image: images.icon.bank,
+      label: 'Wells Fargo',
+      value: 'option3',
+      layout: 'space-between', 
+    },
+    {
+      image: images.icon.bank,
+      label: 'Bank of America',
+      value: 'option4',
+      layout: 'space-between', 
+    },
   ];
 
   // Function to handle option selection

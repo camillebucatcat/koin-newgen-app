@@ -10,6 +10,8 @@ import TextAreaField from '../../../components/TextAreaField';
 import RadioButton from '../../../components/RadioButton';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import FundsHeader from '../../../components/header/FundsHeader';
+import SelectContact from '../SelectContact';
+import SelectCategory from '../SelectCategory';
 
 const RequestFund = () => {
   const [selectedAmount, setSelectedAmount] = useState(null);
@@ -18,6 +20,8 @@ const RequestFund = () => {
   });
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [isDropdownVisible, setDropdownVisible] = useState(false);
+  const [modalSelectContact, setModalSelectContact] = useState(false);
+  const [modalSelectCategory, setModalSelectCategory] = useState(false);
 
   const amounts = ['10', '20', '50', '100'];
 
@@ -42,13 +46,44 @@ const RequestFund = () => {
       amount: value
     });
   };
+
+  const openModalSelectContact = () => {
+    setModalSelectContact(true);
+  };
+  const openModalSelectCategory = () => {
+    setModalSelectCategory(true);
+  };
+  const closeModal = () => {
+    setModalSelectContact(false);
+    setModalSelectCategory(false);
+  };
   
-   // Define your options
+  
   const options = [
-    { label: 'Everyday Spending', value: 'option1' },
-    { label: 'Entertainment Fund', value: 'option2' },
-    { label: 'Wells Fargo', value: 'option3' },
-    { label:'Bank of America', value: 'option4' },
+    {
+      image: images.lean.leanLeftSuccess,
+      label: 'Everyday Spending',
+      value: 'option1',
+      layout: 'space-between', 
+    },
+    {
+      image: images.lean.leanLeftPrimary,
+      label: 'Entertainment Fund',
+      value: 'option2',
+      layout: 'space-between', 
+    },
+    {
+      image: images.icon.bank,
+      label: 'Wells Fargo',
+      value: 'option3',
+      layout: 'space-between', 
+    },
+    {
+      image: images.icon.bank,
+      label: 'Bank of America',
+      value: 'option4',
+      layout: 'space-between', 
+    },
   ];
 
   // Function to handle option selection
@@ -64,7 +99,7 @@ const RequestFund = () => {
         <ScrollView>
           <View style={styles.content}>
             <SansSerifText style={[gStyle.fs12, gStyle.fw600]}>Request From</SansSerifText>
-            <TouchableOpacity activeOpacity={0.5}>
+            <TouchableOpacity activeOpacity={0.5} onPress={openModalSelectContact}>
               <View style={[gStyle.darkCard, gStyle.my4, { borderRadius: 12 }]}>
                 {/* <View style={[display.flexCenterBetween]}>
                   <SansSerifText style={[gStyle.fs14, gStyle.fw400]}>Select Contact</SansSerifText>
@@ -153,7 +188,7 @@ const RequestFund = () => {
             </View>
             <View style={[gStyle.mb4]}>
               <SansSerifText style={[ gStyle.fs12, gStyle.textLight, gStyle.my4 ]}>What’s this for?</SansSerifText>
-              <TouchableOpacity activeOpacity={0.5}>
+              <TouchableOpacity activeOpacity={0.5} onPress={openModalSelectCategory}>
                 <View style={[gStyle.darkCard, { borderRadius: 12 }]}>
                   <View style={[display.flexCenterBetween]}>
                     <SansSerifText style={[gStyle.fs14, gStyle.fw400]}>Select Category</SansSerifText>
@@ -172,6 +207,8 @@ const RequestFund = () => {
           </View>
         </ScrollView>
       </SafeAreaView>
+      <SelectContact  visible={modalSelectContact} onClose={closeModal}/>
+      <SelectCategory  visible={modalSelectCategory} onClose={closeModal}/>
     </SafeAreaProvider>
   );
 };

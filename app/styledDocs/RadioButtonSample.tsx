@@ -4,6 +4,7 @@ import RadioButton from '../../components/RadioButton';
 import { gStyle } from '../styles/Global';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import images from '../../constants/Images';
+import { SansSerifText } from '../../components/SanSerifText';
 
 const RadioButtonSample = () => {
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
@@ -69,10 +70,18 @@ const RadioButtonSample = () => {
   
   return (
       <SafeAreaProvider style={[gStyle.darkBg, gStyle.p4]}>
+        <SansSerifText>With border</SansSerifText>
         <RadioButton 
           options={options} 
           selectedOption={selectedOption} 
           onSelect={handleSelect} 
+        />
+        <SansSerifText>No border</SansSerifText>
+         <RadioButton 
+          options={options} 
+          selectedOption={selectedOption} 
+          onSelect={handleSelect} 
+          showBorder={false}
         />
       </SafeAreaProvider>
   )

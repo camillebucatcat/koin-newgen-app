@@ -123,6 +123,20 @@ const images = {
     account:{
         draftkings: require(pathImages + 'draftkings.png'),
         confetti: require(pathImages + 'confetti.png')
+    },
+    selectCategories: {
+        banking: require(pathImages + 'categories/banking.png'),
+        cards: require(pathImages + 'categories/cards.png'),
+        casino: require(pathImages + 'categories/casino.png'),
+        dining: require(pathImages + 'categories/dining.png'),
+        drinks: require(pathImages + 'categories/drinks.png'),
+        exercise: require(pathImages + 'categories/exercise.png'),
+        inPersonBet: require(pathImages + 'categories/in-person-bet.png'),
+        shopping: require(pathImages + 'categories/shopping.png'),
+        koinTransfer: require(pathImages + 'categories/koin-transfer.png'),
+        showTickets: require(pathImages + 'categories/show-tickets.png'),
+        sportsGame: require(pathImages + 'categories/sports-game.png'),
+        transport: require(pathImages + 'categories/transport.png'),
     }
 
 }

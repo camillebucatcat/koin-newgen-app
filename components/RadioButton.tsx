@@ -1,14 +1,16 @@
 import React from 'react';
-import { View, TouchableOpacity, StyleSheet, ImageSourcePropType } from 'react-native';
+import { View, TouchableOpacity, StyleSheet, Image, ImageSourcePropType } from 'react-native';
 import { SansSerifText } from './SanSerifText';
 import { gStyle } from '../app/styles/Global';
 
 interface Option {
-  title?: string; // Make title optional
+  title?: string; 
   label: string;
   value: string;
-  image?: ImageSourcePropType; // Optional image property
-  layout?: 'left' | 'right' | 'space-between'; // New prop to determine layout
+  layout?: 'left' | 'right' | 'space-between';
+  image?: ImageSourcePropType;
+  imageWidth?: number; // Optional image width
+  imageHeight?: number; // Optional image height
 }
 
 interface RadioButtonProps {
@@ -28,16 +30,30 @@ const RadioButton: React.FC<RadioButtonProps> = ({ options, selectedOption, onSe
         >
           {option.layout === 'left' && (
             <>
-              {/* Radio button on the left */}
-              <View style={styles.radioButtonContainer}>
-                <View
-                  style={[
-                    styles.radioButton,
-                    selectedOption === option.value && styles.selectedRadioButton,
-                  ]}
-                >
-                  {selectedOption === option.value && <View style={styles.innerCircle} />}
+              {/* Radio button and optional image on the left */}
+              <View style={styles.leftContainer}>
+                <View style={styles.radioButtonContainer}>
+                  <View
+                    style={[
+                      styles.radioButton,
+                      selectedOption === option.value && styles.selectedRadioButton,
+                    ]}
+                  >
+                    {selectedOption === option.value && <View style={styles.innerCircle} />}
+                  </View>
                 </View>
+                {option.image && (
+                  <Image
+                    source={option.image}
+                    style={[
+                      styles.optionImage,
+                      {
+                        width: option.imageWidth ?? 24,
+                        height: option.imageHeight ?? 24,
+                      },
+                    ]}
+                  />
+                )}
               </View>
               <View style={styles.textContainer}>
                 {option.title && (
@@ -54,7 +70,19 @@ const RadioButton: React.FC<RadioButtonProps> = ({ options, selectedOption, onSe
 
           {option.layout === 'right' && (
             <>
-              {/* Text on the left, radio button on the right */}
+              {/* Text on the left, radio button and optional image on the right */}
+              {option.image && (
+                <Image
+                  source={option.image}
+                  style={[
+                    styles.optionImage,
+                    {
+                      width: option.imageWidth ?? 24,
+                      height: option.imageHeight ?? 24,
+                    },
+                  ]}
+                />
+              )}
               <View style={[gStyle.mr3]}>
                 {option.title && (
                   <SansSerifText maxFontSizeMultiplier={1} minimumFontScale={1} style={styles.titleText}>
@@ -65,14 +93,16 @@ const RadioButton: React.FC<RadioButtonProps> = ({ options, selectedOption, onSe
                   {option.label}
                 </SansSerifText>
               </View>
-              <View>
-                <View
-                  style={[
-                    styles.radioButton,
-                    selectedOption === option.value && styles.selectedRadioButton,
-                  ]}
-                >
-                  {selectedOption === option.value && <View style={styles.innerCircle} />}
+              <View style={styles.rightContainer}>
+                <View>
+                  <View
+                    style={[
+                      styles.radioButton,
+                      selectedOption === option.value && styles.selectedRadioButton,
+                    ]}
+                  >
+                    {selectedOption === option.value && <View style={styles.innerCircle} />}
+                  </View>
                 </View>
               </View>
             </>
@@ -80,7 +110,19 @@ const RadioButton: React.FC<RadioButtonProps> = ({ options, selectedOption, onSe
 
           {option.layout === 'space-between' && (
             <>
-              {/* Text on the left, radio button on the far right */}
+              {/* Text on the left, radio button and optional image on the far right */}
+              {option.image && (
+                <Image
+                  source={option.image}
+                  style={[
+                    styles.optionImage,
+                    {
+                      width: option.imageWidth ?? 24,
+                      height: option.imageHeight ?? 24,
+                    },
+                  ]}
+                />
+              )}
               <View style={styles.textContainer}>
                 {option.title && (
                   <SansSerifText maxFontSizeMultiplier={1} minimumFontScale={1} style={styles.titleText}>
@@ -123,6 +165,14 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     width: '100%',
   },
+  leftContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  rightContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
   radioButtonContainer: {
     marginRight: 8, // Space between radio button and text
   },
@@ -161,6 +211,9 @@ const styles = StyleSheet.create({
   },
   optionText: {
     fontSize: 16,
+  },
+  optionImage: {
+    marginRight: 8, // Space between the image and the next element
   },
 });
 

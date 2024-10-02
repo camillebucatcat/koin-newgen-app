@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Image, Modal, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
+import { View, Image, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
 import { gStyle } from '../../styles/Global';
 import { SansSerifText } from '../../../components/SanSerifText';
 import { display } from '../../styles/Display';
@@ -8,14 +8,11 @@ import FormField from '../../../components/FormField';
 import Button from '../../../components/Button';
 import TextAreaField from '../../../components/TextAreaField';
 import RadioButton from '../../../components/RadioButton';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
 
-interface ModalProps {
-    visible: boolean;
-    onClose: () => void;
-}
 
-const SendFunds: React.FC<ModalProps> = ({ visible, onClose }) => {
+const SendFunds = () => {
   const [selectedAmount, setSelectedAmount] = useState(null);
   const [form, setForm] = useState({
     amount: ''
@@ -62,18 +59,13 @@ const SendFunds: React.FC<ModalProps> = ({ visible, onClose }) => {
   };
 
   return (
-    <Modal
-      animationType="slide"
-      transparent={true}
-      visible={visible}
-      onRequestClose={onClose}
-    >
-      <View style={[styles.modalContainer, gStyle.darkBg]}>
+    <SafeAreaProvider style={gStyle.darkBg}>
+      <SafeAreaView style={{ flex: 1 }}>
         <View style={[display.flexCenterBetween, styles.header]}>
           <View>
             <SansSerifText>Send Funds</SansSerifText>
           </View>
-          <TouchableOpacity onPress={onClose}>
+          <TouchableOpacity>
             <View>
               <SansSerifText style={[gStyle.fw700]}>Cancel</SansSerifText>
             </View>
@@ -105,9 +97,9 @@ const SendFunds: React.FC<ModalProps> = ({ visible, onClose }) => {
                 maxLength={50}
                 securityMask={false}
                 onPress={() => { }}
-                onKeyPress={() => { }}
-                isActive={false}
-              />
+                  onKeyPress={() => { }}
+                  isActive={false}
+                />
             </View>
             <View>
               <SansSerifText style={[ gStyle.fs12, gStyle.textLight, gStyle.my4 ]}>Or quick select one of the following amounts:</SansSerifText>
@@ -152,7 +144,6 @@ const SendFunds: React.FC<ModalProps> = ({ visible, onClose }) => {
                   </View>
                 )}
               </View>
-           
             </View>
             <View style={[gStyle.mb4]}>
               <SansSerifText style={[ gStyle.fs12, gStyle.textLight, gStyle.my4 ]}>What’s this for?</SansSerifText>
@@ -174,8 +165,8 @@ const SendFunds: React.FC<ModalProps> = ({ visible, onClose }) => {
             </View>
           </View>
         </ScrollView>
-      </View>
-    </Modal>
+      </SafeAreaView>
+    </SafeAreaProvider>
   );
 };
 

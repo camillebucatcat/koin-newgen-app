@@ -14,26 +14,10 @@ import SplitLightIcon from '../../assets/icons/svg-icons/split-light-icon';
 import Colors from '../../constants/Colors';
 import RecentTransactions from '../../components/RecentTransactions';
 import Button from '../../components/Button';
-import SendFunds from '../move-transfer/send-funds/SendFunds';
-import RequestFund from '../move-transfer/request-funds/RequestFund';
 import HomeHeader from '../../components/HomeHeader';
 
 const Settings = ({ navigation }) => {
   const [activeSegment, setActiveSegment] = useState('Transfer');
-  const [modalSendFundVisible, setModalSendFundVisible] = useState(false);
-  const [modalRequestFundVisible, setModalRequestFundVisible] = useState(false);
-
-  const openSendFundModal = () => {
-    setModalSendFundVisible(true);
-  };
-  const openRequestFundModal = () => {
-    setModalRequestFundVisible(true);
-  };
-
-  const closeModal = () => {
-    setModalSendFundVisible(false);
-    setModalRequestFundVisible(false);
-  };
 
   const handleSegmentChange = (segment: string) => {
     setActiveSegment(segment);
@@ -61,13 +45,13 @@ const Settings = ({ navigation }) => {
                 <SansSerifText style={[gStyle.textGrayLight, gStyle.fw600, gStyle.fs16,]}>Total Available Cash</SansSerifText>
               </View>
               <View style={[display.flexCenterBetween, gStyle.pt4, { width: '100%', flexDirection: 'row', justifyContent: 'space-between' }]}>
-                <TouchableOpacity activeOpacity={0.8} style={{ flex: 1, marginRight: 8 }} onPress={openSendFundModal}>
+                <TouchableOpacity activeOpacity={0.8} style={{ flex: 1, marginRight: 8 }}>
                   <View style={[styles.btnContainer]}>
                     <SendLightIcon />
                     <SansSerifText style={[gStyle.textLight, gStyle.fw700, gStyle.fs14, gStyle.mt2]}>Send</SansSerifText>
                   </View>
                 </TouchableOpacity>
-                <TouchableOpacity activeOpacity={0.8} style={{ flex: 1, marginHorizontal: 8 }} onPress={openRequestFundModal}>
+                <TouchableOpacity activeOpacity={0.8} style={{ flex: 1, marginHorizontal: 8 }}>
                   <View style={[styles.btnContainer]}>
                     <RequestLightIcon />
                     <SansSerifText style={[gStyle.textLight, gStyle.fw700, gStyle.fs14, gStyle.mt2]}>Request</SansSerifText>
@@ -264,8 +248,6 @@ const Settings = ({ navigation }) => {
         )}
         </ScrollView>
       </SafeAreaView>
-      <SendFunds visible={modalSendFundVisible} onClose={closeModal}/>
-      <RequestFund visible={modalRequestFundVisible} onClose={closeModal}/>
     </SafeAreaProvider>
   );
 }

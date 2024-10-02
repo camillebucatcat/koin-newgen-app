@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Image, Modal, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
+import { View, Image, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
 import { gStyle } from '../../styles/Global';
 import { SansSerifText } from '../../../components/SanSerifText';
 import { display } from '../../styles/Display';
@@ -8,14 +8,9 @@ import FormField from '../../../components/FormField';
 import Button from '../../../components/Button';
 import TextAreaField from '../../../components/TextAreaField';
 import RadioButton from '../../../components/RadioButton';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
-
-interface ModalProps {
-    visible: boolean;
-    onClose: () => void;
-}
-
-const RequestFund: React.FC<ModalProps> = ({ visible, onClose }) => {
+const RequestFund = () => {
   const [selectedAmount, setSelectedAmount] = useState(null);
   const [form, setForm] = useState({
     amount: ''
@@ -62,18 +57,13 @@ const RequestFund: React.FC<ModalProps> = ({ visible, onClose }) => {
   };
 
   return (
-    <Modal
-      animationType="slide"
-      transparent={true}
-      visible={visible}
-      onRequestClose={onClose}
-    >
-      <View style={[styles.modalContainer, gStyle.darkBg]}>
+    <SafeAreaProvider style={gStyle.darkBg}>
+      <SafeAreaView style={{ flex: 1 }}>
         <View style={[display.flexCenterBetween, styles.header]}>
           <View>
             <SansSerifText>Request Funds</SansSerifText>
           </View>
-          <TouchableOpacity onPress={onClose}>
+          <TouchableOpacity>
             <View>
               <SansSerifText style={[gStyle.fw700]}>Cancel</SansSerifText>
             </View>
@@ -174,8 +164,8 @@ const RequestFund: React.FC<ModalProps> = ({ visible, onClose }) => {
             </View>
           </View>
         </ScrollView>
-      </View>
-    </Modal>
+      </SafeAreaView>
+    </SafeAreaProvider>
   );
 };
 

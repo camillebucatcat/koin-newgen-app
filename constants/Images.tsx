@@ -137,6 +137,17 @@ const images = {
         showTickets: require(pathImages + 'categories/show-tickets.png'),
         sportsGame: require(pathImages + 'categories/sports-game.png'),
         transport: require(pathImages + 'categories/transport.png'),
+        car: require(pathImages + 'categories/car.png'),
+        onlinePurchase: require(pathImages + 'categories/online-purchase.png'),
+        coffee: require(pathImages + 'categories/coffee.png'),
+        groceries: require(pathImages + 'categories/groceries.png'),
+        slotMachine: require(pathImages + 'categories/slot-machine.png'),
+        draftKings: require(pathImages + 'categories/draft-kings.png'),
+        tableGame: require(pathImages + 'categories/table-game.png'),
+        movieTickets: require(pathImages + 'categories/movie-tickets.png'),
+        travel: require(pathImages + 'categories/travel.png'),
+        gaming: require(pathImages + 'categories/gaming.png'),
+        entertainment: require(pathImages + 'categories/entertainment.png')
     }
 
 }

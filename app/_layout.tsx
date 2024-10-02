@@ -18,7 +18,7 @@ import FormFieldSample from './styledDocs/FormFieldSample';
 import EverydaySpending from './account/EverydaySpending';
 import EntertainmentFunds from './account/EntertainmentFunds';
 import Draftkings from './account/DraftKings';
-import TransactionDetails from './transaction/TransactionDetails';
+import TransactionDetails from './move-transfer/split-transaction/TransactionDetails';
 // import SendFunds from './send-funds/SendFunds';
 import SendFunds from './move-transfer/send-funds/SendFunds';
 import RequestFund from './move-transfer/request-funds/RequestFund';
@@ -37,6 +37,7 @@ import SelectContact from './move-transfer/SelectContact';
 import InviteContact from './contacts/InviteContact';
 import SelectCategory from './move-transfer/SelectCategory';
 import RadioButtonSample from './styledDocs/RadioButtonSample';
+import SelectSplitTransaction from './move-transfer/split-transaction/SelectSplitTransaction';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -82,6 +83,7 @@ export default function App() {
           <Stack.Screen name="InviteContact" component={InviteContact}/>
           <Stack.Screen name="SelectCategory" component={SelectCategory}/>
           <Stack.Screen name="RadioButtonSample" component={RadioButtonSample} />
+          <Stack.Screen name="SelectSplitTransaction" component={SelectSplitTransaction} />
         </Stack.Navigator>
       </NavigationContainer>
     </ThemeProvider>

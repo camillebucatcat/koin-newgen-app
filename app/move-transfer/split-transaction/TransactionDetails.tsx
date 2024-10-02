@@ -1,12 +1,12 @@
 import { ScrollView, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
-import images from '../../constants/Images';
-import { gStyle } from '../styles/Global';
-import { display } from '../styles/Display';
-import { SansSerifText } from '../../components/SanSerifText';
-import Button from '../../components/Button';
-import Header from '../../components/header/Header';
+import { gStyle } from '../../styles/Global';
+import Header from '../../../components/header/Header';
+import { SansSerifText } from '../../../components/SanSerifText';
+import { display } from '../../styles/Display';
+import Button from '../../../components/Button';
+
 
 
 const TransactionDetails = ({ navigation }) => {

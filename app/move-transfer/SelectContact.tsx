@@ -32,7 +32,7 @@ const SelectContact: React.FC<ModalProps> = ({ visible, onClose }) => {
               </View>
             </TouchableOpacity>
           </View>
-          <ScrollView showsVerticalScrollIndicator={false} style={styles.scrollView}>
+          <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.scrollContainer}>
             <View style={[styles.searchContainer, gStyle.mx4]}>
               <Image source={images.icon.searchInput} />
               <TextInput placeholder="Search Contacts" placeholderTextColor="#A8A8A8" style={styles.input} />
@@ -173,19 +173,20 @@ const SelectContact: React.FC<ModalProps> = ({ visible, onClose }) => {
                   </TouchableOpacity>
                 </View>
               </View>
-              <View style={styles.alphabetIndex}>
-                {alphabets.map((letter, index) => (
-                  <TouchableOpacity  key={letter}
-                  disabled={index === 0} >
-                    <Text style={[styles.alphabetText, gStyle.textPrimaryLight]}>{letter}</Text>
-                  </TouchableOpacity>
-                ))}
-              </View>
+              
             </View>
             <View style={[gStyle.p4]}>
               <GradientButton title="Invite To Koin" transform="normal" expand='block'/>
             </View>
           </ScrollView>
+          <View style={styles.alphabetIndex}>
+            {alphabets.map((letter, index) => (
+              <TouchableOpacity  key={letter}
+                disabled={index === 0} >
+                <Text style={[styles.alphabetText, gStyle.textPrimaryLight]}>{letter}</Text>
+              </TouchableOpacity>
+            ))}
+          </View>
         </View>
       </View>
     </Modal>
@@ -194,7 +195,7 @@ const SelectContact: React.FC<ModalProps> = ({ visible, onClose }) => {
 
 const styles = StyleSheet.create({
   modalContainer: {
-    flex: 1,
+    flex: 1, 
   },
   backgroundOverlay: {
     flex: 1,
@@ -237,8 +238,9 @@ const styles = StyleSheet.create({
       },
     }),
   },
-  scrollView: {
-    flex: 1,
+  scrollContainer: {
+    flexGrow: 1, 
+    paddingBottom: 100, 
   },
   alphabeticalContainer: {
     flexDirection: 'row',
@@ -260,7 +262,12 @@ const styles = StyleSheet.create({
   },
   alphabetIndex: {
     alignItems: 'flex-end',
-    marginRight: 6,
+    position: 'absolute',
+    top: 320,
+    left: 0,
+    right: 4,
+
+    backgroundColor: gStyle.darkBg.color, 
   },
   alphabetText: {
     fontSize: 14,

@@ -38,6 +38,7 @@ import InviteContact from './contacts/InviteContact';
 import SelectCategory from './move-transfer/SelectCategory';
 import RadioButtonSample from './styledDocs/RadioButtonSample';
 import SelectSplitTransaction from './move-transfer/split-transaction/SelectSplitTransaction';
+import Contacts from './contacts/Contacts';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -84,6 +85,7 @@ export default function App() {
           <Stack.Screen name="SelectCategory" component={SelectCategory}/>
           <Stack.Screen name="RadioButtonSample" component={RadioButtonSample} />
           <Stack.Screen name="SelectSplitTransaction" component={SelectSplitTransaction} />
+          <Stack.Screen name="Contacts" component={Contacts} />
         </Stack.Navigator>
       </NavigationContainer>
     </ThemeProvider>

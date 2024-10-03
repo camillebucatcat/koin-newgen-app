@@ -44,6 +44,7 @@ const images = {
         shoppingbag: require(pathIcons + 'ShoppingBag.png'),
         coffeecup: require(pathIcons + 'CoffeeCup.png'),
         basket: require(pathIcons + 'ShoppingBasket.png'),
+        everyday: require(pathIcons + 'everyday-spending.png'),
     },
     properties: {
         bg: {

@@ -63,6 +63,24 @@ return(
             <Image source={images.icon.arrowright}/>
         </View>
     </TouchableOpacity>
+    <TouchableOpacity style={[display.dFlex, gStyle.py3, display.flexBetween, display.alignCenter, {borderBottomColor: '#FFFFFF1F', borderBottomWidth: 1}]}>
+        <View style={[]}>
+        <Image source={ images.transactions.everyday}/>
+        </View>
+        <View style={[display.flexBetween, display.alignCenter, gStyle.mx3]}>
+            <View>
+                <Text style={[gStyle.textLight, gStyle.fw600, gStyle.fs4]}>Everyday Spending</Text>
+                <Text style={[gStyle.textLight, gStyle.fs3]}>Account Transfer</Text>
+                <Text style={[gStyle.textLight, gStyle.fs3]}>July 29th</Text>
+            </View>
+            <View>
+                <Text style={[gStyle.textSuccessLight, gStyle.fw700, gStyle.fs3]}>+ $100.00</Text>
+            </View>
+        </View>
+        <View>
+            <Image source={images.icon.arrowright}/>
+        </View>
+    </TouchableOpacity>
 </View>
 )
 }

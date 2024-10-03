@@ -66,6 +66,7 @@ const GradientButton: React.FC<ButtonProps> = ({
           style={[
             styles.flexRow,
             styles.innerContainer,
+            expand === 'block' ? { ...styles.innerContainer, paddingHorizontal: 16 } : styles.innerContainer,
             background === 'dark'
             ? [backgrounds.dark, shape === 'round' ? shapes.round : shapes.defaultShape]
             : background === 'light'
@@ -151,7 +152,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     flexDirection: 'row',
     alignItems: 'center',
-    paddingHorizontal: 16, 
   },
   flexRow: {
     flexDirection: 'row',
@@ -175,6 +175,9 @@ const styles = StyleSheet.create({
   },
   blockButton: {
     width: '100%',
+  },
+  blockExpand: {
+    paddingHorizontal: 16,
   },
   // Alignment styles
   alignCenter: {

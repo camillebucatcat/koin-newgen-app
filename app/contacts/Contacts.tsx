@@ -209,9 +209,14 @@ return(
                 </View>
             </TouchableOpacity>
             <TouchableOpacity style={[gStyle.contactCard, gStyle.mb4]} activeOpacity={0.5}>
-            <View style={[display.dFlex, display.alignCenter]}>
-                <Image source={images.profileSample.user2} style={styles.contactImg}/>
-                <SansSerifText style={[gStyle.fs14, gStyle.fw400]}>Aiden Rodríguez</SansSerifText>
+            <View style={[display.flexCenterBetween]}>
+                <View style={[display.dFlex, display.alignCenter]}>
+                    <Image source={images.profileSample.user2} style={styles.contactImg}/>
+                    <SansSerifText style={[gStyle.fs14, gStyle.fw400]}>Aiden Rodríguez</SansSerifText>
+                </View>
+                <View style={[]}>
+                            <GradientButton title="Add" transform="normal" fill="solid" color="light" background="dark" layout="right" image={images.icon.plus} centerText={true} handlePress={() => router.push('')} />
+                        </View>
             </View>
             </TouchableOpacity>
             <TouchableOpacity style={[gStyle.contactCard, gStyle.mb4]} activeOpacity={0.5}>
@@ -299,6 +304,15 @@ return(
             </TouchableOpacity>
         </View>
         </View>
+        </View>
+
+        <View style={[gStyle.mt6, gStyle.darkCard, gStyle.mx4, gStyle.mb8,{}]}>
+            <View style={[gStyle.mb4,{}]}>
+                <Image source={images.icon.usercircleplus}/>
+            </View>
+            <SansSerifText style={[gStyle.textLight, gStyle.fs18, gStyle.fw700, gStyle.mb2,{}]}>Find Who’s on Koin</SansSerifText>
+            <SansSerifText style={[gStyle.textLight, gStyle.mb6,{}]}>To help you find someone you need to send money to – or more importantly request money from –sync your contacts</SansSerifText>
+            <GradientButton title="Sync Contacts" shape="round" expand='block' transform="normal" fill="solid" color="light" background="dark" centerText={true} handlePress={() => router.push('')} />
         </View>
     </View>
     

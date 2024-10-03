@@ -159,7 +159,7 @@ const Settings = ({ navigation }) => {
                   <SansSerifText style={[gStyle.textLight, gStyle.fs12, gStyle.fw400, display.alignTextCenter]}>Rachel Miller</SansSerifText>
                 </View>
               </ScrollView>
-              <GradientButton title="Manage Contacts" transform="normal" handlePress={() => navigation.navigate('')} fill="outline" expand="block" />
+              <GradientButton title="Manage Contacts" transform="normal" handlePress={() => navigation.navigate('')} fill="outline" expand="block" shape="round" />
             </View>
             <View style={[gStyle.darkCard, gStyle.my4]}>
               <SansSerifText style={[gStyle.textLight, gStyle.fw700, gStyle.fs16]}>Groups</SansSerifText>
@@ -182,7 +182,7 @@ const Settings = ({ navigation }) => {
                   <SansSerifText style={[gStyle.textLight, gStyle.fs12, gStyle.fw400, display.alignTextCenter]}>Family</SansSerifText>
                 </View>
               </ScrollView>
-              <GradientButton title="Manage Groups" transform="normal" handlePress={() => navigation.navigate('')} fill="outline" expand="block" />
+              <GradientButton title="Manage Groups" transform="normal" handlePress={() => navigation.navigate('')} fill="outline" expand="block" shape="round"/>
             </View>
             <View style={[gStyle.darkCard, gStyle.my4]}>
               <SansSerifText style={[gStyle.textLight, gStyle.fw700, gStyle.fs16]}>Markers</SansSerifText>
@@ -201,7 +201,7 @@ const Settings = ({ navigation }) => {
                   <SansSerifText style={[gStyle.textLight, gStyle.fs12, gStyle.fw400, display.alignTextCenter]}>Casino</SansSerifText>
                 </View>
               </ScrollView>
-              <GradientButton title="Manage Markers" transform="normal" handlePress={() => navigation.navigate('')} fill="outline" expand="block" />
+              <GradientButton title="Manage Markers" transform="normal" handlePress={() => navigation.navigate('')} fill="outline" expand="block" shape="round"/>
             </View>
             <View style={[gStyle.darkCard, gStyle.my4]}>
               <SansSerifText style={[gStyle.textLight, gStyle.fw700, gStyle.fs16]}>Wristbands</SansSerifText>
@@ -224,7 +224,7 @@ const Settings = ({ navigation }) => {
                   <SansSerifText style={[gStyle.textLight, gStyle.fs12, gStyle.fw400, display.alignTextCenter]}>Family</SansSerifText>
                 </View>
               </ScrollView>
-              <GradientButton title="Manage Wristbands" transform="normal" handlePress={() => navigation.navigate('')} fill="outline" expand="block" />
+              <GradientButton title="Manage Wristbands" transform="normal" handlePress={() => navigation.navigate('')} fill="outline" expand="block" shape="round" />
             </View>
           </View>
         )}

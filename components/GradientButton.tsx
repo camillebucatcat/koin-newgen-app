@@ -20,6 +20,7 @@ interface ButtonProps {
   centerText?: boolean;
   expand?: 'block' | 'default'; 
   layout?: 'left' | 'right' | 'space-between';
+  alignment?: 'start' | 'center' | 'end';  // Alignment prop added
 }
 
 const GradientButton: React.FC<ButtonProps> = ({
@@ -38,6 +39,7 @@ const GradientButton: React.FC<ButtonProps> = ({
   layout = 'left',
   fill = 'solid',
   shape = 'default',
+  alignment = 'center',  // Default alignment
 }) => {
   return (
     <TouchableOpacity
@@ -65,13 +67,20 @@ const GradientButton: React.FC<ButtonProps> = ({
             styles.flexRow,
             styles.innerContainer,
             background === 'dark'
-            ? [backgrounds.dark, shape === 'round' ? shapes.round : shapes.defaultShape] // Apply shape based on background
+            ? [backgrounds.dark, shape === 'round' ? shapes.round : shapes.defaultShape]
             : background === 'light'
-            ? [backgrounds.light, shape === 'round' ? shapes.round : shapes.defaultShape] // Apply shape for light background
+            ? [backgrounds.light, shape === 'round' ? shapes.round : shapes.defaultShape]
             : background === 'none'
             ? backgrounds.none
             : {},
             layout === 'space-between' ? styles.spaceBetweenLayout : {},
+            alignment === 'center'
+              ? styles.alignCenter
+              : alignment === 'start'
+              ? styles.alignStart
+              : alignment === 'end'
+              ? styles.alignEnd
+              : {},
           ]}
         >
           {/* Left layout */}
@@ -142,6 +151,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     flexDirection: 'row',
     alignItems: 'center',
+    paddingHorizontal: 16, 
   },
   flexRow: {
     flexDirection: 'row',
@@ -165,6 +175,16 @@ const styles = StyleSheet.create({
   },
   blockButton: {
     width: '100%',
+  },
+  // Alignment styles
+  alignCenter: {
+    justifyContent: 'center',
+  },
+  alignStart: {
+    justifyContent: 'flex-start',
+  },
+  alignEnd: {
+    justifyContent: 'flex-end',
   },
 });
 

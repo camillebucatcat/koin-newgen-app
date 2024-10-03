@@ -34,6 +34,7 @@ const images = {
         searchInput: require(pathIcons+ 'search-input.png'),
         usercircleplus: require(pathIcons + 'usercircleplus.png'),
         editPencil: require(pathIcons + 'edit-pencil.png'),
+        plusgradient: require(pathIcons + 'plusgradient.png'),
     },
     home: {
         dice: require(pathImages + 'dice.png'),

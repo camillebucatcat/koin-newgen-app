@@ -6,7 +6,15 @@ import { display } from '../app/styles/Display';
 import { router } from 'expo-router';
 import images from '../constants/Images';
 import GradientButton from './GradientButton';
-export default function RecentTransactions (){
+import { SansSerifText } from './SanSerifText';
+
+interface TitleProps {
+    transaction: string;
+    showDate?: boolean;
+  }
+
+
+const RecentTransactions: React.FC<TitleProps> = ({ transaction, showDate = false }) =>{
 return(
 <View style={[]}>
     <TouchableOpacity style={[display.dFlex, gStyle.py3, display.flexBetween, display.alignCenter, {borderBottomColor: '#FFFFFF1F', borderBottomWidth: 1}]}>
@@ -20,7 +28,8 @@ return(
                 <Text style={[gStyle.textLight, gStyle.fs3]}>Yesterday 12.54 pm</Text>
             </View>
             <View>
-                <Text style={[gStyle.textLight, gStyle.fw700, gStyle.fs3]}>- $40.00</Text>
+                <Text style={[gStyle.textLight, gStyle.fw700, gStyle.fs3, display.alignSelfEnd]}>- $40.00</Text>
+                <SansSerifText style={[gStyle.fs12,gStyle.mt1,{}]}>{transaction}</SansSerifText>
             </View>
         </View>
         <View>
@@ -81,6 +90,28 @@ return(
             <Image source={images.icon.arrowright}/>
         </View>
     </TouchableOpacity>
+    <TouchableOpacity style={[display.dFlex, gStyle.py3, display.flexBetween, display.alignCenter, {borderBottomColor: '#FFFFFF1F', borderBottomWidth: 1}]}>
+        <View style={[]}>
+        <Image source={ images.transactions.amazon}/>
+        </View>
+        <View style={[display.flexBetween, display.alignCenter, gStyle.mx3]}>
+            <View>
+                <Text style={[gStyle.textLight, gStyle.fw600, gStyle.fs4]}>Amazon</Text>
+                <Text style={[gStyle.textLight, gStyle.fs3]}>You paid $40</Text>
+                {showDate && ( 
+                    <Text style={[gStyle.textLight, gStyle.fs3]}>July 29th</Text>
+                )}
+            </View>
+            <View>
+                <Text style={[gStyle.textLight, gStyle.fw700, gStyle.fs3, display.alignSelfEnd]}>$30.00</Text>
+                <SansSerifText style={[gStyle.fs12,gStyle.mt1,{}]}>{transaction}</SansSerifText>
+            </View>
+        </View>
+        <View>
+            <Image source={images.icon.arrowright}/>
+        </View>
+    </TouchableOpacity>
 </View>
 )
 }
+export default RecentTransactions;

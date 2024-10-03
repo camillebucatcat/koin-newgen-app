@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
   },
   segmentButton: {
     alignItems: 'center',
-    paddingVertical: 10,
+    paddingVertical: 16,
   },
   fullWidthSegment: {
     flex: 1,

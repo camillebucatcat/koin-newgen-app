@@ -61,7 +61,7 @@ export default function App() {
       <NavigationContainer independent={true} linking={linking}>
         <Stack.Navigator screenOptions={{ headerShown: false }}>
           <Stack.Screen name="Home" component={HomeTabs} />
-          <Stack.Screen name="styledDocs/ButtonSample" component={ButtonSample} />
+          <Stack.Screen name="ButtonSample" component={ButtonSample} />
           <Stack.Screen name="styledDocs/FormFieldSample" component={FormFieldSample} />
           <Stack.Screen name="EverydaySpending" component={EverydaySpending} />
           <Stack.Screen name="EntertainmentFunds" component={EntertainmentFunds} />

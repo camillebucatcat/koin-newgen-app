@@ -12,8 +12,9 @@ const ButtonSample = () => {
     <SafeAreaProvider>
       <SafeAreaView style={{ flex: 1 }} forceInset={{ top: 'always', bottom: 'never' }}> 
         <ScrollView contentContainerStyle={{ paddingHorizontal: 16, paddingVertical: 8 }}>
-          <GradientButton title="Gradient Outline"  handlePress={() => console.log('Pressed!')} fill="outline" expand="block" />
-          <GradientButton title="Gradient Outline" color="dark" background="light" handlePress={() => console.log('Pressed!')} fill="outline" expand="block" />
+          <GradientButton title="Gradient Outline" shape='default'  handlePress={() => console.log('Pressed!')} fill="outline" expand="block" />
+          <GradientButton title="Gradient Outline" shape='round' color="dark" background="light" handlePress={() => console.log('Pressed!')} fill="outline" expand="block" />
+          <GradientButton title="Solid with image" color="light" background="none" layout="right" shape="round" image={images.icon.plus} handlePress={() => console.log('Pressed!')} fill="clear" expand="block" customStyles={{marginVertical: 8}} />
           <Button title="SOLID" expand="default" shape="default" fill="solid" color="primary" customStyles={{ marginVertical: 8}} centerText={true} handlePress={() => router.push('')} />
           <Button title="CLEAR" shape="round" fill="clear" customStyles={{ marginVertical: 8}} handlePress={() => router.push('')} />
           <Button title="OUTLINE" expand="block" shape="round" fill="outline" color="primary" text="primary" customStyles={{ marginVertical: 8}} handlePress={() => router.push('')} />

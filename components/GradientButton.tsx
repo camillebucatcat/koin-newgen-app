@@ -12,13 +12,14 @@ interface ButtonProps {
   shape?: 'default' | 'round';
   fill?: 'solid' | 'clear' | 'outline';
   color?: 'dark' | 'light'; 
-  background?: 'dark' | 'light'; 
+  background?: 'dark' | 'light' | 'none'; 
   image?: ImageSourcePropType;
   transform?: '' | 'normal';
   disabled?: boolean;
   opacity?: number;
   centerText?: boolean;
   expand?: 'block' | 'default'; 
+  layout?: 'left' | 'right' | 'space-between';
 }
 
 const GradientButton: React.FC<ButtonProps> = ({
@@ -29,11 +30,14 @@ const GradientButton: React.FC<ButtonProps> = ({
   image,
   transform = '',
   background = 'dark',
-  color = 'light', 
+  color = 'light',
   disabled = false,
   opacity = 1,
   centerText = true,
-  expand = 'default',  
+  expand = 'default',
+  layout = 'left',
+  fill = 'solid',
+  shape = 'default',
 }) => {
   return (
     <TouchableOpacity
@@ -52,26 +56,74 @@ const GradientButton: React.FC<ButtonProps> = ({
         style={[
           styles.linearGradient,
           { opacity: disabled ? 0.5 : 1 },
-        
+          shape === 'default' && shapes.defaultShape,
+          shape === 'round' && shapes.round,
         ]}
       >
         <View
           style={[
             styles.flexRow,
             styles.innerContainer,
-            background === 'dark' ? backgrounds.dark : backgrounds.light,
-            centerText ? styles.centerButtonText : styles.leftButtonText,
+            background === 'dark'
+            ? [backgrounds.dark, shape === 'round' ? shapes.round : shapes.defaultShape] // Apply shape based on background
+            : background === 'light'
+            ? [backgrounds.light, shape === 'round' ? shapes.round : shapes.defaultShape] // Apply shape for light background
+            : background === 'none'
+            ? backgrounds.none
+            : {},
+            layout === 'space-between' ? styles.spaceBetweenLayout : {},
           ]}
         >
-          {image && <Image source={image} style={styles.image} />}
-          <SansSerifText style={[
-            styles.baseText,
-            color === 'light' ? texts.light : texts.dark,
-            transform === '' ? transforms.default : transforms.normal,
-            customSpace
-          ]}>
-            {title}
-          </SansSerifText>
+          {/* Left layout */}
+          {layout === 'left' && (
+            <>
+              {image && <Image source={image} style={styles.image} />}
+              <SansSerifText
+                style={[
+                  styles.baseText,
+                  color === 'light' ? texts.light : texts.dark,
+                  transform === '' ? transforms.default : transforms.normal,
+                  customSpace,
+                ]}
+              >
+                {title}
+              </SansSerifText>
+            </>
+          )}
+
+          {/* Right layout */}
+          {layout === 'right' && (
+            <>
+              <SansSerifText
+                style={[
+                  styles.baseText,
+                  color === 'light' ? texts.light : texts.dark,
+                  transform === '' ? transforms.default : transforms.normal,
+                  customSpace,
+                ]}
+              >
+                {title}
+              </SansSerifText>
+              {image && <Image source={image} style={styles.image} />}
+            </>
+          )}
+
+          {/* Space-between layout*/}
+          {layout === 'space-between' && (
+            <>
+              <SansSerifText
+                style={[
+                  styles.baseText,
+                  color === 'light' ? texts.light : texts.dark,
+                  transform === '' ? transforms.default : transforms.normal,
+                  customSpace,
+                ]}
+              >
+                {title}
+              </SansSerifText>
+              {image && <Image source={image} style={styles.image} />}
+            </>
+          )}
         </View>
       </LinearGradient>
     </TouchableOpacity>
@@ -81,17 +133,22 @@ const GradientButton: React.FC<ButtonProps> = ({
 const styles = StyleSheet.create({
   linearGradient: {
     minHeight: 43,
-    borderRadius: 100, 
+    borderRadius: 100,
   },
   innerContainer: {
-    borderRadius: 100,
+    borderRadius: 8,
     flex: 1,
-    margin: 1, 
+    margin: 1,
     justifyContent: 'center',
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   flexRow: {
     flexDirection: 'row',
     alignItems: 'center',
+  },
+  spaceBetweenLayout: {
+    justifyContent: 'space-between',
   },
   image: {
     width: 20,
@@ -103,20 +160,12 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     fontSize: 14,
   },
-  centerButtonText: {
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  leftButtonText: {
-    paddingLeft: 16,
-  },
   defaultButton: {
-    alignSelf: 'flex-start', 
+    alignSelf: 'flex-start',
   },
   blockButton: {
-    width: '100%',  
+    width: '100%',
   },
- 
 });
 
 const texts = StyleSheet.create({ 
@@ -134,9 +183,16 @@ const backgrounds = StyleSheet.create({
   },
   dark: {
     backgroundColor: '#3C3A3C',
-  }
+  },
 })
-
+const shapes = StyleSheet.create({
+  defaultShape: {
+    borderRadius: 16,
+  },
+  round: {
+    borderRadius: 100,
+  },
+});
 const transforms = StyleSheet.create({
   default: {
     textTransform: 'uppercase',
@@ -145,5 +201,9 @@ const transforms = StyleSheet.create({
     textTransform: 'none',
   },
 });
-
+const fills = StyleSheet.create({
+  clear: {
+    backgroundColor: 'transparent',
+  },
+});
 export default GradientButton;

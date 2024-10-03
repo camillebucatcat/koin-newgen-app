@@ -97,7 +97,7 @@ return(
                         <Image source={images.icon.noPfp} style={styles.contactImg}/>
                         <SansSerifText style={[gStyle.fs14, gStyle.fw400]}>Angela Jones</SansSerifText>
                       </View>
-                      <View style={styles.invitedContainer}>
+                      <View style={styles.koininvitecontainer}>
                         <SansSerifText style={[gStyle.fs14, gStyle.fw600]}>Invited</SansSerifText>
                       </View>
                     </View>
@@ -108,7 +108,7 @@ return(
                         <Image source={images.icon.noPfp} style={styles.contactImg}/>
                         <SansSerifText style={[gStyle.fs14, gStyle.fw400]}>Arian Williams</SansSerifText>
                       </View>
-                      <View style={styles.invitedContainer}>
+                      <View style={styles.koininvitecontainer}>
                         <SansSerifText style={[gStyle.fs14, gStyle.fw600]}>Invited</SansSerifText>
                       </View>
                     </View>                 
@@ -128,7 +128,7 @@ return(
                         <Image source={images.icon.noPfp} style={styles.contactImg}/>
                         <SansSerifText style={[gStyle.fs14, gStyle.fw400]}>Bill Jones</SansSerifText>
                       </View>
-                      <View style={styles.invitedContainer}>
+                      <View style={styles.koininvitecontainer}>
                         <SansSerifText style={[gStyle.fs14, gStyle.fw600]}>Invited</SansSerifText>
                       </View>
                     </View>                 
@@ -204,7 +204,7 @@ return(
                         <SansSerifText style={[gStyle.fs14, gStyle.fw400]}>Ada Wilson</SansSerifText>
                     </View>
                     <View style={[]}>
-                        <GradientButton title="Add" transform="normal" fill="outline" color="light" background="dark" image={images.icon.plus} centerText={true} handlePress={() => router.push('')} />
+                        <GradientButton title="Add" transform="normal" fill="solid" color="light" background="dark" layout="right" image={images.icon.plus} centerText={true} handlePress={() => router.push('')} />
                     </View>
                 </View>
             </TouchableOpacity>
@@ -257,7 +257,7 @@ return(
                 <SansSerifText style={[gStyle.fs14, gStyle.fw400]}>Bill Jones</SansSerifText>
                 </View>
                 <View style={[]}>
-                <GradientButton title="Invite" transform="normal" fill="solid" color="dark" background="dark" centerText={true} handlePress={() => router.push('')} />
+                <GradientButton title="Invite" transform="normal" fill="solid" color="dark" background='none' centerText={true} handlePress={() => router.push('')} />
                 </View>
             </View>                 
             </TouchableOpacity>
@@ -339,7 +339,8 @@ const styles = StyleSheet.create({
     searchContainer: {
       backgroundColor: '#7676803D',
       borderRadius: 50,
-      padding: 16,
+      paddingVertical: 8,
+      paddingHorizontal: 16,
       flexDirection: 'row',
       marginTop: 24,
     },
@@ -400,6 +401,12 @@ const styles = StyleSheet.create({
       paddingVertical: 8,
       borderRadius: 8,
       borderWidth: 1
-    }
+    },
+    koininvitecontainer: {
+        backgroundColor: '#4F4F4F',
+        paddingHorizontal: 12,
+        paddingVertical: 4,
+        borderRadius: 50
+      }
   });
   

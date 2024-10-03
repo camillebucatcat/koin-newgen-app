@@ -41,6 +41,11 @@ export default {
     tertiaryShade: '#542ae0',
     tertiaryTint: '#7045ff',
   },
+  primaryOrange:{
+    color: '#FF8950',
+    primaryOrangeShade: '#e07946',
+    primaryOrangeTint: '#ff9562',
+  },
   success: {
     color: '#2dd55b',
     successShade: '#28bb50',

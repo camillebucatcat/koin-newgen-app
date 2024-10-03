@@ -4,6 +4,7 @@ import Colors from '../constants/Colors';
 import images from '../constants/Images';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Defs, G, Path, Svg } from 'react-native-svg';
+import TabQr from '../assets/icons/svg-icons/tabQr';
 // const image = {uri: '../assets/images/tabbar-vector.png'};
 
 export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
@@ -11,7 +12,7 @@ export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
 
   return (
     <View style={[styles.tabBar]}>
-      {/* <View style={[styles.tabLinks]}>
+      <View style={[styles.tabLinks]}>
         {state.routes.map((route, index) => {
           const { options } = descriptors[route.key];
           const label =
@@ -53,7 +54,7 @@ export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
               onLongPress={onLongPress}
               style={{ flex: 1 }}
             >
-              <Text style={{ color: isFocused ? 'orange' : '#fff', textAlign: 'center', fontSize: 12 }}>
+              <Text style={{ color: isFocused ? 'orange' : '#fff', textAlign: 'center', fontSize: 12, fontFamily: '' }}>
                 {label}
               </Text>
             </TouchableOpacity>
@@ -62,15 +63,17 @@ export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
       </View>
       <View style={styles.btnQR}>
         <TouchableOpacity style={{ flex: 1 }} >
-          <Text>
+          {/* <Text>
             QR
-          </Text>
+          </Text> */}
+          <View style={styles.QrHolder}>
+          <TabQr />
+          </View>
         </TouchableOpacity>
-      </View> */}
-      {/* <View style={styles.tabBarBg}>
-        <Image source={images.tabBar.Bg} style={styles.tabBarBgImage} />
+      </View>
+      <View style={styles.tabBarBg}>
         <ImageBackground source={images.tabBar.Bg} resizeMode='cover' style={styles.tabBarBgImage}></ImageBackground>
-      </View> */}
+      </View>
     </View>
   );
 }
@@ -99,10 +102,21 @@ const styles = StyleSheet.create({
   },
   btnQR: {
     zIndex: 10,
-    width: 70,
-    height: 70,
-    backgroundColor: 'yellow',
-    marginRight: 40
+    width: 80,
+    height: 80,
+    backgroundColor: Colors.primaryOrange.color,
+    marginRight: 45,
+    borderRadius: 100,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'row',
+    textAlign: 'center'
+  },
+  QrHolder: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   tabBarBg: {
     width: '100%',

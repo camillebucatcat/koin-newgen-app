@@ -44,6 +44,7 @@ import SplitTransactionType from './move-transfer/split-transaction/SplitTransac
 import SplitReviewTransaction from './move-transfer/split-transaction/SplitReviewTransaction';
 import SplitTransactionSent from './move-transfer/split-transaction/SplitTransactionSent';
 import SplittingTransaction from './move-transfer/split-transaction/SplittingTransaction';
+import SettleUpFund from './settle-up/SettleUpFund';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -96,6 +97,7 @@ export default function App() {
           <Stack.Screen name="SplitTransactionType" component={SplitTransactionType} />
           <Stack.Screen name="SplitReviewTransaction" component={SplitReviewTransaction} />
           <Stack.Screen name="SplitTransactionSent" component={SplitTransactionSent} />
+          <Stack.Screen name="SettleUpFund" component={SettleUpFund} />
         </Stack.Navigator>
       </NavigationContainer>
     </ThemeProvider>

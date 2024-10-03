@@ -1,11 +1,12 @@
 import React, {useRef, useState} from 'react';
-import {Animated, Platform, StyleProp, StyleSheet, TextInput, TextStyle, TouchableOpacity, View} from 'react-native';
+import {Animated, Image, Platform, StyleProp, StyleSheet, TextInput, TextStyle, TouchableOpacity, View} from 'react-native';
 import Colors from '../constants/Colors';
 import Svg, { Path } from 'react-native-svg';
 import EyeIcon from '../assets/icons/svg-icons/eye';
 import EyeSlash from '../assets/icons/svg-icons/eye-slash';
 import EditIcon from '../assets/icons/svg-icons/edit-icon';
 import ClearIcon from '../assets/icons/svg-icons/clear-icon';
+import images from '../constants/Images';
 
 interface FormField {
   title: string;
@@ -129,7 +130,7 @@ const FormField: React.FC<FormField> = ({title, securityMask=false, labelColor, 
       ): null }
       { showClearBtn ? 
         <TouchableOpacity style={styles.clearIconContainer} onPress={clearText}>
-          <ClearIcon />
+          <Image source={images.icon.close}/>
         </TouchableOpacity>
         : null
       }

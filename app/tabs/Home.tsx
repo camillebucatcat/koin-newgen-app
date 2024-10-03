@@ -15,6 +15,7 @@ import GradientButton from '../../components/GradientButton';
 import { SansSerifText } from '../../components/SanSerifText';
 import { router } from 'expo-router';
 import HomeHeader from '../../components/header/HomeHeader';
+import NoContent from '../../components/NoContent';
 
 
 const Home = ({ navigation }) => {
@@ -34,7 +35,7 @@ const Home = ({ navigation }) => {
       <SafeAreaView style={{ flex: 1 }}>
         <ScrollView>
         {activeSegment === 'For You' && (
-          <View style={{paddingHorizontal: 16, paddingVertical: 8}}>
+          <View style={{paddingHorizontal: 16, paddingVertical: 8,  paddingBottom: 150}}>
             <View style={[gStyle.darkCard, gStyle.my4]}>
               <SansSerifText style={[gStyle.textLight, gStyle.fw500, gStyle.fs16]}>Total Available Cash</SansSerifText>
               <SansSerifText style={[gStyle.textLight, gStyle.fw600, gStyle.fs32]}>$8,385.28</SansSerifText>
@@ -348,13 +349,17 @@ const Home = ({ navigation }) => {
           </View>
         )}
         {activeSegment === 'Credit' && ( 
-          <View style={{paddingHorizontal: 16, paddingVertical: 8, paddingBottom: 150}}>
-            <SansSerifText style={[gStyle.textLight]}>Credit</SansSerifText>
+          <View>
+            <View style={styles.centeredContent}>
+              <NoContent />
+            </View>
           </View>
         )}
         {activeSegment === 'Rewards' && ( 
-          <View style={{paddingHorizontal: 16, paddingVertical: 8, paddingBottom: 150}}>
-            <SansSerifText style={[gStyle.textLight]}>Rewards</SansSerifText>
+          <View>
+            <View style={styles.centeredContent}>
+              <NoContent />
+            </View>
           </View>
         )}
         </ScrollView>
@@ -421,5 +426,10 @@ const styles = StyleSheet.create({
   },
   logo: {
     resizeMode: 'contain',
+  },
+  centeredContent: {
+    flex: 1,
+    paddingVertical: 320,
+    paddingHorizontal: 16
   }
 });

@@ -8,6 +8,7 @@ import Button from '../../components/Button';
 import { router } from 'expo-router';
 import { display } from '../styles/Display';
 import HomeHeader from '../../components/header/HomeHeader';
+import NoContent from '../../components/NoContent';
 
 const Discover = () => {
   const [activeSegment, setActiveSegment] = useState('Perks');
@@ -407,14 +408,18 @@ const Discover = () => {
         )}
 
         {activeSegment === 'Partners' && ( 
-          <View style={{ paddingHorizontal: 16, paddingVertical: 8 }}>
-            <Text style={{ fontSize: 16, color: '#888' }}>Partners</Text>
+          <View>
+            <View style={styles.centeredContent}>
+              <NoContent />
+            </View>
           </View>
         )}
 
         {activeSegment === 'Events' && ( 
-          <View style={{ paddingHorizontal: 16, paddingVertical: 8 }}>
-            <Text style={{ fontSize: 16, color: '#888' }}>Events</Text>
+          <View>
+            <View style={styles.centeredContent}>
+              <NoContent />
+            </View>
           </View>
         )}
         </ScrollView>
@@ -440,5 +445,10 @@ const styles = StyleSheet.create({
   bookmark:{
     backgroundColor: '#1F1F1F5C',
     borderRadius: 100
+  },
+  centeredContent: {
+    flex: 1,
+    paddingVertical: 320,
+    paddingHorizontal: 16
   }
 });

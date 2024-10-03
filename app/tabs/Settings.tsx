@@ -133,7 +133,7 @@ const Settings = ({ navigation }) => {
         )}
 
         {activeSegment === 'Manage' && ( 
-          <View style={{ paddingHorizontal: 16, paddingVertical: 8 }}>
+          <View style={{ paddingHorizontal: 16, paddingVertical: 8, paddingBottom: 150 }}>
             <View style={[gStyle.darkCard, gStyle.my4]}>
               <SansSerifText style={[gStyle.textLight, gStyle.fw700, gStyle.fs16]}>Contacts</SansSerifText>
               <SansSerifText style={[gStyle.textLight, gStyle.fw400, gStyle.fs14, gStyle.mt2]}>Manage your contacts...</SansSerifText>

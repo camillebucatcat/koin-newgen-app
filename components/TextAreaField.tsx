@@ -49,7 +49,7 @@ const TextAreaField: React.FC<TextAreaFieldProps> = ({
   const borderStyle = {
     borderColor: borderAnimation.interpolate({
       inputRange: [0, 1],
-      outputRange: ['#A8A8A8', '#543D8A'],
+      outputRange: ['#3C3A3C', '#543D8A'],
     }),
     borderWidth: 1,
   };

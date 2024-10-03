@@ -40,6 +40,9 @@ import RadioButtonSample from './styledDocs/RadioButtonSample';
 import SelectSplitTransaction from './move-transfer/split-transaction/SelectSplitTransaction';
 import Contacts from './contacts/Contacts';
 import Groups from './manage/Groups';
+import SplitTransactionType from './move-transfer/split-transaction/SplitTransactionType';
+import SplitReviewTransaction from './move-transfer/split-transaction/SplitReviewTransaction';
+import SplitTransactionSent from './move-transfer/split-transaction/SplitTransactionSent';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -88,6 +91,9 @@ export default function App() {
           <Stack.Screen name="SelectSplitTransaction" component={SelectSplitTransaction} />
           <Stack.Screen name="Contacts" component={Contacts} />
           <Stack.Screen name="Groups" component={Groups} />
+          <Stack.Screen name="SplitTransactionType" component={SplitTransactionType} />
+          <Stack.Screen name="SplitReviewTransaction" component={SplitReviewTransaction} />
+          <Stack.Screen name="SplitTransactionSent" component={SplitTransactionSent} />
         </Stack.Navigator>
       </NavigationContainer>
     </ThemeProvider>

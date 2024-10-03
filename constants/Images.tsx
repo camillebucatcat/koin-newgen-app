@@ -32,7 +32,8 @@ const images = {
         close: require(pathIcons + 'close.png'),
         clockPending: require(pathIcons + 'clock-pending.png'),
         searchInput: require(pathIcons+ 'search-input.png'),
-        usercircleplus: require(pathIcons + 'usercircleplus.png')
+        usercircleplus: require(pathIcons + 'usercircleplus.png'),
+        editPencil: require(pathIcons + 'edit-pencil.png'),
     },
     home: {
         dice: require(pathImages + 'dice.png'),

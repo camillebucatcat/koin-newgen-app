@@ -170,7 +170,7 @@ const styles = StyleSheet.create({
   optionContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingVertical: 24,
+    paddingVertical: 16,
     borderRadius: 8,
     width: '100%',
   },
@@ -221,7 +221,7 @@ const styles = StyleSheet.create({
     paddingBottom: 4,
   },
   optionText: {
-    fontSize: 16,
+    fontSize: 14,
   },
   optionImage: {
     marginRight: 8, // Space between the image and the next element

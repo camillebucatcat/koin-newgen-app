@@ -1,57 +1,20 @@
-import React from 'react';
-import { View, Text, Modal, ScrollView, Image, TextInput, StyleSheet, TouchableOpacity, FlatList, Platform } from 'react-native';
-import { SansSerifText } from '../../components/SanSerifText';
-import { gStyle } from '../styles/Global';
-import images from '../../constants/Images';
-import { display } from '../styles/Display';
-import GradientButton from '../../components/GradientButton';
+import { ScrollView, StyleSheet, Text, View, Image, TextInput, Platform, TouchableOpacity } from 'react-native';
+import React, { useMemo } from 'react';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import { gStyle } from '../../styles/Global';
+import Header from '../../../components/header/Header';
+import images from '../../../constants/Images';
+import { SansSerifText } from '../../../components/SanSerifText';
+import { display } from '../../styles/Display';
 
-interface ModalProps {
-  visible: boolean;
-  onClose: () => void;
-}
-
-const contacts = [
-  { id: '1', name: 'Ada Wilson', image: images.profileSample.user1 },
-  { id: '2', name: 'Aiden Rodríguez', image: images.profileSample.user2 },
-  { id: '3', name: 'Angela Jones', image: images.icon.noPfp },
-  { id: '4', name: 'Arian Williams', image: images.icon.noPfp },
-  { id: '5', name: 'Betty Luo', image: images.profileSample.user3 },
-  { id: '6', name: 'Bill Jones', image: images.icon.noPfp },
-  { id: '7', name: 'Chloe Davis', image: images.profileSample.user5 },
-  { id: '8', name: 'Mia Chen', image: images.profileSample.user6 },
-  { id: '9', name: 'Rachel Miller', image: images.profileSample.user4 },
-  { id: '10', name: 'Tommy Johnson', image: images.profileSample.user7 },
-];
-
-const SelectContact: React.FC<ModalProps> = ({ visible, onClose }) => {
-  const alphabets = ['#', ...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')];
-
-  const renderContact = ({ item }: { item: { id: string; name: string; image: any } }) => (
-    <TouchableOpacity style={[gStyle.contactCard, gStyle.mb4]} activeOpacity={0.5}>
-      <View style={[display.dFlex, display.alignCenter]}>
-        <Image source={item.image} style={styles.contactImg} />
-        <SansSerifText style={[gStyle.fs14, gStyle.fw400]}>{item.name}</SansSerifText>
-      </View>
-    </TouchableOpacity>
-  );
-
+const SplittingTransaction = () => {
+  const alphabets = useMemo(() => ['#', ...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')], []);
+  
   return (
-    <Modal
-      animationType="slide"
-      transparent={true}
-      visible={visible}
-      onRequestClose={onClose}
-    >
-      <View style={styles.modalContainer}>
-        <View style={styles.backgroundOverlay}>
-          <View style={styles.headerContainer}>
-            <SansSerifText style={[gStyle.fw600, gStyle.fs18]}>Select Contact</SansSerifText>
-            <TouchableOpacity onPress={onClose}>
-              <Image source={images.icon.close} />
-            </TouchableOpacity>
-          </View>
-          <ScrollView showsVerticalScrollIndicator={false} >
+    <SafeAreaProvider style={gStyle.darkBg}>
+      <SafeAreaView style={{ flex: 1 }}>
+        <Header title="Split Transaction(s)" showCancelBtn={true} />
+        <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.scrollContainer}>
           <View style={[styles.searchContainer, gStyle.mx4]}>
             <Image source={images.icon.searchInput} />
             <TextInput placeholder="Search Contacts" placeholderTextColor="#A8A8A8" style={styles.input} />
@@ -193,49 +156,35 @@ const SelectContact: React.FC<ModalProps> = ({ visible, onClose }) => {
                 </View>
               </View>
           </View>
-          <View style={[gStyle.p4]}>
-            <GradientButton title="Invite To Koin" shape="round" transform="normal" expand='block'/>
-          </View>
         </ScrollView>
-          <View style={styles.alphabetIndex}>
-            {alphabets.map((letter, index) => (
-              <TouchableOpacity key={letter} disabled={index === 0}>
-                <Text style={[styles.alphabetText, gStyle.textPrimaryLight]}>{letter}</Text>
-              </TouchableOpacity>
-            ))}
-          </View>
+        <View style={styles.alphabetIndex}>
+          {alphabets.map((letter, index) => (
+            <TouchableOpacity key={letter} disabled={index === 0}>
+              <Text style={[styles.alphabetText, gStyle.textPrimaryLight]}>{letter}</Text>
+            </TouchableOpacity>
+          ))}
         </View>
-      </View>
-    </Modal>
+      </SafeAreaView>
+    </SafeAreaProvider>
   );
 };
 
+export default SplittingTransaction;
+
 const styles = StyleSheet.create({
-  modalContainer: {
-    flex: 1,
-  },
-  backgroundOverlay: {
-    flex: 1,
-    backgroundColor: 'rgba(52, 52, 52, 0.9)',
-    justifyContent: 'flex-start',
-  },
-  headerContainer: {
-    padding: 16,
-    backgroundColor: '#211F21',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+  scrollContainer: {
+    flexGrow: 1,
+    paddingBottom: 100,
   },
   searchContainer: {
-    backgroundColor: '#767680',
+    backgroundColor: '#353438',
     borderRadius: 50,
-    padding: 16,
+    padding: 10,
     flexDirection: 'row',
-    marginTop: 24,
   },
   input: {
-    fontSize: 16,
-    marginLeft: 16,
+    fontSize: 14,
+    marginLeft: 8,
     fontFamily: 'Aventa',
     color: '#fff',
     ...Platform.select({
@@ -244,33 +193,11 @@ const styles = StyleSheet.create({
       },
     }),
   },
-  contactImg: {
-    width: 40,
-    height: 40,
-    borderRadius: 20,
-    marginRight: 10,
-  },
-  alphabeticalContainer: {
-    padding: 16,
-  },
-  alphabetIndex: {
-    alignItems: 'center',
-    position: 'absolute',
-    top: 320,
-    right: 0,
-  },
-  alphabetText: {
-    fontSize: 16,
-  },
   invitedContainer: {
     backgroundColor: '#4F4F4F',
     paddingHorizontal: 12,
     paddingVertical: 4,
     borderRadius: 50
-  },
-  contactList: {
-    flex: 1,
-    // paddingHorizontal: 16,
   },
   avatarCard: {
     width: 72,
@@ -283,6 +210,29 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     marginBottom: 6,
   },
+  alphabeticalContainer: {
+    flexDirection: 'row',
+    paddingTop: 16,
+  },
+  contactList: {
+    flex: 1,
+    paddingHorizontal: 16,
+  },
+  contactImg: {
+    width: 44, 
+    height: 44,
+    borderRadius: 12,
+    marginRight: 8,
+  },
+  alphabetIndex: {
+    alignItems: 'center',
+    position: 'absolute',
+    top: 320,
+    right: 0,
+  },
+  alphabetText: {
+    fontSize: 13,
+    color: '#fff',
+    marginVertical: 2,
+  },
 });
-
-export default SelectContact;

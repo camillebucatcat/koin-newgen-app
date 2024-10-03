@@ -48,13 +48,18 @@ import SettleUpFund from './settle-up/SettleUpFund';
 import SettleUpReview from './settle-up/SettleUpReview';
 import SettleUpSent from './settle-up/SettleUpSent';
 import SettleUp from './settle-up/SettleUp';
+import { createStackNavigator } from '@react-navigation/stack';
+import { Animated } from 'react-native';
+import { CardStyleInterpolators } from '@react-navigation/stack';
 
+const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
-const Stack = createNativeStackNavigator();
+// const Stack = createNativeStackNavigator();
 const prefix = Linking.createURL('/');
 const linking = {
   prefixes: [prefix],
 };
+
 
 export default function App() {
   const [loaded, error] = useFonts({
@@ -67,15 +72,15 @@ export default function App() {
 
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <NavigationContainer independent={true} linking={linking}>
-        <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <NavigationContainer independent={true} linking={linking}  >
+        <Stack.Navigator screenOptions={{ headerShown: false, animationEnabled: true }} >
           <Stack.Screen name="Home" component={HomeTabs} />
           <Stack.Screen name="ButtonSample" component={ButtonSample} />
           <Stack.Screen name="styledDocs/FormFieldSample" component={FormFieldSample} />
           <Stack.Screen name="EverydaySpending" component={EverydaySpending} />
           <Stack.Screen name="EntertainmentFunds" component={EntertainmentFunds} />
           <Stack.Screen name="DraftKings" component={Draftkings} />
-          <Stack.Screen name="TransactionDetails" component={TransactionDetails}/>
+          <Stack.Screen name="TransactionDetails" component={TransactionDetails} options={{ cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS }}/>
           <Stack.Screen name="AddFunds" component={AddFunds} />
           <Stack.Screen name="SendFunds" component={SendFunds}/>
           <Stack.Screen name="RequestFund" component={RequestFund}/>

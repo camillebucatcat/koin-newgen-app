@@ -4,6 +4,7 @@ import { gStyle } from '../../app/styles/Global';
 import { display } from '../../app/styles/Display';
 import { SansSerifText } from '../SanSerifText';
 import images from '../../constants/Images';
+import { useNavigation } from '@react-navigation/native';
 
 
 interface TitleProps {
@@ -12,10 +13,12 @@ interface TitleProps {
 }
 
 const Header: React.FC<TitleProps> = ({ title, showCancelBtn = false }) => {
+  let navigation: any = useNavigation();
+
   return (
     <View style={[gStyle.py6, gStyle.px6,]}>
       <View style={[ display.dFlex, display.alignCenter ]}>
-        <TouchableOpacity style={[ gStyle.mr3]}>
+        <TouchableOpacity style={[ gStyle.mr3]} onPress={() => navigation.goBack()}>
           <Image source={images.icon.arrowBack}/>
         </TouchableOpacity>
         <View style={[display.flexCenterBetween]}>

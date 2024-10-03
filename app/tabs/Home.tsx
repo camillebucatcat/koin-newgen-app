@@ -20,7 +20,7 @@ import NoContent from '../../components/NoContent';
 
 const Home = ({ navigation }) => {
   const [activeSegment, setActiveSegment] = useState('For You');
-
+  console.log(navigation)
   const handleSegmentChange = (segment: string) => {
     setActiveSegment(segment);
   };
@@ -64,7 +64,7 @@ const Home = ({ navigation }) => {
               <SansSerifText style={[gStyle.textLight, gStyle.fw700]}>Recent Transactions</SansSerifText>
               <GradientButton title="View Detail" customStyles={{width: '35%'}} customSpace={{padding: 12}} transform="normal" shape="round" fill="outline" color="light"  centerText={true} handlePress={() => router.push('')} />
             </View>
-              <RecentTransactions />
+              <RecentTransactions transaction='' />
             </View>
             <TouchableOpacity activeOpacity={0.8}>
               <View style={[ gStyle.darkCard, gStyle.my4 ]}>

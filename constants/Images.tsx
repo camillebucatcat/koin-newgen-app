@@ -35,6 +35,7 @@ const images = {
         usercircleplus: require(pathIcons + 'usercircleplus.png'),
         editPencil: require(pathIcons + 'edit-pencil.png'),
         plusgradient: require(pathIcons + 'plusgradient.png'),
+        questionCircle: require(pathIcons + 'question-circle.png'),
     },
     home: {
         dice: require(pathImages + 'dice.png'),

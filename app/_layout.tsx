@@ -47,6 +47,7 @@ import SplittingTransaction from './move-transfer/split-transaction/SplittingTra
 import SettleUpFund from './settle-up/SettleUpFund';
 import SettleUpReview from './settle-up/SettleUpReview';
 import SettleUpSent from './settle-up/SettleUpSent';
+import SettleUp from './settle-up/SettleUp';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -99,6 +100,7 @@ export default function App() {
           <Stack.Screen name="SplitTransactionType" component={SplitTransactionType} />
           <Stack.Screen name="SplitReviewTransaction" component={SplitReviewTransaction} />
           <Stack.Screen name="SplitTransactionSent" component={SplitTransactionSent} />
+          <Stack.Screen name="SettleUp" component={SettleUp} />
           <Stack.Screen name="SettleUpFund" component={SettleUpFund} />
           <Stack.Screen name="SettleUpReview" component={SettleUpReview} />
           <Stack.Screen name="SettleUpSent" component={SettleUpSent} />

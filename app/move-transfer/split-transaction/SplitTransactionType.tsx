@@ -65,8 +65,9 @@ const SplitTransactionType = () => {
       layout: 'space-between', 
     },
   ];
-  const handleSelect = (option: { title: string; label: string; value: string }) => {
-    setSelectedOption(option.value); 
+  // Function to handle option selection
+  const handleSelect = ( value: string ) => {
+    setSelectedOption(value); // Update the selected option
     setDropdownVisible(false);
   };
 

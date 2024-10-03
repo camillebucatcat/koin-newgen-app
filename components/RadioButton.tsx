@@ -7,7 +7,7 @@ interface Option {
   title?: string;
   label: string;
   value: string;
-  layout?: 'left' | 'right' | 'space-between';
+  layout?: 'left' | 'right' | 'space-between' ;
   image?: ImageSourcePropType;
   imageWidth?: number; // Add optional imageWidth property
   imageHeight?: number; // Add optional imageHeight property
@@ -33,7 +33,7 @@ const RadioButton: React.FC<RadioButtonProps> = ({ options, selectedOption, onSe
         >
           <TouchableOpacity
             style={styles.optionContainer}
-            onPress={() => onSelect(option)}
+            onPress={() => onSelect(option.value)}
           >
             {option.layout === 'left' && (
               <>

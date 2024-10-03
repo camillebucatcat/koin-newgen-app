@@ -18,9 +18,10 @@ const  InviteContact= ()=>{
     { title: '', label: 'Email', value: 'email', layout: 'left' },
   ];
  // Function to handle option selection
- const handleSelect = (option: { title: string; label: string; value: string }) => {
-    setSelectedOption(option.value);
-};
+ const handleSelect = (value: string) => {
+    setSelectedOption(value);
+  };
+
 return(
 <SafeAreaProvider style={[gStyle.darkBg]}>
 <SafeAreaView style={[{flex: 1}]}>

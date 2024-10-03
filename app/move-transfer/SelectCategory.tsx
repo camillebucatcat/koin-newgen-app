@@ -29,9 +29,10 @@ const SelectCategory: React.FC<ModalProps> = ({ visible, onClose }) => {
     { image: images.selectCategories.transport, label:'Transport', value: 'option12', layout:'space-between', imageWidth: 44, imageHeight: 44},
   ];
 
-  const handleSelect = (option: { title: string; label: string; value: string }) => {
-    setSelectedOption(option.value);
+  const handleSelect = (value: string) => {
+    setSelectedOption(value);
   };
+
 
   return (
     <Modal

@@ -21,6 +21,7 @@ const SplittingTransaction = () => {
       <SafeAreaView style={{ flex: 1 }}>
         <Header title="Split Transaction(s)" showCancelBtn={true} />
         <SegmentControl 
+        fullWidth={false}
         titles={['Contacts', 'Groups', ]}
         onSegmentChange={handleSegmentChange}
       />
